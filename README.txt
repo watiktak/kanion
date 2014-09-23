@@ -1,0 +1,1 @@
+Framework:springMVC3.2+spring3.2+mybatis3.1
