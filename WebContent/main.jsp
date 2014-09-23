@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,12 +8,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
+
     <title>康源PKS统计挖掘系统</title>
 	<link rel="stylesheet" type="text/css" href="CSS/global.css">
+	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="js/jquery-extend.js"></script>
+	<script  language="JavaScript" type="text/javascript">
+	  	function dataAnalysis() {
+	  		window.location="GardeniaExtration/selectAll.htm";   
+	  	};
+  </script>
   </head>
-  
   <body>
-  
  	 <!--顶部导航-->
 	<div class="Tray">
 		<div class="tray">
@@ -36,7 +43,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="toolbar">
 			<ul class="tools">
 				<li class="tool">
-					<button title="数据分析">
+					<button  id="dataAnalysisBtn" title="数据分析" onclick="dataAnalysis()">
 						<i class="i i1"></i>
 					</button>				
 				</li>			
@@ -54,7 +61,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div> 
 	<div id="Bdy">
 		<div class="bdy">
+			<div id="dataAnalysis">
+				<!-- 金清压缩提存列表 -->
+							<table width="850px" cellpadding="0" cellspacing="0">
+						
+								<c:forEach items="${gardeniaExtrations}" var="item">
+									<tr>
+										<td>${item.batchno}</td>
+										<td>${item.concentrationextractionweight}</td>
+										<td>${item.originalph}</td>
+										<td>${item.hclvolume}</td>
+									</tr>
+								</c:forEach>
+								<tr/>
+							</table>
+			
+			</div>
+		
 		</div>
 	</div>
   </body>
+  
+
 </html>

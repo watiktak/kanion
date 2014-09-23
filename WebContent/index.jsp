@@ -9,9 +9,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     <title>康源PKS统计挖掘系统</title>
 	<link rel="stylesheet" type="text/css" href="CSS/index.css">
-	<link rel="bookmark"  type="image/x-icon"  href="图片地址"/>
-	<link rel="shortcut icon" href="图片地址"> 
-	<link rel="icon" href="图片地址">
+	<link rel="bookmark"  type="image/x-icon"  href="icons/logo.png"/>
+	<link rel="shortcut icon" href="icons/logo.png"> 
+	<link rel="icon" href="icons/logo.png">
+	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="js/jquery-extend.js"></script>
   </head>
   
   <body>
@@ -120,8 +122,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 
   </body>
   
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/jquery-extend.js"></script>
+
 <script>
 //.left-banner直接调用.fadeAnimate，返回它自身
 $('#top-main .left-banner').fadeAnimate({});
