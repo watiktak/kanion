@@ -1,4 +1,5 @@
 @CHARSET "UTF-8";
+
 * {
 	padding: 0;
 	margin: 0;
@@ -19,7 +20,10 @@ body,input,textarea,select,button {
 	font: 12px/1.667 'Helvetica Neue', Tahoma;
 	color: #455469
 }
-
+select{
+	width:100px;
+	height:22px;
+}
 input,textarea,table {
 	font-size: 1em;
 	font-family: inherit
@@ -41,7 +45,7 @@ img,fieldset,hr,iframe,button {
 }
 
 img,.img {
-	display: inline-block;/*行内块*/
+	display: inline-block; /*行内块*/
 	background: no-repeat;
 	vertical-align: top
 }
@@ -49,14 +53,23 @@ img,.img {
 form,.form {
 	position: relative;
 	display: block;
-	zoom: 1;}
-
+	zoom: 1;
+}
 
 /*列表项目统一样式，每个列表前缀符号*/
 li {
 	list-style: none
 }
-
+/*定义头*/
+dt {
+	font-size: 16px;
+	font-family: "微软雅黑";
+	color: #3A8B9B;
+}
+dd{
+	line-height: 20px;
+	margin-top: 10px;
+}
 /*盒样式的统一，W3C盒模型规定长宽属性是盒内内容的长宽，不包含border和padding，但是IE的标准是长宽属性为边框的长宽。-moz-box-sizing或-webkit-box-sizing分别设置火狐或Safari和WebKit符合W3C标准*/
 button,.btn {
 	overflow: visible;
@@ -72,6 +85,18 @@ button,.btn {
 	background: none
 }
 
+.orange-btn {
+	font-family: "微软雅黑";
+	display: inline-block;
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	font-size: 18px;
+	color: #fff !important;
+	background: url('../icons/btn_bg_1.jpg') repeat-x;
+}
+
 /*按钮内边框，火狐浏览器，IE浏览器默认会显示按钮内边框和padding*/
 button::-moz-focus-inner,input::-moz-focus-inner {
 	padding: 0;
@@ -81,7 +106,7 @@ button::-moz-focus-inner,input::-moz-focus-inner {
 /*上下标*/
 sup,sub {
 	vertical-align: baseline
-}	
+}
 
 /*引用的样式blockquote是段引用，q是行内引用，quotes定义各级引号*/
 blockquote,q {
@@ -159,11 +184,15 @@ a:hover {
 	display: none !important;
 	opacity: 0 !important
 }
+.dis{
+	display: block;
+	opacity: 100 !important
+}
 /*transition:property duration timing-function delay;动画过度效果*/
 .noVis {
 	visibility: hidden !important;
 	opacity: 0 !important;
-	filter: alpha(opacity = 0);
+	filter: alpha(opacity =   0);
 	-webkit-transition: all ease-out .3s;
 	transition: all ease-out .3s
 }
@@ -189,13 +218,14 @@ a:hover {
 	color: #3A3F42
 }
 
-.tray,.toolbar,.bdy{
+.tray,.toolbar,.bdy {
 	position: relative;
 	width: 1000px;
 	min-height: 100%;
 	margin-left: auto;
 	margin-right: auto
 }
+
 .Tray a {
 	color: #3A3F42
 }
@@ -209,13 +239,14 @@ a:hover {
 	height: 39px;
 	margin: 0 0 0;
 	text-indent: -15em;
-	background: url(../icons/logo.png) no-repeat center 
+	background: url(../icons/logo.png) no-repeat center
 }
 
 .nav {
 	height: 39px;
 	line-height: 39px;
-	margin: -39px 0 0 90px;}
+	margin: -39px 0 0 90px;
+}
 
 .nav>li {
 	z-index: 2;
@@ -230,7 +261,6 @@ a:hover {
 	height: 100%;
 	padding: 0 12px
 }
-
 
 .nav2 {
 	top: 5px;
@@ -282,12 +312,14 @@ a:hover {
 
 .Toolbar2 {
 	border-bottom: 0;
-	background-color: #64b9c9;}
+	background-color: #64b9c9;
+}
 /*工具栏左列：各个工具栏导航*/
 .tools {
 	height: 68px;
 	margin: 0 0 -68px
 }
+
 .tool {
 	position: relative;
 	display: inline-block;
@@ -297,6 +329,7 @@ a:hover {
 	vertical-align: top;
 	background: none
 }
+
 .tool>a,.tool>button {
 	display: block;
 	padding: 0 20px;
@@ -314,14 +347,17 @@ a:hover {
 	background: #8ad2df;
 	text-decoration: none;
 }
+
 .tool>button:active {
 	background: #1D1D20
 }
+/*小icon的全局设置*/
 .i {
 	width: 32px;
 	height: 32px;
 	overflow: hidden;
 	display: inline-block;
+	background: url(../icons/icons.png) no-repeat -100%;
 	margin: 0 0 .25em;
 	line-height: 0 !important;
 	text-align: left;
@@ -350,8 +386,7 @@ a:hover {
 .Toolbar2 .toolB form {
 	text-align: left;
 	position: relative;
-	height:68px
-;
+	height: 68px;
 	padding-top: 23px;
 }
 
@@ -361,7 +396,8 @@ a:hover {
 	height: 20px;
 	background: url(../icons/searchBtn.png) no-repeat center;
 	left: 12px;
-	top: 28%;}
+	top: 28%;
+}
 
 .Toolbar2 .toolB .txt {
 	width: 93px;
@@ -377,17 +413,16 @@ a:hover {
 
 #Bdy {
 	min-height: 100%;
-	margin:auto;
-	background:#fff;
-	width:1000px
-	
+	margin: auto;
+	background: #fff;
+	width: 1000px
 }
 
 .bdy:before {
 	visibility: hidden;
 	float: left;
 	width: 100%;
-	min-height: 500px;
+	min-height: 110px;
 	height: 100%;
 	display: block;
 	content: '';
@@ -403,3 +438,97 @@ a:hover {
 	clear: both
 }
 
+.main {
+	float: left;
+	width: 100%;
+}
+
+div.intro {
+	padding: 6px 20px 0 20px;
+}
+
+.file-gnm {
+	position: relative;
+	padding: 1em 0;
+	border-bottom: 1px dashed #DCDCDC;
+}
+
+.file-gnm:before {
+	padding-left: 30px;
+}
+
+.file-gnm:before {
+	content: attr(csstxt);
+}
+
+.iB {
+	vertical-align: top;
+	width: 25px;
+	height: 25px;
+}
+
+.i2 {
+	background-position: -25px 0;
+}
+
+.file-gnm>.i {
+	top: 16px;
+	left: 0;
+	position: absolute;
+}
+
+.w200 {
+	width: 200px;
+}
+.mt-50{
+	margin-top:-50px;
+}
+.floatRight{
+	float:right;
+}
+
+#containerAverage1:before{
+	visibility: hidden;
+	float: left;
+	width: 100%;
+	min-height: 50px;
+	display: block;
+	content: '';
+	background: transparent no-repeat center;
+	opacity: 0;
+	-webkit-transition: all .2s;
+	transition: all .2s
+	
+}
+#containerAverage1:after{
+	visibility: hidden;
+	float: left;
+	width: 100%;
+	min-height: 50px;
+	display: block;
+	content: '';
+	background: transparent no-repeat center;
+	opacity: 0;
+	-webkit-transition: all .2s;
+	transition: all .2s
+}
+#containerAverage2:after{
+	visibility: hidden;
+	float: left;
+	width: 100%;
+	min-height: 50px;
+	display: block;
+	content: '';
+	background: transparent no-repeat center;
+	opacity: 0;
+	-webkit-transition: all .2s;
+	transition: all .2s
+}
+.container{
+	min-width:700px;
+	height:500px;
+	max-width:800px;
+	text-align: center;
+	margin: auto;
+	
+}

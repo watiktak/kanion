@@ -41,6 +41,19 @@
   <select id="selectAll" resultMap="BaseResultMap">
       select * from KANGYUAN.GARDENIAEXTRATION order by "batchNo"      
   </select>
+  
+  <select id="getDryConcreteWeights" resultType="Double">      
+      select distinct "dryConcreteWeight" from KANGYUAN.GARDENIAEXTRATION order by "dryConcreteWeight" asc
+  </select>
+  
+  <select id="getContents" resultType="Double">
+      select distinct "content" from KANGYUAN.GARDENIAEXTRATION order by "content" asc
+  </select>
+  
+  <select id="averageAnalysis" resultMap="BaseResultMap">
+      select * from KANGYUAN.GARDENIAEXTRATION where "dryConcreteWeight" &gt;= #{minDryConcreteWeight} and "dryConcreteWeight" &lt;= #{maxDryConcreteWeight} and "content" &gt;= #{minContent} and "content" &lt;= #{maxContent}
+  </select>
+  
   <insert id="insert" parameterType="com.kanion.www.model.GardeniaExtration" >
     insert into KANGYUAN.GARDENIAEXTRATION (batchNo, concentrationExtractionWeight, 
       OriginalPH, HCLVolume, PHWithHCL, 

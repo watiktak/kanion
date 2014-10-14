@@ -31,6 +31,10 @@
 		<servlet-name>SpringMVC</servlet-name>
 		<url-pattern>*.htm</url-pattern>
 	</servlet-mapping>
+		<servlet-mapping>
+		<servlet-name>SpringMVC</servlet-name>
+		<url-pattern>*.json</url-pattern>
+	</servlet-mapping>
 	<!-- pring MVC End  -->
 	
 	<!-- 监听开始 -->
@@ -69,4 +73,6 @@
 		<welcome-file>index.jsp</welcome-file>
 
 	</welcome-file-list>
+	
+	
 </web-app>

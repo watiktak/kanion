@@ -26,8 +26,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</h1>
 			<ul class="top-menu">
 				<li>
+					<a href="">数据分析</a>
+				</li>
+				<li>
 					<a href="">系统介绍</a>
 				</li>
+	
 			</ul>
 		</div>
 	 </div> 

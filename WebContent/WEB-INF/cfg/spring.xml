@@ -15,5 +15,6 @@
 	<context:property-placeholder location="/WEB-INF/cfg/config.properties"/>
 	<!-- 对包下service包所有注解扫描（自动注入） -->
 	<context:component-scan base-package="com.kanion.www.service"/>
+	
 
 </beans>
