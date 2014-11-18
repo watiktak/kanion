@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:util="http://www.springframework.org/schema/util" 
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xmlns:p="http://www.springframework.org/schema/p" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="  
 	http://www.springframework.org/schema/aop 
 	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
@@ -18,10 +15,10 @@
     http://www.springframework.org/schema/context   
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<!--  <util:properties id="jdbcProps" location="/WEB-INF/cfg/config.properties"/> -->
+	<!-- <util:properties id="jdbcProps" location="/WEB-INF/cfg/config.properties"/> -->
 
-	<!--配置用户数据源,配置了sqlSessionFactory之后，属性文件的读取在数据源配置之后，故不能直接从属性文件中读取，待解决-->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" 
+	<!--配置用户数据源,配置了sqlSessionFactory之后，属性文件的读取在数据源配置之后，故不能直接从属性文件中读取，待解决 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl" />
@@ -76,7 +73,6 @@
 	</tx:advice>
 
 	<aop:config>
-
 		<aop:pointcut id="transactionPointCut"
 			expression="execution(* com.kanion.www.service..*Impl.*(..))" />
 		<aop:advisor pointcut-ref="transactionPointCut"

@@ -136,6 +136,7 @@ textarea {
 	resize: vertical
 }
 
+
 .txt {
 	height: 19px;
 	line-height: 19px !important;
@@ -348,9 +349,9 @@ a:hover {
 	text-decoration: none;
 }
 
-.tool>button:active {
+/*.tool>button:active {
 	background: #1D1D20
-}
+}*/
 /*小icon的全局设置*/
 .i {
 	width: 32px;
@@ -530,5 +531,7 @@ div.intro {
 	max-width:800px;
 	text-align: center;
 	margin: auto;
+	margin-top:30px;
+	margin-bottom:50px;
 	
 }

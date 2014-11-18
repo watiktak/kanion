@@ -15,9 +15,9 @@
 */
 package com.kanion.www.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import com.kanion.www.model.GardeniaExtration;
 
@@ -35,5 +35,10 @@ public interface GardeniaExtrationService {
 
 	public List<Double> getContents();
 	
-	public Map<String,Double> averageAnalysis(Double minDryConcreteWeight,Double maxDryConcreteWeight,Double minContent,Double maxContent);
+	public Map<String,Double> argsAverageAnalysis(Double minDryConcreteWeight,Double maxDryConcreteWeight,Double minContent,Double maxContent);
+
+	public List<BigDecimal> getBatchNos();
+
+	public Map<String,Object> qualityAverageAnalysis(
+			Integer minBatchNo, Integer maxBatchNo);
 }

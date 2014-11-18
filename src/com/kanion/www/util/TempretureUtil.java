@@ -14,6 +14,9 @@
 * 2014-10-13	cyz    		1.0			1.0 Version
 */
 package com.kanion.www.util;
+
+import java.math.BigDecimal;
+
 /**
  * @ClassName: TempretureUtil
  * @Description: TODO
@@ -22,7 +25,19 @@ package com.kanion.www.util;
  */
 public class TempretureUtil {
 	
-	public static Double stringToVal(String tmp){
-		return Double.parseDouble(tmp.substring(0,tmp.indexOf("℃")));
+	public static double stringToVal(String tmp){
+		return new BigDecimal(tmp.substring(0,tmp.indexOf("℃"))).doubleValue();
 	}
+	
+	public static String add(String t1,String t2){
+		BigDecimal d1=new BigDecimal(t1.substring(0,t1.indexOf("℃")));
+		BigDecimal d2=new BigDecimal(t2.substring(0,t2.indexOf("℃")));
+		return d1.add(d2).toString()+"℃";
+	}
+	
+	public static String div(String tmp,double n){
+		double result=stringToVal(tmp);
+		return Double.toString(ArithUtil.div(result, n))+"℃";
+	}
+
 }

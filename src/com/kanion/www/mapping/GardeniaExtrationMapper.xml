@@ -50,9 +50,18 @@
       select distinct "content" from KANGYUAN.GARDENIAEXTRATION order by "content" asc
   </select>
   
-  <select id="averageAnalysis" resultMap="BaseResultMap">
+  <select id="getBatchNos" resultType="BigDecimal">
+      select distinct "batchNo" from KANGYUAN.GARDENIAEXTRATION order by "batchNo" desc
+  </select>
+  
+  <select id="argsAverageAnalysis" resultMap="BaseResultMap">
       select * from KANGYUAN.GARDENIAEXTRATION where "dryConcreteWeight" &gt;= #{minDryConcreteWeight} and "dryConcreteWeight" &lt;= #{maxDryConcreteWeight} and "content" &gt;= #{minContent} and "content" &lt;= #{maxContent}
   </select>
+  
+  <select id="qualityAverageAnalysis" resultMap="BaseResultMap">
+      select * from KANGYUAN.GARDENIAEXTRATION where "batchNo" &gt;= #{minBatchNo} and "batchNo" &lt;= #{maxBatchNo} 
+  </select>
+  
   
   <insert id="insert" parameterType="com.kanion.www.model.GardeniaExtration" >
     insert into KANGYUAN.GARDENIAEXTRATION (batchNo, concentrationExtractionWeight, 

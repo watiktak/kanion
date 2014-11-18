@@ -15,26 +15,36 @@
  */
 package com.kanion.www.util;
 
-/**
- * @ClassName: TimeUtil
- * @Description: TODO
- * @date 2014-10-12 下午10:29:28
- * 
- */
 public class TimeUtil {
 
 	//将时间字符串转换为小时
 	public static double changeToHour(String timeString) {
 		timeString = timeString.replace("小时", ",");
 		timeString = timeString.replace("分钟", ",");
-		String[] time = new String[2];
+		String[] time = null;
 		time = timeString.split(",");
-		int hour=0,miniute=0;
+		int hour=0,minute=0;
 		for(int i=0;i<time.length;i++){
-			if(0==i) hour = Integer.parseInt(time[i]);
-			if(1==i) miniute = Integer.parseInt(time[1]);
+			if(0==i) hour += Integer.valueOf(time[i]);
+			if(1==i) minute += Integer.valueOf(time[i]);
 		}
-		return hour+miniute/60.0;
+		double result=ArithUtil.add(hour, ArithUtil.div(minute, 60.0));
+		return result;
 	}
-
+	
+	//将小时形式转换为“XX小时XX分钟”
+	public static String minutesToString(double hours){
+		//System.out.print("转换"+hours+"小时为字符串形式：");
+		long longMinutes=(long)ArithUtil.round(ArithUtil.mul(hours, 60.0),0);
+		long hour=longMinutes/60;
+		long minute=longMinutes%60;
+		String result=hour+"小时"+minute+"分钟";
+		return result;
+	}
+	
+	//时间除法
+	public static String div(String timeString,double n){
+		double hours=changeToHour(timeString);
+		return minutesToString(ArithUtil.div(hours, n));
+	}
 }
