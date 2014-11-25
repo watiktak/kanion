@@ -31,8 +31,13 @@
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />-->
-
+		<!--
 		<table schema="kangyuan" tableName="gardeniaExtration" domainObjectName="GardeniaExtration"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />-->
+		
+		<table schema="kangyuan" tableName="gardeniaExtrationConcentration" domainObjectName="GardeniaExtrationConcentration"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />

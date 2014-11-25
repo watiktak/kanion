@@ -40,4 +40,35 @@ public class TempretureUtil {
 		return Double.toString(ArithUtil.div(result, n))+"℃";
 	}
 
+	
+	//从乙醇浓度、温度字段获取浓度
+		public static Double getConcentration(String str){
+			
+			return Double.parseDouble(str.substring(0, str.indexOf('%')));
+		
+		}
+		
+		//从乙醇浓度、温度字段获取温度
+		public static Double getTemp(String str){
+			
+			return Double.parseDouble(str.substring(str.indexOf('、')+1,str.indexOf('℃')));
+			
+		}
+		
+		//将乙醇浓度、温度字段字符串相加
+		public static String addCT(String ct1,String ct2){
+			
+			String result="";
+			result+=ArithUtil.add(getConcentration(ct1),getConcentration(ct2))+"%、";
+			result+=ArithUtil.add(getTemp(ct1), getTemp(ct2))+"℃";
+			return result;
+			
+		}
+		
+		public static String divCT(String ct,double n){
+			String result="";
+			result+=ArithUtil.div(getConcentration(ct), n)+"%、";
+			result+=ArithUtil.div(getTemp(ct), n)+"℃";
+			return result;
+		}
 }

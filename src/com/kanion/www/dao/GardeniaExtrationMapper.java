@@ -22,6 +22,6 @@ public interface GardeniaExtrationMapper {
 	
 	List<GardeniaExtration> argsAverageAnalysis(@Param("minDryConcreteWeight")Double minDryConcreteWeight,@Param("maxDryConcreteWeight")Double maxDryConcreteWeight,@Param("minContent")Double minContent,@Param("maxContent")Double maxContent);
 
-	List<GardeniaExtration> qualityAverageAnalysis(@Param("minBatchNo")Integer minBatchNo,@Param("maxBatchNo")Integer maxBatchNo);
+	List<GardeniaExtration> selectByBatchNos(@Param("minBatchNo")Integer minBatchNo,@Param("maxBatchNo")Integer maxBatchNo);
 
 }

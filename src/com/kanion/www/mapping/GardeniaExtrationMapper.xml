@@ -58,7 +58,7 @@
       select * from KANGYUAN.GARDENIAEXTRATION where "dryConcreteWeight" &gt;= #{minDryConcreteWeight} and "dryConcreteWeight" &lt;= #{maxDryConcreteWeight} and "content" &gt;= #{minContent} and "content" &lt;= #{maxContent}
   </select>
   
-  <select id="qualityAverageAnalysis" resultMap="BaseResultMap">
+  <select id="selectByBatchNos" resultMap="BaseResultMap">
       select * from KANGYUAN.GARDENIAEXTRATION where "batchNo" &gt;= #{minBatchNo} and "batchNo" &lt;= #{maxBatchNo} 
   </select>
   

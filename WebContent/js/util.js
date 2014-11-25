@@ -57,3 +57,16 @@ function drawHighcharts(container,data){
 		series:data.series		
 	});
 };
+//显示表格
+function showHighcharts(container){
+	container.attr("class","dis container");
+};
+//清除表格
+function hideHighcharts(container){
+	container.attr("class","noDis ");
+};
+//检查区间范围是否合理
+function checkSection(min,max){
+	if(parseInt(min)>=parseInt(max)) return false;
+	else return true;
+}

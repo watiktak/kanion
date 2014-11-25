@@ -15,13 +15,11 @@
 */
 package com.kanion.www.test;
 
-import static org.junit.Assert.*;
 
 import java.math.BigDecimal;
 
 import org.junit.Test;
 
-import com.kanion.www.util.TimeUtil;
 
 /**
  * @ClassName: TimeUtilTest

@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 				-->
 				<li class="tool">
-					<button  id="qualityAverageBtn" title="质量均值" onclick="qualityAverage()">
+					<button  id="qualityAverageBtn" title="质量均值" onclick="qualityAverageAnalysisInit()">
 						<i class="i i1"></i>
 					</button>	
 				</li>			
@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="Bdy">
 		<div class="bdy">
 			<div class="main">
-				<!-- 参数均值分析模块：指定干膏范围，查看各参数的均值 -->
+				<!-- ***************************************************** 参数均值分析模块(此模块忽略)：指定干膏范围，查看各参数的均值 ***************************************************** -->
 				<div id="argAverageDiv" class="noDis">
 					<!-- 板块介绍部分 -->
 					<div class="intro" >
@@ -91,39 +91,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div id="containerAverage1" class="container"></div>
 					<div id="containerAverage2" class="container"></div>
 				</div>
-				
+				<!-- ***************************************************** 质量均值分析模块  ***************************************************** -->
 				<!-- 质量均值分析模块 ：分析某一时间段的（干膏/含量/浸膏量）均值，表示离异点，以及形成这些离异点的原因-->
 				<div id=qualityAverageDiv class="noDis">
+					<!-- 分析目标表列表 -->
 					<div class="intro">
 						<dl>
 							<dt csstxt="（干膏/含量/浸膏量）均值分析" class="file-gnm">
 								<i class="i iB i2"></i>
 							</dt>
-							<dd>请选择工段范围：
-								<select id="minBatchNo" name="minBatchNo"></select>
+							<dd><i class="w250 dis-ib">请选择栀子萃取工段范围：</i>
+								<select id="minBatchNoGardeniaExtration" name="minBatchNoGardeniaExtration"></select>
 								-
-								<select id="maxBatchNo"name="maxBatchNo"></select>
+								<select id="maxBatchNoGardeniaExtration"name="maxBatchNoGardeniaExtration"></select>
+								<button type="button" onclick="qualityAverageAnalysisGardeniaExtration()" class="orange-btn w200 mt15 floatRight" >栀子萃取质量均值分析</button>
 							</dd>
-							<dd><br/></dd>
+							<dd><i class="w250 dis-ib">请选择栀子提取浓缩工段范围：</i>
+								<select id="minBatchNoGardeniaExtrationConcentartion" name="minBatchNoGardeniaExtrationConcentartion"></select>
+								-
+								<select id="maxBatchNoGardeniaExtrationConcentartion"name="maxBatchNoGardeniaExtrationConcentartion"></select>
+								<button type="button" onclick="qualityAverageAnalysisGardeniaExtrationConcentartion()" class="orange-btn w200 mt15 floatRight" >栀子提取浓缩质量均值分析</button>
+							</dd>
 						</dl>
-						<button type="button" onclick="qualityAverageAnalysis()" class="orange-btn w200 mt-50 floatRight" >质量均值分析</button>
+						
 					</div>	
-					<div id="containerQuality" class="container"></div>	
-					<div id="containerAvgRelatedToDryconcreteweights" class="container"></div>
-					<div id="containerAvgRelatedToContents" class="container"></div>
-					<div id="containerSections" class="container"></div>		
-					<div id="chartInfo" class="chartInfo">
-									
-						<c:forEach items="${returnData.sections}" var="item">
-									<tr>
-										<td>${item.key}:</td>
-										<td>${item.value}</td>										
-									</tr>
-						</c:forEach>
 					
 					
-					
+					<!-- 表格展示模块 -->
+					<div class="tables">
+						<div id="containerQuality" class="container"></div>	
+						<div id="containerAvgRelatedToDryconcreteweights" class="container"></div>
+						<div id="containerAvgRelatedToContents" class="container"></div>
+						<div id="avgRelatedToConcretequantitysChart" class="container"></div>
+						<div id="containerSections" class="container"></div>
+						<!-- 图标说明 -->	
+						<div id="chartInfo" class="chartInfo"></div>								
 					</div>
+
+					
 				</div>
 			</div>
 		</div>
@@ -266,33 +271,82 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- 质量均值分析相关js模块 -->
 	<script language="JavaScript" type="text/javascript">
 		//质量均值分析按钮点击后的初始化：显示批次范围列表。
-		function qualityAverage(){
+		function qualityAverageAnalysisInit(){
 			var basePath=$("#basePath").val();
-			var url=basePath+"GardeniaExtration/getBatchNos.htm";
-			var batchNos=getJSON(url);
-			var minBatchNoSelector=$("#minBatchNo");
-			var maxBatchNoSelector=$("#maxBatchNo");
-			bindDataToSelector(batchNos,batchNos,minBatchNoSelector);
-			bindDataToSelector(batchNos,batchNos,maxBatchNoSelector);
+			var url=basePath+"qualityAverageAnalysis/init.json";
+			resultData=getJSON(url);
+			
+			bindDataToSelector(resultData.gardeniaExtrationBatchNos,resultData.gardeniaExtrationBatchNos,$("#minBatchNoGardeniaExtration"));
+			bindDataToSelector(resultData.gardeniaExtrationBatchNos,resultData.gardeniaExtrationBatchNos,$("#maxBatchNoGardeniaExtration"));
+			
+			bindDataToSelector(resultData.gardeniaExtrationConcentartionBatchNos,resultData.gardeniaExtrationConcentartionBatchNos,$("#minBatchNoGardeniaExtrationConcentartion"));
+			bindDataToSelector(resultData.gardeniaExtrationConcentartionBatchNos,resultData.gardeniaExtrationConcentartionBatchNos,$("#maxBatchNoGardeniaExtrationConcentartion"));
+			
 			$("#argAverageDiv").attr("class","noDis");
 			$("#qualityAverageDiv").attr("class","dis");
+	
 		};
-		var returnData;
-		function qualityAverageAnalysis(){
-			var basePath=$("#basePath").val();
-			var minBatchNo=$("#minBatchNo option:selected").val();
-			var maxBatchNo=$("#maxBatchNo option:selected").val();
-	  		var url=basePath+"GardeniaExtration/qualityAverageAnalysis.json";
+	</script>
+	<script type="text/javascript">
+		//	均值分析按钮点击事件
+		function qualityAverageAnalysisGardeniaExtration(){
+			var minBatchNo=$("#minBatchNoGardeniaExtration option:selected").val();
+			var maxBatchNo=$("#maxBatchNoGardeniaExtration option:selected").val();
+			if(false==checkSection(minBatchNo,maxBatchNo)){
+				alert("请选择合理的区间范围,您当前选择的范围为"+minBatchNo+"-"+maxBatchNo);
+				return;
+			}
+			qualityAverageAnalysis(minBatchNo,maxBatchNo,"GardeniaExtration"); 			
+		};
+		function qualityAverageAnalysisGardeniaExtrationConcentartion(){
+			var minBatchNo=$("#minBatchNoGardeniaExtrationConcentartion option:selected").val();
+			var maxBatchNo=$("#maxBatchNoGardeniaExtrationConcentartion option:selected").val();
+			if(false==checkSection(minBatchNo,maxBatchNo)){
+				alert("请选择合理的区间范围,您当前选择的范围为"+minBatchNo+"-"+maxBatchNo);
+				return;
+			}
+			qualityAverageAnalysis(minBatchNo,maxBatchNo,"GardeniaExtrationConcentartion"); 	
+		}
+		
+		
+	</script>
+	<script>
+		//质量均值分析
+		function qualityAverageAnalysis(minBatchNo,maxBatchNo,table){
+			var basePath=$("#basePath").val();			
+	  		var url=basePath+table+"/qualityAverageAnalysis.json";
 	  		var data={};
 	  		data["minBatchNo"]=minBatchNo;
 	  		data["maxBatchNo"]=maxBatchNo;
-	  		returnData=getJSON(url,data);
-	  		drawHighcharts($('#containerQuality'),returnData.avgChart);	
-	  		drawHighcharts($('#containerAvgRelatedToDryconcreteweights'),returnData.avgRelatedToDryconcreteweightsChart);
-	  		drawHighcharts($('#containerAvgRelatedToContents'),returnData.avgRelatedToContentsChart);
-	  		drawHighcharts($('#containerSections'),returnData.normalChart);
-	  		
-	
+	  		var returnData=getJSON(url,data);
+	  		drawHighchart(returnData);
+		};
+		//呈现图表
+		function drawHighchart(returnData){
+			if(null!=returnData.avgChart){
+				showHighcharts($('#containerQuality'));			
+				drawHighcharts($('#containerQuality'),returnData.avgChart);
+			}else hideHighcharts($('#containerQuality'));
+			
+			if(null!=returnData.avgRelatedToDryconcreteweightsChart){
+				showHighcharts($('#containerAvgRelatedToDryconcreteweights'));	
+				drawHighcharts($('#containerAvgRelatedToDryconcreteweights'),returnData.avgRelatedToDryconcreteweightsChart);
+			}else hideHighcharts($('#containerAvgRelatedToDryconcreteweights'));
+				
+			if(null!=returnData.avgRelatedToContentsChart){
+				showHighcharts($('#containerAvgRelatedToContents'));			
+				drawHighcharts($('#containerAvgRelatedToContents'),returnData.avgRelatedToContentsChart);
+			}else hideHighcharts($('#containerAvgRelatedToContents'));	
+	  			
+			if(null!=returnData.avgRelatedToConcretequantitysChart){
+				showHighcharts($('#avgRelatedToConcretequantitysChart'));			
+				drawHighcharts($('#avgRelatedToConcretequantitysChart'),returnData.avgRelatedToConcretequantitysChart);
+			}else hideHighcharts($('#avgRelatedToConcretequantitysChart'));	
+			
+			if(null!=returnData.normalChart){
+				showHighcharts($('#containerSections'));			
+				drawHighcharts($('#containerSections'),returnData.normalChart);
+			}else hideHighcharts($('#containerSections'));	
 		};
 	</script>
 </html>

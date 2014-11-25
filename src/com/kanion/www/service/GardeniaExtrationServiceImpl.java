@@ -120,7 +120,7 @@ public class GardeniaExtrationServiceImpl implements GardeniaExtrationService {
 	public Map<String,Object> qualityAverageAnalysis(
 			Integer minBatchNo, Integer maxBatchNo) {
 		Map<String,Object> returnData=null;
-		List<GardeniaExtration> gardeniaExtrations = gardeniaExtrationMapper.qualityAverageAnalysis(minBatchNo, maxBatchNo);		
+		List<GardeniaExtration> gardeniaExtrations = gardeniaExtrationMapper.selectByBatchNos(minBatchNo, maxBatchNo);		
 		int totleRecords = gardeniaExtrations.size();
 		if(0!=totleRecords){
 			returnData=new HashMap<String,Object>();
