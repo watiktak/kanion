@@ -16,7 +16,6 @@
 package com.kanion.www.controller;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,8 +27,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.kanion.www.service.GardeniaExtrationConcentartionService;
-import com.kanion.www.service.GardeniaExtrationService;
+import com.kanion.www.service.QualityAverageAnalysisService;
 
 /**
  * @ClassName: QualityAverageAnalysisController
@@ -40,38 +38,46 @@ import com.kanion.www.service.GardeniaExtrationService;
 @Controller
 @RequestMapping("qualityAverageAnalysis")
 public class QualityAverageAnalysisController {
+		
+	private QualityAverageAnalysisService qualityAverageAnalysisService;
 	
 	@Autowired
-	private GardeniaExtrationService gardeniaExtrationService;
-	@Autowired
-	private GardeniaExtrationConcentartionService gardeniaExtrationConcentartionService;
-	@Autowired
-	public void setGardeniaExtrationService(
-			GardeniaExtrationService gardeniaExtrationService) {
-		this.gardeniaExtrationService = gardeniaExtrationService;
+	public void setQualityAverageAnalysisService(
+			QualityAverageAnalysisService qualityAverageAnalysisService) {
+		this.qualityAverageAnalysisService = qualityAverageAnalysisService;
 	}
-	@Autowired	
-	public void setGardeniaExtrationConcentartionService(
-			GardeniaExtrationConcentartionService gardeniaExtrationConcentartionService) {
-		this.gardeniaExtrationConcentartionService = gardeniaExtrationConcentartionService;
-	}
-
-
-	// 获取批次范围
-	@RequestMapping("/init")
+	
+	
+	// 获取表名
+	@RequestMapping("/initTables")
 	@ResponseBody
-	public Map<String,List<BigDecimal>> init(HttpServletRequest request,
+	public Map<String,List<String>> initTables(HttpServletRequest request,
 			HttpServletResponse response) {
-		Map<String,List<BigDecimal>> returnData=new HashMap<String,List<BigDecimal>>();
+		return qualityAverageAnalysisService.initTables();
+	}
+	
+	
+	// 获取批次范围
+	@RequestMapping("/initBatchNos")
+	@ResponseBody
+	public Map<String,List<BigDecimal>> initBatchNos(HttpServletRequest request,
+			HttpServletResponse response) {
+		String tableName=request.getParameter("tableName");
+		return qualityAverageAnalysisService.initBatchNos(tableName);
 		
-		List<BigDecimal> gardeniaExtrationBatchNos = gardeniaExtrationService.getBatchNos();
-		returnData.put("gardeniaExtrationBatchNos",gardeniaExtrationBatchNos);
-		System.out.println("获取栀子萃取批号成功：" + gardeniaExtrationBatchNos.get(0)+"-"+gardeniaExtrationBatchNos.get(gardeniaExtrationBatchNos.size()-1));
+	}
+
+	//计算质量均值
+	@RequestMapping("/run")
+	@ResponseBody
+	public Map<String,Object> qualityAverageAnalysis(
+			HttpServletRequest request, HttpServletResponse response) {
 		
-		List<BigDecimal> gardeniaExtrationConcentartionBatchNos = gardeniaExtrationConcentartionService.getBatchNos();
-		returnData.put("gardeniaExtrationConcentartionBatchNos",gardeniaExtrationConcentartionBatchNos);
-		System.out.println("获取栀子提取浓缩批号成功：" + gardeniaExtrationConcentartionBatchNos.get(0)+"-"+gardeniaExtrationConcentartionBatchNos.get(gardeniaExtrationBatchNos.size()-1));
-		return returnData;
+		String tableName=request.getParameter("tableName");
+		Integer minBatchNo = Integer.parseInt(request.getParameter("minBatchNo"));
+		Integer maxBatchNo = Integer.parseInt(request.getParameter("maxBatchNo"));
+		System.out.println(tableName+":"+minBatchNo+":"+maxBatchNo);
+		return qualityAverageAnalysisService.qualityAverageAnalysis(tableName, minBatchNo, maxBatchNo);
 	}
 
 }
