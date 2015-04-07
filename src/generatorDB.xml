@@ -26,18 +26,8 @@
 			targetPackage="com.kanion.www.dao" targetProject="kanion\src">
 			<property name="enableSubPackages" value="false" />
 		</javaClientGenerator>
-		<!--  
-		<table schema="kangyuan" tableName="USERS" domainObjectName="User"
-			enableCountByExample="false" enableUpdateByExample="false"
-			enableDeleteByExample="false" enableSelectByExample="false"
-			selectByExampleQueryId="false" />-->
-		<!--
-		<table schema="kangyuan" tableName="gardeniaExtration" domainObjectName="GardeniaExtration"
-			enableCountByExample="false" enableUpdateByExample="false"
-			enableDeleteByExample="false" enableSelectByExample="false"
-			selectByExampleQueryId="false" />-->
 		
-		<table schema="kangyuan" tableName="gardeniaExtrationConcentration" domainObjectName="GardeniaExtrationConcentration"
+			<table tableName="KYMEDICINE" domainObjectName="KymMedicine"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />

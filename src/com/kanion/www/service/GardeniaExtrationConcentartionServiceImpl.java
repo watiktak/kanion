@@ -114,7 +114,7 @@ public class GardeniaExtrationConcentartionServiceImpl implements
 				HighchartUtil avgChart=new HighchartUtil();
 				//X轴目录			
 				avgChart.getTitle().setText("栀子提取浓缩中各批次浓缩浸膏重量的均值差分析");
-				avgChart.getxAxis().setCategories(batchNos);
+			//	avgChart.getxAxis().setCategories(batchNos);
 				//各批号浓缩浸膏重量
 				HighchartUtil.Series concretequantitysSeries=new HighchartUtil.Series();
 				concretequantitysSeries.setName("浓缩浸膏量(Kg)");
@@ -149,7 +149,7 @@ public class GardeniaExtrationConcentartionServiceImpl implements
 				HighchartUtil avgRelatedToConcretequantitysChart=new HighchartUtil();
 				//X轴目录			
 				avgRelatedToConcretequantitysChart.getTitle().setText("各批次与浓缩浸膏量相关性较大的控制参数表");
-				avgRelatedToConcretequantitysChart.getxAxis().setCategories(batchNos);
+		//		avgRelatedToConcretequantitysChart.getxAxis().setCategories(batchNos);
 				
 				HighchartUtil.Series secondalcoholcsSeries=new HighchartUtil.Series();
 				secondalcoholcsSeries.setName("第二次乙醇浓度(%)");
@@ -211,13 +211,13 @@ public class GardeniaExtrationConcentartionServiceImpl implements
 				HighchartUtil normalChart=new HighchartUtil();
 				normalChart.getTitle().setText("栀子浓缩浸膏量分布区间统计表");
 				//X轴目录
-				List<String> normalChartCategories=normalChart.getxAxis().getCategories();
+		//		List<String> normalChartCategories=normalChart.getxAxis().getCategories();
 				//统计每个区间所含批数
 				List<Object> batchCounts=new ArrayList<Object>();			
 				Iterator<Entry<String, List<GardeniaExtrationConcentartion>>> iter=sections.entrySet().iterator();
 				while(iter.hasNext()){
 					Map.Entry<String, List<GardeniaExtrationConcentartion>> e=(Map.Entry<String, List<GardeniaExtrationConcentartion>>) iter.next();
-					normalChartCategories.add(e.getKey().toString());
+//					normalChartCategories.add(e.getKey().toString());
 					batchCounts.add(((List<GardeniaExtrationConcentartion>)e.getValue()).size());				
 				}
 				HighchartUtil.Series batchCountsSeries=new HighchartUtil.Series();
@@ -226,7 +226,7 @@ public class GardeniaExtrationConcentartionServiceImpl implements
 				normalChart.getSeries().add(batchCountsSeries);
 				returnData.put("normalChart", normalChart);					
 				
-				System.out.println("栀子提取浓缩数据浓缩浸膏量均值分析正太分布区间："+normalChartCategories);
+	//			System.out.println("栀子提取浓缩数据浓缩浸膏量均值分析正太分布区间："+normalChartCategories);
 				System.out.println("栀子提取浓缩数据浓缩浸膏量均值分析正太分布区间对应批数："+batchCounts);
 				
 				/**

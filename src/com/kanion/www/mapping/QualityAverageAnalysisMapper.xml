@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.kanion.www.dao.QualityAverageAnalysisMapper" >
+    <select id="selectBatchNos" resultType="BigDecimal" statementType="STATEMENT">
+      select distinct "batchNo" from ${tableName} order by "batchNo" desc      
+  	</select>
+  	
+    <select id="selectByBatchNoSection" resultType="java.util.HashMap" statementType="STATEMENT">
+        select * from ${tableName} where "batchNo" &gt;= ${minBatchNo} and "batchNo" &lt;= ${maxBatchNo} order by "batchNo"
+    </select>
+  
+</mapper>

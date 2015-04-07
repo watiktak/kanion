@@ -55,4 +55,5 @@
     set USERNAME = #{username,jdbcType=VARCHAR}
     where USERID = #{userid,jdbcType=DECIMAL}
   </update>
+ 
 </mapper>

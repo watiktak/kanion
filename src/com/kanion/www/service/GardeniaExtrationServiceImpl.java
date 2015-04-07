@@ -180,7 +180,7 @@ public class GardeniaExtrationServiceImpl implements GardeniaExtrationService {
 			HighchartUtil avgChart=new HighchartUtil();
 			//X轴目录			
 			avgChart.getTitle().setText("各批次栀子干膏与含量的均值差分析");
-			avgChart.getxAxis().setCategories(batchNos);
+//			avgChart.getxAxis().setCategories(batchNos);
 			//各批号干膏
 			HighchartUtil.Series dryconcreteweightsSeries=new HighchartUtil.Series();
 			dryconcreteweightsSeries.setName("干膏");
@@ -234,7 +234,7 @@ public class GardeniaExtrationServiceImpl implements GardeniaExtrationService {
 			HighchartUtil avgRelatedToDryconcreteweightsChart=new HighchartUtil();
 			//X轴目录			
 			avgRelatedToDryconcreteweightsChart.getTitle().setText("各批次与干膏相关性较大的控制参数表");
-			avgRelatedToDryconcreteweightsChart.getxAxis().setCategories(batchNos);
+//			avgRelatedToDryconcreteweightsChart.getxAxis().setCategories(batchNos);
 			
 			HighchartUtil.Series hclvolumesSeries=new HighchartUtil.Series();
 			hclvolumesSeries.setName("加入1:1盐酸量(l)");
@@ -282,7 +282,7 @@ public class GardeniaExtrationServiceImpl implements GardeniaExtrationService {
 			HighchartUtil avgRelatedToContentsChart=new HighchartUtil();
 			//X轴目录			
 			avgRelatedToContentsChart.getTitle().setText("各批次与含量相关性较大的控制参数表");
-			avgRelatedToContentsChart.getxAxis().setCategories(batchNos);
+//			avgRelatedToContentsChart.getxAxis().setCategories(batchNos);
 			
 			HighchartUtil.Series extractiontempreturesSeries=new HighchartUtil.Series();
 			extractiontempreturesSeries.setName("萃取环境温度(℃)");
@@ -346,13 +346,13 @@ public class GardeniaExtrationServiceImpl implements GardeniaExtrationService {
 			normalChart.getTitle().setText("栀子干膏分布区间统计表");
 
 			//X轴目录
-			List<String> normalChartCategories=normalChart.getxAxis().getCategories();
+//			List<String> normalChartCategories=normalChart.getxAxis().getCategories();
 			//统计每个区间所含批数
 			List<Object> batchCounts=new ArrayList<Object>();			
 			Iterator<Entry<String, List<GardeniaExtration>>> iter=sections.entrySet().iterator();
 			while(iter.hasNext()){
 				Map.Entry<String, List<GardeniaExtration>> e=(Map.Entry<String, List<GardeniaExtration>>) iter.next();
-				normalChartCategories.add(e.getKey().toString());
+//				normalChartCategories.add(e.getKey().toString());
 				batchCounts.add(((List<GardeniaExtration>)e.getValue()).size());				
 			}
 			HighchartUtil.Series batchCountsSeries=new HighchartUtil.Series();
@@ -361,7 +361,7 @@ public class GardeniaExtrationServiceImpl implements GardeniaExtrationService {
 			normalChart.getSeries().add(batchCountsSeries);
 			returnData.put("normalChart", normalChart);					
 			
-			System.out.println("栀子萃取数据干膏和含量均值分析正太分布区间："+normalChartCategories);
+//			System.out.println("栀子萃取数据干膏和含量均值分析正太分布区间："+normalChartCategories);
 			System.out.println("栀子萃取数据干膏和含量均值分析正太分布区间对应批数："+batchCounts);
 			
 			/**

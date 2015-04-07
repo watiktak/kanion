@@ -127,14 +127,14 @@ public class HighchartUtil {
 	//X轴属性设置
 	public class XAxis{
 		//X轴目录
-		private List<String> categories=new ArrayList<String>();
+		private List<Object> categories=new ArrayList<Object>();
 
-		public List<String> getCategories() {
+		public List<Object> getCategories() {
 			return categories;
 		}
 
-		public void setCategories(List<String> categories) {
-			this.categories = categories;
+		public void setCategories(List<Object> object) {
+			this.categories = object;
 		}
 		
 	}

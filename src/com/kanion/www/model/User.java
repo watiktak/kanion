@@ -3,7 +3,9 @@ package com.kanion.www.model;
 import java.math.BigDecimal;
 
 public class User {
-    private BigDecimal userid;
+  
+
+	private BigDecimal userid;
 
     private String username;
 
