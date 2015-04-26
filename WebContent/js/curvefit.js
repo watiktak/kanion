@@ -5,7 +5,7 @@
 		chart=new Highcharts.Chart({
 			chart:{
 				renderTo:'tablesCur',
-				type:'spline'
+				type:'scatter'
 			},
 			title:{
 				text:"萃取率拟合图"
@@ -15,11 +15,11 @@
 				href:'www.xxx.org',
 				position:{
 					x:-30,
-					y:-30
+					y:0
 				},
 				style:{
-					color:'red',
-					fontWeight:'bold'
+					color:'#909090',
+					fontWeight:'normal'
 				},
 				enable:true,
 				text:'Source:www.kanion.com'
@@ -37,23 +37,84 @@
 				// categories:['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun',  
     //                         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 			},
-			series:[{
-				name:'新绿原酸',
-				data:[3.7,13.9,16.9,22.6,25.3,30.6,33.1,35.4,37.6,39.8,
-			41.9,44.0,45.9,50.8,53.8,56.9,59.9]  
+			legend:{
+				layout:'vertical',
+				align:'left',
+				verticalAlign:'top',
+				x:100,
+				y:10,
+				floating:true,
+				backgroundColor:'#fff',
+				borderWidth:1
 			},
-			{ name: '绿原酸',  
-              data: [5.1,19.0,23.1,26.9,34.1,37.4,40.8,43.9,49.3,54.4,
-			56.7,58.9,61.0,67.5,70.7,74.0]},
-              {
-              	name: '隐绿原酸',  
-                data: [5.3,19.5,23.7,27.5,34.8,38.2,41.5,44.7,47.5,
-			50.1,52.6,57.4,59.5,64.7,67.9,71.1,74.2]  
-              },
-              {
-              	name: '咖啡酸',  
-                        data: [8.1,15.5,22.3,28.7,34.5,39.5,44.3,48.8,52.9,56.8,60.3,63.3,
-			65.9,70.7,72.8,76.3,81.4,83.9,86.5]  
-              }]
+			plotOptions:{
+				scatter:{
+					marker:{
+						radius:5,
+						states:{
+							hover:{
+								enabled:true,
+								lineColor:'rgb(100,100,100)'
+							}
+						}
+					},
+					states:{
+						hover:{
+							marker:{
+								enabled:false
+							}
+						}
+					},
+					tooltip:{
+						headerFormat:'<b>{series.name}</b><br>',
+						pointFormat:'{point.x},{point.y}'
+					}
+				}
+			}
+			,
+			series:[{
+				regression:true,
+				regressionSettings:{
+					type:'linear',
+					color:'rgba(223,83,83,.9)'
+				},
+				color:'rgba(223,83,83,.5)',
+				name:'新绿原酸',
+				data:[[1,3.7],[2,13.9],[3,16.9],[4,22.6],[5,25.3],[6,30.6],[7,33.1],[8,35.4],[9,37.6],[10,39.8],
+			[11,41.9],[12,44.0],[13,45.9],[14,50.8],[15,53.8],[16,56.9],[17,59.9]]
+		},
+		{
+			regression:true,
+			regressionSettings:{
+					type:'linear',
+					color:'rgba(19,221,77,.9)'
+			},
+			color:'rgba(19,221,77,.5)',
+			name:'绿原酸',
+			data:[[1,5.1],[2,19.0],[3,23.1],[4,26.9],[5,34.1],[6,37.4],[7,40.8],
+				[8,43.9],[9,49.3],[10,54.4],[11,56.7],[12,58.9],[13,61.0],[14,67.5],[15,70.7],[16,74.0]]
+		},{
+			regression:true,
+			regressionSettings:{
+					type:'linear',
+					color:'rgba(86,255,255,.9)'
+			},
+			color:'rgba(86,255,255,.5)',
+			name:'隐绿原酸',
+			data:[[1,5.3],[2,19.5],[3,23.7],[4,27.5],[5,34.8],[6,38.2],[7,41.5],
+			[8,44.7],[9,47.5],[10,50.1],[11,52.6],[12,57.4],[13,59.5],[14,64.7],
+			[15,67.9],[16,71.1],[17,74.2]]
+		},{
+			regression:true,
+			regressionSettings:{
+					type:'linear',
+					color:'rgba(0,0,191,.9)'
+			},
+			color:'rgba(0,0,191,.5)',
+			name:'咖啡酸',
+			data:[[1,8.1],[2,15.5],[3,22.3],[4,28.7],[5,34.5],[6,39.5],
+			[7,44.3],[8,48.8],[9,52.9],[10,56.8],[11,60.3],[12,63.3],
+			[13,65.9],[14,70.7],[15,72.8],[16,76.3],[17,81.4],[18,83.9],[19,86.5]]
+		}]
 		});
 	});

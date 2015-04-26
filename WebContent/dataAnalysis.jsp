@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							收率分析图表:各中间体重量/体积，进行初步平均值分析对比工作。							
 						</li>
 						
-						<li class="navi_info">
+						<li id="transferRateAnalysis" class="navi_info">
 							<button>
 								<i class="i i3"></i>
 							</button>
