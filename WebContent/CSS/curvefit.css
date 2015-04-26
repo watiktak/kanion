@@ -1,0 +1,56 @@
+﻿/*
+   曲线拟合页面样式表
+*/
+/*拟合方法选择项*/
+fieldset.zs{
+	margin:1em 0;
+	padding:0.4em 1em;
+	border:1px solid #ccc;
+	display:inline-block;
+	position:relative;
+
+}
+fieldset.zs_curve_fieldset{
+	width:400px;
+}
+div.zs_curvechoice{
+	color:black;
+	font-family:"微软雅黑";
+	font-size:14px;
+	width:100%;
+}
+div.zs_curvechoice span{
+	padding-left:0.5em;
+}
+label.zs_method{
+	display:inline-block;
+	width:100px;
+	text-align:left;
+}
+/*结果计算按钮部分*/
+div.zs_cs{
+	position:absolute;
+	bottom:0;
+}
+div.zs_curvecal{
+	width:300px;
+	position:relative;
+	height:160px;
+}
+
+div.zs_curvesr{
+	margin-left:5px;
+}
+span.zs_curvesvalue{
+	right:6px;
+	width:200px;
+	
+}
+button.zs_w200{
+	display:block;
+	margin:0 auto;
+	margin-top:15px;
+	width:280px;
+}
+
+

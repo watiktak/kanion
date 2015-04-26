@@ -139,6 +139,14 @@ textarea {
 	resize: vertical
 }
 
+.defaultOption{
+	line-height: 18px;
+	width: 200px;
+	padding: 2px 5px 2px 10px;	
+	height: 30px;
+	font-size: 14px;
+}
+
 .title{
 	font-size: 14px;
 	font-family: "微软雅黑";
@@ -179,7 +187,7 @@ a {
 }
 
 a:hover {
-	text-decoration: underline
+	text-decoration: none
 }
 
 .noSelect {
@@ -265,9 +273,17 @@ a:hover {
 }
 
 .nav>li>a {
+	line-height: 46px;		
+	color: #6f6f6f;
+	font-size: 16px;	
 	display: block;
 	height: 100%;
-	padding: 0 12px
+	padding: 0 12px;	
+	font-family: "微软雅黑";	
+}
+
+.nav>li>a:hover {
+color: #63b43b;
 }
 
 .nav2 {
@@ -360,13 +376,13 @@ a:hover {
 	background: #1D1D20
 }*/
 /*小icon的全局设置*/
-.i {
-	width: 32px;
+.tool .i {
+	width: 35px;
 	height: 32px;
 	overflow: hidden;
 	display: inline-block;
-	background: url(../icons/icons.png) no-repeat -100%;
-	margin: 0 0 .25em;
+	background: url(../icons/analysis_nav.png) no-repeat ;
+	margin: 0 0 .15em;
 	line-height: 0 !important;
 	text-align: left;
 	vertical-align: middle;
@@ -374,9 +390,42 @@ a:hover {
 	-webkit-text-size-adjust: none
 }
 
-.i1 {
-	background: url(../icons/dataanalysis.png) no-repeat center
+.tool .i1 {	
+	background-position: left;
 }
+
+.tool .i22 {	
+	background-position: -57px 0;
+}
+
+.tool .i3 {	
+	background-position: -116px 0;
+}
+
+.tool .i4 {	
+	background-position: -170px 0;
+}
+
+.tool .i5 {	
+	background-position: -230px 0;
+}
+
+.tool .i6 {	
+	background-position: -287px 0;
+}
+.tool .i7 {	
+	background-position: -342px 0;
+}
+.tool .i8 {	
+	background-position: -395px 0;
+}
+.tool .i9 {	
+	background-position: -452px 0;
+}
+.tool .i10 {	
+	background-position: -513px 0;
+}
+
 /*工具栏右：搜索条*/
 .tools2 {
 	height: 68px;
@@ -446,11 +495,96 @@ a:hover {
 	clear: both
 }
 
+
+/*统计分析模块导航页图标说明*/
+.navi_info>button {
+	display: block;
+	padding: 0 20px;
+	height: 68px;
+	font-size: 24px;
+	color: #8ad2df;
+	-webkit-transition: background 0.2s;
+	transition: background 0.2s
+}
+
+.navi_info>button:hover {
+	z-index: 1;
+	margin-right: -1px;
+	padding-right: 21px;
+	background: #fff;
+	text-decoration: none;
+}
+
+.navi_info .i {
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	display: inline-block;
+	background: url(../icons/analysis_nav_info.png) no-repeat ;
+	margin: 0 0 0em;
+	line-height: 0 !important;
+	text-align: left;
+	vertical-align: middle;
+	text-decoration: none !important;
+	-webkit-text-size-adjust: none
+}
+
+.navi_info .i1 {	
+	background-position: left;
+}
+
+.navi_info .i22 {	
+	background-position: -57px 0;
+}
+
+.navi_info .i3 {	
+	background-position: -110px 0;
+}
+
+.navi_info .i4 {	
+	background-position: -165px 0;
+}
+
+.navi_info .i5 {	
+	background-position: -222px 0;
+}
+
+.navi_info .i6 {	
+	background-position: -277px 0;
+}
+.navi_info .i7 {	
+	background-position: -332px 0;
+}
+.navi_info .i8 {	
+	background-position: -387px 0;
+}
+.navi_info .i9 {	
+	background-position: -442px 0;
+}
+.navi_info .i10 {	
+	background-position: -503px 0;
+}
+
+
+
+
+
+
+
+
+
 .main {
 	float: left;
 	width: 100%;
 }
 
+.main_content{
+	/* width:100%; */
+	margin: 20px 50px 50px 50px;
+	
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
 div.intro {
 	padding: 6px 20px 0 20px;
 }
@@ -478,6 +612,7 @@ div.intro {
 	display:inline-block;
 }
 .i2 {
+	background:url(../icons/icons.png) no-repeat;
 	background-position: -25px 0;
 }
 
