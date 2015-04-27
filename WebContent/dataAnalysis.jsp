@@ -48,7 +48,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							转移率分析:对各工序转移率进行计算并通过选取工序，使用柱状图显示出来。
 						</li>
 						
-						<li  class="navi_info">
+						<li  id="normalDistribution" class="navi_info">
 							<button>
 								<i class="i i4"></i>
 							</button>
