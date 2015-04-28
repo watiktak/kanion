@@ -1,7 +1,7 @@
-ï»¿/*
-   æ›²çº¿æ‹Ÿåˆé¡µé¢æ ·å¼è¡¨
+/*
+   ÇúÏßÄâºÏÒ³ÃæÑùÊ½±í
 */
-/*æ‹Ÿåˆæ–¹æ³•é€‰æ‹©é¡¹*/
+/*ÄâºÏ·½·¨Ñ¡ÔñÏî*/
 fieldset.zs{
 	margin:1em 0;
 	padding:0.4em 1em;
@@ -15,7 +15,7 @@ fieldset.zs_curve_fieldset{
 }
 div.zs_curvechoice{
 	color:black;
-	font-family:"å¾®è½¯é›…é»‘";
+	font-family:"Î¢ÈíÑÅºÚ";
 	font-size:14px;
 	width:100%;
 }
@@ -27,10 +27,10 @@ label.zs_method{
 	width:100px;
 	text-align:left;
 }
-/*ç»“æœè®¡ç®—æŒ‰é’®éƒ¨åˆ†*/
+/*½á¹û¼ÆËã°´Å¥²¿·Ö*/
 div.zs_cs{
 	position:absolute;
-	bottom:0;
+	bottom:120px;
 }
 div.zs_curvecal{
 	width:300px;
@@ -46,11 +46,34 @@ span.zs_curvesvalue{
 	width:200px;
 	
 }
-button.zs_w200{
+button.zs_cfButton{
 	display:block;
 	margin:0 auto;
-	margin-top:15px;
 	width:280px;
+	height:30px;
+	line-height:30px;
+	background: url('../icons/btn_bg_1.jpg') repeat-x
 }
-
-
+/*Í¼±íÏÔÊ¾Çø*/
+.zs_curCharts{
+    margin-top:-20px;
+}
+/*ÏÔÊ¾rÖµµÄtableÑùÊ½*/
+div.zs_rsval{
+    width:100%;
+    margin:20px auto;
+}
+table.zs_rstab{
+    width:50%;
+    margin:0 auto;
+    color:black;
+    border-collapse:separate;
+}
+.zs_rstab caption{
+    font-size:1em;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+.zs_rstab td{
+    border:1px solid #ccc;
+}

@@ -34,93 +34,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<legend>请选择</legend>
 										<div class="zs_curvechoice">
 										<div>
-											<label for=""><span>一次拟合:</span></label>
-											<label for="" class="zs_method"><input type="checkbox" checked><span>线性拟合</span></label>
-											<label for="" class="zs_method"><input type="checkbox"><span>非线性拟合</span></label>
+											<label for=""><span>一次方程拟合:</span></label>
+											<label for="" class="zs_method"><input type="checkbox" checked><span>线性回归</span></label>
+											<!--  <label for="" class="zs_method"><input type="checkbox"><span>非线性拟合</span></label>-->
 										</div>
 										<div>
-											<label for=""><span>二次拟合:</span></label>
-											<label for="" class="zs_method"><input type="checkbox"><span>差值法</span></label>
-											<label for="" class="zs_method"><input type="checkbox"><span>最小二乘法</span></label>
+											<label for=""><span>二次方程拟合:</span></label>
 											<label for="" class="zs_method"><input type="checkbox"><span>非线性回归</span></label>
+											<label for="" class="zs_method"><input type="checkbox"><span>最小二乘法</span></label>
+											<!--  <label for="" class="zs_method"><input type="checkbox"><span>非线性回归</span></label>-->
 										</div>
-										<div>
-											<span>x-data-range:</span>
-											<select name="" id="">
-												<option value="0" selected>0</option>
-												<option value="1">10</option>
-												<option value="2">20</option>
-												<option value="3">30</option>
-												<option value="4">40</option>
-												<option value="5">50</option>
-												<option value="6">60</option>
-												<option value="7">70</option>
-												<option value="8">80</option>
-												<option value="9">90</option>
-												<option value="10">100</option>
-											</select>
-											<select name="" id="">
-												<option value="0">0</option>
-												<option value="1">10</option>
-												<option value="2" selected>20</option>
-												<option value="3">30</option>
-												<option value="4">40</option>
-												<option value="5">50</option>
-												<option value="6">60</option>
-												<option value="7">70</option>
-												<option value="8">80</option>
-												<option value="9">90</option>
-												<option value="10">100</option>
-											</select>
-										</div>
-										<div>
-											<span>y-data-range:</span>
-											<select name="" id="">
-												<option value="0" selected>0</option>
-												<option value="1">10</option>
-												<option value="2">20</option>
-												<option value="3">30</option>
-												<option value="4">40</option>
-												<option value="5">50</option>
-												<option value="6">60</option>
-												<option value="7">70</option>
-												<option value="8">80</option>
-												<option value="9">90</option>
-												<option value="10">100</option>
-											</select>
-											<select name="" id="">
-												<option value="0">0</option>
-												<option value="1">10</option>
-												<option value="2">20</option>
-												<option value="3">30</option>
-												<option value="4">40</option>
-												<option value="5">50</option>
-												<option value="6">60</option>
-												<option value="7">70</option>
-												<option value="8">80</option>
-												<option value="9">90</option>
-												<option value="10" selected>100</option>
-											</select>
-										</div>
+										
 										</div>
 									</fieldset>
 									<div class="zs_cal zs_curvecal">
 									<div class="zs_cs">
-										<div class="zs_sr zs_curvesr">
+										<!--  <div class="zs_sr zs_curvesr">
 											<span>R值:</span>
 											<span class="zs_svalue zs_curvesvalue"></span>
-										</div>
-										<div class="zs_sr zs_curvesr">
+										</div>-->
+										<!-- <div class="zs_sr zs_curvesr">
 											<span>拟合方程:</span>
 											<span class="zs_svalue zs_curvesvalue"></span>
-										</div>
-										<button type="button" class="zs_orange-btn zs_w200 mt-50 floatRight">曲线拟合</button>
+										</div> -->
+										<button type="button" class="zs_cfButton">文件上传</button><br/>
+										<button type="button" class="zs_cfButton">曲线拟合</button>
 										</div>
 									</div>
 								</dd>
 							</dl>
 						</div>
-						<div class="charts tablesCur" id="tablesCur"></div>
+						
+						<div class="charts tablesCur zs_curCharts " id="tablesCur"></div>
+						<div class="zs_rsval">
+						<table class="zs_rstab">
+						<caption>R值</caption>
+						<tr>
+							<td>新绿原酸</td>
+							<td>绿原酸</td>
+							<td>隐绿原酸</td>
+							<td>咖啡酸</td>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>0.999017</td>
+							<td>0.998585</td>
+							<td>0.994851</td>
+						</tr>
+						</table>
+						</div>
 					</div>
 				</div>
 			</div>
