@@ -1,0 +1,345 @@
+{"typeNames":[
+	{
+		"name": "热毒宁注射液青金提取物",
+		"tableName": "",
+		"processes": 
+		[
+			{
+				"name": "金银花提取",
+				"tableName": "",
+				"phases": 
+				[
+					{
+						"name": "金银花第一次提取",
+						"tableName": "",
+						"arguments": 
+						[
+							{
+								"name": "加入纯化水流速m³/h",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "加纯化水量",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "加纯化水时间",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "加入浓盐酸量",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "加浓盐酸时纯化水温度",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "加酸后纯化水PH值",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "第一次提取过程纯化水预热蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "第一次提取过程纯化水预热纯化水温度（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "第一次提取过程升温过程蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "第一次提取过程升温过程温度上/下（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第一次提取蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第一次提取温度上/下（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "提取液PH",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "水提取药液量",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "提取液总量（7.9-8.1M3）",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "出液流速",
+								"tableName": "",
+								"type": 0
+							}
+						]
+					},
+
+					{
+						"name": "金银花第二次提取",
+						"tableName": "",
+						"arguments": 
+						[
+							{
+								"name": "加入纯化水流速m³/h",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "加纯化水量",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "加纯化水时间",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "第二次提取过程纯化水预热蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "第二次提取过程纯化水预热纯化水温度（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "第二次提取过程升温过程蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "第二次提取过程升温过程温度上/下（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第二次提取蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第二次提取温度上/下（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "蒸馏液体积",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "蒸馏液总体积（210-225L）",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "水提取药液量",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "提取液PH",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "残留液出液量",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "提取液总量(单）",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "提取液总量",
+								"tableName": "",
+								"type": 0
+							}
+						]
+					}
+				]
+			},
+
+			{
+				"name": "金银花浓缩",
+				"tableName": "",
+				"phases": 
+				[
+					{
+						"name": "金银花回流提取液的连续三效板式浓缩（第1亚批）",
+						"tableName": "",
+						"arguments": 
+						[
+							{
+								"name": "金银花第一次提取液连续三效板式浓缩蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第一次提取液连续三效板式浓缩一效温度（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第二次提取液连续三效板式浓缩蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第二次提取液连续三效板式浓缩一效温度（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第一次提取液三效终点浓缩三效温度（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第一次提取液三效终点浓缩三效真空度（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第二次提取液三效终点浓缩三效温度（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "金银花第二次提取液三效终点浓缩三效真空度（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "过程中浸膏相对密度",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "第一次提取液三效浓缩出膏总量（标准2.0～2.2M3）",
+								"tableName": "",
+								"type": 0
+							},
+
+							{
+								"name": "第二次提取液三效浓缩出膏总量（标准2.0～2.2M3）",
+								"tableName": "",
+								"type": 0
+							}
+						]
+					},
+
+					{
+						"name": "金银花回流提取液的减压浓缩（第1亚批）",
+						"tableName": "",
+						"arguments": 
+						[
+							{
+								"name": "蒸汽压力（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "药液温度（℃）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "真空度（MPa）",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "过程中出膏相对密度",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "温度",
+								"tableName": "",
+								"type": 1
+							},
+
+							{
+								"name": "出膏重量",
+								"tableName": "",
+								"type": 1
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
+}
