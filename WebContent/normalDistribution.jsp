@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<i class="i iB i2"></i>
 							</dt>
 							<dd>
-								<dd><i class="w125 dis-ib">请选择品名：</i>
+								<dd><i class="w125 dis-ib">请选择品名：  </i>
 									<select id="tables">
 									    <option value="volvo">金青提取</option>
 										<option value="saab">热毒宁栀子提取</option>
@@ -40,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</select>
 								</dd>
 							</dd>
-							<dd><i class="w125 dis-ib">请选择批次：</i>
+							<dd><i class="w125 dis-ib">请选择批次：  </i>
 									<select id="minBatchNo" name="minBatchNo">
 									    <option value="volvo">1</option>
 										<option value="saab">2</option>
@@ -100,17 +100,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<option value="audi">栀子提取物的粉碎分装</option>
 									</select>		
 								</dd>
-								<dd><i class="w125 dis-ib">请选择项目：</i>
+								<dd><i class="w125 dis-ib">请选择项目：  </i>
 									<select id="minProcessName" name="minProcessName">
-									    <option value="volvo">第一次回流提取</option>
-										<option value="saab">第二次回流提取</option>
-										<option value="fiat">单效浓缩</option>
-										<option value="audi">刮板浓缩</option>
-										<option value="fiat">热处理</option>
-										<option value="audi">冷藏过滤</option>
-										<option value="audi">栀子过滤浸膏萃取</option>
-										<option value="fiat">栀子浸膏的真空干燥</option>
-										<option value="audi">栀子提取物的粉碎分装</option>
+									    <option value="volvo">收率</option>
+										<option value="saab">转移率</option>
 									</select>
 									<button type="button" onclick="qualityAverageAnalysis()" class="orange-btn w200 mt15 floatRight" >正态分析</button>
 								</dd>							
@@ -317,7 +310,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				                width:0.5,                //标示线的宽度，1px
 				                zIndex:100,
 				                label:{
-				                    text:'55',     //标签的内容
+				                    text:'56',     //标签的内容
 				                    verticalAlign:'top',                //标签的水平位置，水平居左,默认是水平居中center
 				                    x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
 				                }
@@ -328,7 +321,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				                width:0.5,                //标示线的宽度，1px
 				                zIndex:100,
 				                label:{
-				                    text:'65',     //标签的内容
+				                    text:'64',     //标签的内容
 				                    verticalAlign:'top',                //标签的水平位置，水平居左,默认是水平居中center
 				                    x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
 				                }
@@ -341,7 +334,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			                width:0.5,                //标示线的宽度，1px
 			                zIndex:100,
 			                label:{
-			                    text:'55',     //标签的内容
+			                    text:'53',     //标签的内容
 			                    verticalAlign:'top',                //标签的水平位置，水平居左,默认是水平居中center
 			                    x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
 			                }
@@ -352,7 +345,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			                width:0.5,                //标示线的宽度，1px
 			                zIndex:100,
 			                label:{
-			                    text:'65',     //标签的内容
+			                    text:'67',     //标签的内容
 			                    verticalAlign:'top',                //标签的水平位置，水平居左,默认是水平居中center
 			                    x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
 			                }

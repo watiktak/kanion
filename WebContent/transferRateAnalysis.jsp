@@ -89,17 +89,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</dd>
 								<dd><i class="w100 dis-ib">请选择工序：</i>
 									<select id="minProcessName" name="minProcessName">
-									    <option value="volvo">青金第一次提取</option>
-										<option value="saab">青金第二次提取</option>
-										<option value="fiat">青金第三次提取</option>
-										<option value="audi">青金第四次提取</option>
+									    <option value="volvo">第一次回流提取</option>
+										<option value="saab">第二次回流提取</option>
+										<option value="fiat">单效浓缩</option>
+										<option value="audi">刮板浓缩</option>
+										<option value="fiat">热处理</option>
+										<option value="audi">冷藏过滤</option>
+										<option value="audi">栀子过滤浸膏萃取</option>
+										<option value="fiat">栀子浸膏的真空干燥</option>
+										<option value="audi">栀子提取物的粉碎分装</option>
 									</select>
 									-
 									<select id="maxProcessName"name="maxProcessName">
-									    <option value="volvo">青金第一次提取</option>
-										<option value="saab">青金第二次提取</option>
-										<option value="fiat">青金第三次提取</option>
-										<option value="audi">青金第四次提取</option>
+									    <option value="volvo">第一次回流提取</option>
+										<option value="saab">第二次回流提取</option>
+										<option value="fiat">单效浓缩</option>
+										<option value="audi">刮板浓缩</option>
+										<option value="fiat">热处理</option>
+										<option value="audi">冷藏过滤</option>
+										<option value="audi">栀子过滤浸膏萃取</option>
+										<option value="fiat">栀子浸膏的真空干燥</option>
+										<option value="audi">栀子提取物的粉碎分装</option>
 									</select>
 									<button type="button" onclick="qualityAverageAnalysis()" class="orange-btn w200 mt15 floatRight" >转移率分析</button>
 								</dd>						

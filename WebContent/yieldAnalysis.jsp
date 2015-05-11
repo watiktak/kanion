@@ -76,7 +76,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<i class="w100 dis-ib">项目</i>
 								<select class="defaultOption">
 									<option>体积</option>
-									<option>温度</option>
+									<option>重量</option>
 								</select>							
 								<button type="button" id="yieldAnalysisBtn" class="orange-btn w200 mt15 floatRight" >收率分析</button>
 							</dd>							

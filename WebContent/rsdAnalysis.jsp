@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>康源PKS统计挖掘系统</title>
+		
 		<link rel="stylesheet" href="CSS/global_zs.css" type="text/css">
 		<link rel="stylesheet" href="CSS/rsd.css" type="text/css" >
 		<link rel="stylesheet" href="CSS/curvefit.css" type="text/css">
@@ -17,10 +18,13 @@
 <body>
 
 
-		<%@ include file="head.html" %>			
+		<%@ include file="head.html" %>		
+		
 		<div id="zs_mainbody">
+		
 			<div class="zs_bdy">
 				<div class="zs_main">
+				
 					<div id="rsddiv" class="zs_rsddiv">
 						<div class="zs_selectData">
 							<dl>
@@ -254,10 +258,11 @@
 							<td>406</td>
 						</tr>
 					</table>
+					<br/><br/>
 				</div>
 			</div>
-		</div>
 		
+		</div>
 		
 </body>
 
