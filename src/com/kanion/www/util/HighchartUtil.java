@@ -25,6 +25,14 @@ import java.util.List;
  *
  */
 public class HighchartUtil {
+	private Chart chart;
+	private Title title;
+	private Subtitle subtitle;
+	private XAxis xAxis;
+	private YAxis yAxis;
+	private Tooltip tooltip;
+	private Legend legend;
+	private List<Series> series;
 	
 	public class Chart{
 		//图标类型，默认为折线图
@@ -300,14 +308,7 @@ public class HighchartUtil {
 		
 	}
 	
-	private Chart chart;
-	private Title title;
-	private Subtitle subtitle;
-	private XAxis xAxis;
-	private YAxis yAxis;
-	private Tooltip tooltip;
-	private Legend legend;
-	private List<Series> series;
+	
 	
 	
 	

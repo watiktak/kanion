@@ -14,46 +14,32 @@ package com.kanion.www.model.analysis.trend;
 
 import java.util.List;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * @ClassName: Phase
- * @Description: TODO
+ * @Description: 阶段，对象一旦构造其属性不可更改
  * @date 2015年5月11日 下午3:46:24
  *
  */
-public class Phase {
+public class Phase extends MokeTableImpl<Argument>{
+	/*
+	 * (设置参数)
+	 * @see com.kanion.www.model.analysis.trend.MokeTable#setSubTable(java.util.List)
+	 */
+
 	
-	private String name;
-	private String tableName;
-	private List<Argument> arguments;
-	
-	public Phase() {
-		
-	}
-	public Phase(String name,String tableName,List<Argument> arguments){
-		this.name=name;
-		this.tableName=tableName;
-		this.arguments=arguments;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getTableName() {
-		return tableName;
-	}
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-	}
-	public List<Argument> getArguments() {
-		return arguments;
-	}
-	public void setArguments(List<Argument> arguments) {
-		this.arguments = arguments;
+	@Override
+	@JSONField(name="arguments")
+	public void setSubTable(List<Argument> subTable) throws Exception {
+		super.setSubTable(subTable);
 	}
 	
-	
+//	@Override
+//	@JSONField(name="arguments")
+//	public List<Argument> getSubTable() {
+//		return subTable;
+//	}
 }
 
 

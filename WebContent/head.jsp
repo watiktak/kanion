@@ -1,12 +1,16 @@
-
+<%@   page   language="java"   contentType="text/html;   charset=utf-8"%>
+<%
+String path2 = request.getContextPath();
+String basePath2 = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path2+"/";
+%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <!--顶部导航-->
 	<div class="Tray">
 		<div class="tray">
-			<a href="index.jsp" title="康源PKS统计挖掘系统" class="logo">康源PKS统计挖掘系统</a>
+			<a href="<%=basePath2%>index.jsp" title="康源PKS统计挖掘系统" class="logo">康源PKS统计挖掘系统</a>
 			<ul class="nav">
 				<li>
-					<a href="dataAnalysis.jsp">统计分析</a>				</li>
+					<a href="<%=basePath2%>dataAnalysis.jsp">统计分析</a>				</li>
 				<li>
 					<a>数据挖掘</a>				</li>
 				<li>
@@ -85,16 +89,18 @@
 			</ul>
 						
 		</div>
+		<input type="hidden" value="<%=basePath2%>" id=basePath2>
 	</div> 
 	
 	
 <script language="JavaScript" type="text/javascript">
 $(".tool").click(function(){
+	var basePath=$("#basePath2").val();
 	var id = $(this).attr("id");
 	if(id=="trendAnalysis"){
-		location.href = id + "/init.htm";
+		location.href = basePath + id + "/init.htm";
 	}else{
-		location.href = id + ".jsp";
+		location.href = basePath + id + ".jsp";
 	}
 });	
 </script>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -18,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 
-	<%@ include file="head.html" %>
+	<c:import url="head.jsp"  charEncoding="UTF-8" />
 	<div id="Bdy">
 		<div class="bdy">
 			<div class="main">	
@@ -108,8 +109,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script language="JavaScript" type="text/javascript">
 //获取image src路径
 $(".navi_info").click(function(){
+	var basePath=$("#basePath2").val();
 	var id = $(this).attr("id");
-	location.href = id + ".jsp";
+	if(id=="trendAnalysis"){
+		location.href = basePath + id + "/init.htm";
+	}else{
+		location.href = basePath + id + ".jsp";
+	}
 });		
 </script>
 

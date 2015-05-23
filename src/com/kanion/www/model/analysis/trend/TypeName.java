@@ -14,44 +14,23 @@ package com.kanion.www.model.analysis.trend;
 
 import java.util.List;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 /**
  * @ClassName: TypeName
- * @Description: TODO
+ * @Description: 品名，对象一旦构造其中的属性不可更改。
  * @date 2015年5月11日 下午3:41:05
  *
  */
-public class TypeName {
-	private String name;
-	private String tableName;
-	private List<Process> processes;
-	
-	public TypeName() {
-		
-	}
-	public TypeName(String name,String tableName,List<Process> processes){
-		this.name=name;
-		this.tableName=tableName;
-		this.processes=processes;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getTableName() {
-		return tableName;
-	}
-	public void setTableName(String tableName) {
-		this.tableName = tableName;
-	}
-	public List<Process> getProcesses() {
-		return processes;
-	}
-	public void setProcesses(List<Process> processes) {
-		this.processes = processes;
+public class TypeName extends MokeTableImpl<Process>{
+	/*
+	 * (设置工段)
+	 * @see com.kanion.www.model.analysis.trend.MokeTable#setSubTable(java.util.List)
+	 */
+	@Override
+	@JSONField(name="processes")
+	public void setSubTable(List<Process> subTable) throws Exception {
+		super.setSubTable(subTable);
 	}
 	
-	
-
 }

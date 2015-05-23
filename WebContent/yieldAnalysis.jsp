@@ -18,7 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 
-	<%@ include file="head.html" %>
+	<%@ include file="head.htm" %>
 	<div id="Bdy">
 		<div class="bdy">
 			<div class="main">	

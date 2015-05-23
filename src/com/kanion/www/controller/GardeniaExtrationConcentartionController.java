@@ -1,18 +1,3 @@
-/**
-* Filename: GardeniaExtrationConcentartionController.java
-* Project Name: kanion
-* @author: cyz	63954008(at)qq.com
-* @version: 1.0
-* @since: JDK 1.7.0_45
-* Copyright © 2014 CCNT. All Rights Reserved
-* Create at: 2014年11月24日  下午3:47:19
-* Description:
-*
-* Modification History:
-* Date			Author		Version		Description
-* ------------------------------------------------------------------
-* 2014年11月24日	cyz    		1.0			1.0 Version
-*/
 package com.kanion.www.controller;
 
 import java.util.Map;
