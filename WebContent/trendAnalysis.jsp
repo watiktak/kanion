@@ -92,6 +92,7 @@ $(function(){
 
 var basePath=$("#basePath").val();
 //点击趋势显示按钮
+/*
 $("#trendAnalysisBtn").click(function(){		
 	var url=basePath+"trendAnalysis/getChart.json";
 	var typeName=$("#typeNames").val();
@@ -110,6 +111,7 @@ $("#trendAnalysisBtn").click(function(){
 	var returnData=getJSON(url,data);
 	//showHighcharts($('#container'));
 });	
+*/
 
 
 //显示品名和工段
@@ -177,55 +179,148 @@ $("#phaseSelectBtn").click(function(){
 	});
 	
 });
-$(function () {
+var basePath=$("#basePath").val();
+//点击趋势显示按钮
+var params;
+$("#trendAnalysisBtn").click(function(){
+    params = $("#arguments option:selected").val();
+    drawAction();
+	showHighcharts($('#container'));
+});	
+
+function drawAction() {
     $('#container').highcharts({
-        title: {
-            text: 'Trend of Temperature',
-            x: -20 //center
+    	chart: {
+            type: 'spline',
+            events: {
+                load: function () {
+               	 if(params == "第一次提取过程升温过程蒸汽压力（MPa）"){
+               		this.yAxis[0].setTitle({
+                        text: '蒸汽压力(MPa)',
+                        style:{
+                        	color:'#64B9C9',
+    		        		fontSize:'14px',
+    					    fontFamily:'微软雅黑'
+                        }
+                    });
+               		this.setTitle({text:"第一次提取过程升温过程蒸汽压力（MPa）"});
+               		this.series[0].update({
+        	            name: 'T3001A',
+        	            data: [0.22, 0.20, 0.20, 0.19,0.17,0.15,0.110,0.108,0.105,0.107,0.103,
+        	                   0.101,0.099,0.100,0.098,0.096,0.099,0.098,0.100,0.092]
+        	        });
+               		this.series[1].update({
+        	        	name: 'T3001B',
+        	            data: [0.21, 0.19, 0.18, 0.18,0.16,0.14,0.100,0.0928,0.0905,0.0907,0.0903,
+        	                   0.0905,0.091,0.0880,0.089,0.090,0.091,0.092,0.093,0.091]
+        	        });
+               		this.series[2].update({
+        	        	name: 'T3001C',
+        	            data: [0.215, 0.195, 0.185, 0.18,0.163,0.142,0.101,0.098,0.095,0.091,0.090,
+        	                   0.091,0.089,0.090,0.088,0.090,0.089,0.088,0.089,0.090]
+        	        });
+               		this.series[3].update({
+        	        	name: 'T3001D',
+        	            data: [0.218, 0.208, 0.198, 0.187,0.169,0.149,0.108,0.106,0.104,0.100,0.098,
+        	                   0.096,0.097,0.095,0.092,0.090,0.088,0.090,0.089,0.088]
+        	        });
+               		this.series[4].update({
+        	        	name: 'T3001E',
+        	            data: [0.209, 0.199, 0.197, 0.180,0.170,0.146,0.105,0.102,0.103,0.097,0.093,
+        	                   0.091,0.090,0.088,0.089,0.090,0.091,0.089,0.090,0.089]
+        	        });
+               		this.series[5].update({
+        	        	name: 'T3001F',
+        	            data: [0.213, 0.201, 0.194, 0.182,0.168,0.148,0.109,0.106,0.102,0.101,0.094,
+        	                   0.090,0.091,0.089,0.088,0.091,0.089,0.088,0.091,0.089]
+        	        });
+               	 } else {
+               		this.yAxis[0].setTitle({
+                        text: '温度(°C)',
+                        style:{
+                        	color:'#64B9C9',
+    		        		fontSize:'14px',
+    					    fontFamily:'微软雅黑'
+                        }
+                    });
+               		this.setTitle({text:"热毒宁注射液金银花提取第一次提取过程升温过程温度上（℃）"});
+               		this.series[0].update({
+        	            name: 'T3001A',
+        	            data: [19.5, 24.8, 34.7, 50.4,70.5,96.2,100.2,99.8,101.2,100.3,100.4,
+        	                   100.5,100.3,101.1,101.7,100.9,101.4,100.8,101.1,100.9]
+        	        });
+               		this.series[1].update({
+        	        	name: 'T3001B',
+        	            data: [20.5, 25.8, 35.7, 51.4,71.5,97.2,101.2,100.8,101.8,101.3,100.1,
+        	                   101.5,100.0,100.1,101.2,101.2,100.4,101.3,101.5,101.2]
+        	        });
+               		this.series[2].update({
+        	        	name: 'T3001C',
+        	            data: [19.9, 25.1, 36.2, 52.1,71.1,94.9,101.0,99.9,101.8,101.3,101.4,
+        	                   101.5,101.3,100.8,101.2,101.6,101.4,101.2,101.7,101.2]
+        	        });
+               		this.series[3].update({
+        	        	name: 'T3001D',
+        	            data: [19.8, 25.3, 36.2, 51.8,71.1,97.3,101.7,100.8,101.7,100.9,100.7,
+        	                   101.0,101.8,101.5,101.0,101.3,101.1,102.0,101.3,101.9]
+        	        });
+               		this.series[4].update({
+        	        	name: 'T3001E',
+        	            data: [20.8, 26.8, 35.9, 52.3,72.6,98.0,101.6,101.2,100.9,101.7,101.6,
+        	                   101.2,101.1,100.9,101.1,100.8,101.9,101.1,100.7,101.9]
+        	        });
+               		this.series[5].update({
+        	        	name: 'T3001F',
+        	            data: [21.5, 26.8, 36.3, 53.4,72.9,98.5,101.8,101.2,101.9,102.0,101.8,
+        	                   100.4,100.7,100.9,101.1,101.2,101.9,101.2,101.9,101.5]
+        	        });             
+               	 }
+                }
+            }
         },
-        subtitle: {
-            text: 'Source: www.kanion.com',
-            x: -20
+        title: {
+        	margin:40,
+            text: '金银花提取-提取罐上部温度',
+            style:{
+        		color:'#64B9C9',
+        		fontSize:'18px',
+			    fontFamily:'微软雅黑'
+        	}
         },
         xAxis: {
-            categories: ['1:30', '1:50', '2:10', '2:30']
+        	title: {
+                text: '生产过程时间点(2015-5-1)',
+                style:{
+	        		color:'#64B9C9',
+	        		fontSize:'14px',
+				    fontFamily:'微软雅黑'
+	        	}
+            },
+            categories: ['9:03', '9:06', '9:09', '9:12','9:15', '9:18', '9:21', '9:24'
+                         ,'9:27', '9:30', '9:33','9:36', '9:39', '9:42', '9:45',
+                         , '9:48', '9:51', '9:54','9:57', '10:00']
         },
         yAxis: {
+        	min:0,
             title: {
-                text: 'Temperature (°C)'
+                text: '温度(°C)'
             },
             plotLines: [{
                 value: 0,
                 width: 1,
-                color: '#808080'
+                color: '#64B9C9'
             }]
+        },
+        credits:{
+            enabled:false // 禁用版权信息
         },
         tooltip: {
             valueSuffix: '°C'
         },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            borderWidth: 0
-        },
-        series: [{
-            name: 'A13',
-            data: [99, 99, 100, 101]
-        }, {
-            name: 'A14',
-            data: [100, 100,101,101]
-        }, {
-            name: 'A15',
-            data: [100, 100,100,100]
-        }, {
-            name: 'A16',
-            data: [100, 100,101,101]
-        }]
+        series:[{},{},{},{},{},{}],
     });
-});
-				
-
+};
+			
 </script>  	
 
 </html>

@@ -505,11 +505,11 @@ color: #63b43b;
 }
 
 
-/*统计分析模块导航页图标说明*/
+/*导航页图标说明*/
 .navi_info>button {
 	display: block;
 	padding: 0 20px;
-	height: 68px;
+	height: 88px;
 	font-size: 24px;
 	color: #8ad2df;
 	-webkit-transition: background 0.2s;
@@ -565,16 +565,24 @@ color: #63b43b;
 	background-position: -332px 0;
 }
 .navi_info .i8 {	
-	background-position: -387px 0;
+	background-position: -397px 0;
 }
 .navi_info .i9 {	
-	background-position: -442px 0;
+	background-position: -452px 0;
 }
 .navi_info .i10 {	
-	background-position: -503px 0;
+	background-position: -510px 0;
 }
 
-
+.navi_info .i11 {	
+	background-position: -570px 0;
+}
+.navi_info .i12 {	
+	background-position: -625px 0;
+}
+.navi_info .i13 {	
+	background-position: -670px 0;
+}
 
 
 
