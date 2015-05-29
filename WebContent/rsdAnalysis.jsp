@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>康源PKS统计挖掘系统</title>
-		
+<title>康缘PKS统计挖掘系统</title>
 		<link rel="stylesheet" href="CSS/global_zs.css" type="text/css">
 		<link rel="stylesheet" href="CSS/rsd.css" type="text/css" >
 		<link rel="stylesheet" href="CSS/curvefit.css" type="text/css">
@@ -16,15 +20,11 @@
 		<script src="js/rsd.js" type="text/javascript"></script>		
 </head>
 <body>
-
-
-		<%@ include file="head.html" %>		
-		
+	<input id="pageName" value="dataAnalysis" type="hidden"/>
+	<c:import url="head.jsp"  charEncoding="UTF-8" />	
 		<div id="zs_mainbody">
-		
 			<div class="zs_bdy">
 				<div class="zs_main">
-				
 					<div id="rsddiv" class="zs_rsddiv">
 						<div class="zs_selectData">
 							<dl>
@@ -55,54 +55,55 @@
 											<tr>
 												<td class="zs_name"><span>项目:</span></td>
 												<td><select name="proj" id="zs_proj">
-													<option value="" selected>项目1</option>
+													<option value="" selected>重量</option>
+													<option value="" selected>体积</option>
 												</select></td>
 											</tr>
 											
 											<tr><td class="zs_name"><span>批次:</span></td>
 												<td><select  id="minBatchNo" name="minBatchNo" class="zs_ser">
-													<option value="20">20</option>
-													<option value="19">19</option>
-													<option value="18">18</option>
-													<option value="17">17</option>
-													<option value="16">16</option>
-													<option value="15">15</option>
-													<option value="14">14</option>
-													<option value="13">13</option>
-													<option value="12">12</option>
-													<option value="11">11</option>
-													<option value="10">10</option>
-													<option value="9">9</option>
-													<option value="8">8</option>
-													<option value="7">7</option>
-													<option value="6">6</option>
-													<option value="5">5</option>
-													<option value="4">4</option>
-													<option value="3">3</option>
-													<option value="2">2</option>
-													<option value="1" selected>1</option>
+													<option value="20">Z131120</option>
+													<option value="19">Z131119</option>
+													<option value="18">Z131118</option>
+													<option value="17">Z131117</option>
+													<option value="16">Z131116</option>
+													<option value="15">Z131115</option>
+													<option value="14">Z131114</option>
+													<option value="13">Z131113</option>
+													<option value="12">Z131112</option>
+													<option value="11">Z131111</option>
+													<option value="10">Z131110</option>
+													<option value="9">Z131109</option>
+													<option value="8">Z131108</option>
+													<option value="7">Z131107</option>
+													<option value="6">Z131106</option>
+													<option value="5">Z131105</option>
+													<option value="4">Z131104</option>
+													<option value="3">Z131103</option>
+													<option value="2">Z131102</option>
+													<option value="1" selected>Z131101</option>
 												</select>
 												<select name="maxBatchNo" id="maxBatchNo" class="zs_ser">
-													<option value="20" selected>20</option>
-													<option value="19">19</option>
-													<option value="18">18</option>
-													<option value="17">17</option>
-													<option value="16">16</option>
-													<option value="15">15</option>
-													<option value="14">14</option>
-													<option value="13">13</option>
-													<option value="12">12</option>
-													<option value="11">11</option>
-													<option value="10">10</option>
-													<option value="9">9</option>
-													<option value="8">8</option>
-													<option value="7">7</option>
-													<option value="6">6</option>
-													<option value="5">5</option>
-													<option value="4">4</option>
-													<option value="3">3</option>
-													<option value="2">2</option>
-													<option value="1">1</option>
+													<option value="20">Z131120</option>
+													<option value="19">Z131119</option>
+													<option value="18">Z131118</option>
+													<option value="17">Z131117</option>
+													<option value="16">Z131116</option>
+													<option value="15">Z131115</option>
+													<option value="14">Z131114</option>
+													<option value="13">Z131113</option>
+													<option value="12">Z131112</option>
+													<option value="11">Z131111</option>
+													<option value="10">Z131110</option>
+													<option value="9">Z131109</option>
+													<option value="8">Z131108</option>
+													<option value="7">Z131107</option>
+													<option value="6">Z131106</option>
+													<option value="5">Z131105</option>
+													<option value="4">Z131104</option>
+													<option value="3">Z131103</option>
+													<option value="2">Z131102</option>
+													<option value="1">Z131101</option>
 												</select></td>
 												
 											</tr>
@@ -128,64 +129,41 @@
 											<tr>
 												<td class="zs_name"><span>项目:</span></td>
 												<td><select name="proj" id="zs_proj">
-													<option value="">项目1</option>
+													<option value="">重量</option>
+													<option value="">体积</option>
 												</select></td>
 											</tr>
 											<tr>
 												 <td class="zs_name"><span>时间段:</span></td>
 												<td><select name="start" id="start" class="zs_ser">
-													<option value="">0</option>
-													<option value="">1</option>
-													<option value="">2</option>
-													<option value="">3</option>
-													<option value="">4</option>
-													<option value="">5</option>
-													<option value="">6</option>
-													<option value="">7</option>
-													<option value="">8</option>
-													<option value="" >9</option>
-													<option value="">10</option>
-													<option value="">11</option>
-													<option value="">12</option>
-													<option value="">13</option>
-													<option value="">14</option>
-													<option value="">15</option>
-													<option value="">16</option>
-													<option value="">17</option>
-													<option value="">18</option>
-													<option value="">19</option>
-													<option value="">20</option>
-													<option value="">21</option>
-													<option value="">22</option>
-													<option value="">23</option>
-													<option value="">24</option>
+													<option value="">1月</option>
+													<option value="">2月</option>
+													<option value="">3月</option>
+													<option value="">4月</option>
+													<option value="">5月</option>
+													<option value="">6月</option>
+													<option value="">7月</option>
+													<option value="">8月</option>
+													<option value="">9月</option>
+													<option value="" >10月</option>
+													<option value="">11月</option>
+													<option value="">12月</option>
+			
 												</select>
 												<select name="end" id="end" class="zs_ser">
-													<option value="">0</option>
-													<option value="">1</option>
-													<option value="">2</option>
-													<option value="">3</option>
-													<option value="">4</option>
-													<option value="">5</option>
-													<option value="">6</option>
-													<option value="">7</option>
-													<option value="">8</option>
-													<option value="">9</option>
-													<option value="">10</option>
-													<option value="">11</option>
-													<option value="">12</option>
-													<option value="">13</option>
-													<option value="">14</option>
-													<option value="">15</option>
-													<option value="">16</option>
-													<option value="">17</option>
-													<option value="">18</option>
-													<option value="">19</option>
-													<option value="">20</option>
-													<option value="">21</option>
-													<option value="">22</option>
-													<option value="">23</option>
-													<option value="">24</option>
+													<option value="">1月</option>
+													<option value="">2月</option>
+													<option value="">3月</option>
+													<option value="">4月</option>
+													<option value="">5月</option>
+													<option value="">6月</option>
+													<option value="">7月</option>
+													<option value="">8月</option>
+													<option value="">9月</option>
+													<option value="">10月</option>
+													<option value="">11月</option>
+													<option value="">12月</option>
+					
 												</select >
 												</td>
 											</tr>
@@ -198,72 +176,31 @@
 										</div>-->
 										<div class="zs_sr">
 											<span>RSD值:</span>
-											<span class="zs_svalue">8.01%</span>
+											<span class="zs_svalue" id="zs_value"></span>
 										</div>
-										<button type="button" class="zs_midButton">RSD计算</button>
+										<button type="button" class="zs_midButton" id="zs_midButton">RSD计算</button>
 									</div>
 									
 								</dd>
 							</dl>
 						</div>
-						
 					</div>
 				</div>
-				<div class=" charts tablesRsd" id="tablesRsd"></div>
+				
+				
+				<div class=" charts tablesRsd" id="tablesRsd"></div> 
 				<div class="zs_midValue">
-					<table class="zs_mid">
-						<caption>各批号中间体(Kg)</caption>
-						<tr>
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
-							<td>4</td>
-							<td>5</td>
-							<td>6</td>
-							<td>7</td>
-							<td>8</td>
-							<td>9</td>
-							<td>10</td>
-							<td>11</td>
-							<td>12</td>
-							<td>13</td>
-							<td>14</td>
-							<td>15</td>
-							<td>16</td>
-							<td>17</td>
-							<td>18</td>
-							<td>19</td>
-							<td>20</td>
-						</tr>
-						<tr>
-							<td>435</td>
-							<td>409</td>
-							<td>413</td>
-							<td>372</td>
-							<td>400</td>
-							<td>381</td>
-							<td>458</td>
-							<td>376</td>
-							<td>343</td>
-							<td>379</td>
-							<td>350</td>
-							<td>369</td>
-							<td>443</td>
-							<td>361</td>
-							<td>392</td>
-							<td>363</td>
-							<td>387</td>
-							<td>386</td>
-							<td>431</td>
-							<td>406</td>
-						</tr>
-					</table>
-					<br/><br/>
+					 <table class="zs_mid"></table>
 				</div>
 			</div>
-		
 		</div>
 		
+		
 </body>
-
+<script language="JavaScript" type="text/javascript">
+$(function(){
+	var pageName=$("#pageName").val();
+	loadHead(pageName);
+});
+</script>
 </html>

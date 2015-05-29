@@ -15,6 +15,7 @@ package com.kanion.www.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,6 +29,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kanion.www.highchart.Spline;
 import com.kanion.www.service.TrendAnalysisService;
+import com.kanion.www.util.ProjectProperties;
 
 /**
  * @ClassName: TrendAnalysisController
@@ -144,7 +146,16 @@ public class TrendAnalysisController {
 		String phase=request.getParameter("phase");
 		String[] phases=phase.split(phase);
 		String argument=request.getParameter("argument");
-		Spline trendSpline=mTrendAnalysisService.getChart(typeName,process,phases,argument);
+		Spline trendSpline=null;
+		
+		//如果当前程序是demon,调用service中的对应demo方法
+		Properties p=ProjectProperties.getSingleton();
+		if(p.getProperty("project.demon","false")=="true"){
+			System.out.println("project is started on demo schema...");
+			trendSpline=mTrendAnalysisService.getDemoChart(typeName,process,phases,argument);
+		}else{
+			trendSpline=mTrendAnalysisService.getChart(typeName,process,phases,argument);
+		}
 		ret.put("trend",trendSpline);
 		return ret;
 		

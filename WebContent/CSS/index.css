@@ -30,7 +30,7 @@ color: #444;
 
 /*头部*/
 #header {
-height: 46px;
+height: 50px;
 line-height: 46px;
 overflow: hidden;
 font-family: "微软雅黑";
@@ -48,9 +48,9 @@ line-height: 1;
 }
 #header h1 a {
 display: inline-block;
-height: 30px;
+height: 37px;
 background: url('../icons/indexlogo.png') no-repeat;
-width: 372px;
+width: 384px;
 margin-top: 9px;
 }
 /*头部导航*/
@@ -82,7 +82,7 @@ color: #63b43b;
 #top-main {
 position: relative;
 overflow: hidden;
-height: 560px;
+height: 600px;
 border-bottom: 1px solid #E5E5E5;
 background: url(../icons/top_banner_bg.png) repeat-x;
 }
@@ -199,6 +199,86 @@ font-size: 18px;
 color: #fff !important;
 background: url('../icons/btn_bg_1.jpg') repeat-x;
 }
+
+
+#top-slide {
+text-align: center;
+background: #f6f5f5;
+padding-top: 30px;
+padding-bottom: 7px;
+}
+
+
+#中间导航
+#download {
+border-top: 1px solid #e5e5e5;
+border-bottom: 1px solid #e5e5e5;
+margin-bottom: -1px;
+}
+
+.clearfix {
+}
+
+.clearfix:after {
+content: '\200B';
+display: block;
+width: 0px;
+height: 0px;
+font-size: 0px;
+visibility: hidden;
+clear: both;
+}
+
+#download .download-list {
+margin: 10px auto;
+width: 960px;
+}
+
+
+#download .download-list li {
+height: 140px;
+float: left;
+width: 310px;
+border-right: 1px solid #EAE8E8;
+text-align: center;
+}
+
+#download .download-list li.last {
+border-right: 0 none transparent;
+}
+
+#download .download-list .ico-analysis a {
+background-position: center 20px;
+}
+
+#download .download-list .ico-mining a {
+background-position: center -180px;
+}
+
+#download .download-list .ico-feedback a {
+background-position: center -387px;
+}
+
+#download .download-list li a {
+margin-bottom: -20px;
+margin-top: -20px;
+height: 33px;
+padding-top: 135px;
+font-size: 18px;
+display: inline-block;
+width: 300px;
+background: url('../icons/index_intro.png') no-repeat;
+color: #8a8a8a;
+}
+
+#download .download-list li a:hover {
+	background-color:#efefef;
+	width:310px;
+	margin-left:-1px;
+	margin-right:-1px;
+}
+
+#常量
 .mt15 {
 margin-top: 15px;
 }

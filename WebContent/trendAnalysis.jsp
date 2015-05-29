@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>康源PKS统计挖掘系统</title>
+<title>康缘PKS统计挖掘系统</title>
 <link rel="stylesheet" type="text/css" href="../CSS/global.css">
 	<script type="text/javascript" src="../js/jquery-1.7.1.js"></script>
 	<script type="text/javascript" src="../js/jquery-extend.js"></script>
@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 
+	<input id="pageName" value="dataAnalysis" type="hidden"/>
 	<c:import url="head.jsp"  charEncoding="UTF-8" />
 	<div id="Bdy">
 		<div class="bdy">
@@ -83,6 +84,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </body>
 <script language="JavaScript" type="text/javascript">
+$(function(){
+	var pageName=$("#pageName").val();
+	loadHead(pageName);
+});
+
+
 var basePath=$("#basePath").val();
 //点击趋势显示按钮
 $("#trendAnalysisBtn").click(function(){		

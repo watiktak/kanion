@@ -229,7 +229,7 @@ a:hover {
 	top: 0;
 	position: fixed;
 	width: 100%;
-	height: 39px;
+	height: 46px;
 	background: #fff;
 	color: #3A3F42
 }
@@ -251,8 +251,8 @@ a:hover {
 	position: relative;
 	overflow: hidden;
 	display: block;
-	width: 90px;
-	height: 39px;
+	width: 126px;
+	height: 40px;
 	margin: 0 0 0;
 	text-indent: -15em;
 	background: url(../icons/logo.png) no-repeat center
@@ -261,7 +261,7 @@ a:hover {
 .nav {
 	height: 39px;
 	line-height: 39px;
-	margin: -39px 0 0 90px;
+	margin: -36px 0 0 140px;
 }
 
 .nav>li {
@@ -275,7 +275,7 @@ a:hover {
 .nav>li>a {
 	line-height: 46px;		
 	color: #6f6f6f;
-	font-size: 16px;	
+	font-size: 20px;	
 	display: block;
 	height: 100%;
 	padding: 0 12px;	
@@ -325,7 +325,7 @@ color: #63b43b;
 
 .Toolbar {
 	z-index: 6;
-	top: 39px;
+	top: 46px;
 	position: fixed;
 	width: 100%;
 	height: 68px;
@@ -424,6 +424,15 @@ color: #63b43b;
 }
 .tool .i10 {	
 	background-position: -513px 0;
+}
+.tool .i11 {	
+	background-position: -573px 0;
+}
+.tool .i12 {	
+	background-position: -629px 0;
+}
+.tool .i13 {	
+	background-position: -670px 0;
 }
 
 /*工具栏右：搜索条*/

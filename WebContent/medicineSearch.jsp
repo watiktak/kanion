@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>康源PKS统计挖掘系统</title>
+    <title>康缘PKS统计挖掘系统</title>
 	<link rel="stylesheet" type="text/css" href="CSS/global.css">
 	<link rel="stylesheet" type="text/css" href="CSS/search.css">
 	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  	 <!--顶部导航-->
 	<div class="Tray">
 		<div class="tray">
-			<a href="index.jsp" title="康源PKS统计挖掘系统" class="logo">康源PKS统计挖掘系统</a>
+			<a href="index.jsp" title="康缘PKS统计挖掘系统" class="logo">康缘PKS统计挖掘系统</a>
 			<ul class="nav">
 				<li>
 					<a>统计分析</a>				</li>

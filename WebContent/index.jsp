@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    <title>康源PKS统计挖掘系统</title>
+    <title>康缘PKS统计挖掘系统</title>
 	<link rel="stylesheet" type="text/css" href="CSS/index.css">
 	<link rel="bookmark"  type="image/x-icon"  href="icons/logo.png"/>
 	<link rel="shortcut icon" href="icons/logo.png"> 
@@ -26,10 +26,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</h1>
 			<ul class="top-menu">
 				<li>
-					<a href="dataAnalysis.jsp">数据分析</a>
+					<a href=""></a>
 				</li>
 				<li>
-					<a href="">系统介绍</a>
+					<a href=""></a>
 				</li>
 	
 			</ul>
@@ -42,16 +42,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<!--主体左栏-->
 				<ul class="left-banner">
 					<li style="left: 0px; opacity: 1;">
-						<a title="点击查看" target="_blank" href=""><img src="images/analysis.png"></a>
+						<a title="点击查看" target="_blank" href=""><img src="images/yinling.png"></a>
 					</li>
 					<li style="left: -1470px; opacity: 0;">
-						<a title="点击查看" href=""><img src="images/datamining.png"></a>
+						<a title="点击查看" href=""><img src="images/analysis.png "></a>
 					</li>				
 					<li style="left: -1470px; opacity: 0;">
-						<a title="点击查看" target="_blank" href=""><img src="images/xiaolv.png"></a>
+						<a title="点击查看" target="_blank" href=""><img src="images/datamining.png"></a>
 					</li>
 					<li style="left: -1470px; opacity: 0;">
-						<a title="点击查看" target="_blank" href=""><img src="images/yinling.png"></a>
+						<a title="点击查看" target="_blank" href=""><img src="images/feedback.png"></a>
 					</li>				
 				</ul>
 				<ul class="controller">
@@ -62,21 +62,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</ul>		
 				
 				<!--主体右栏-->
+				
 				<div id="account-box" class="right-account">
 					<div class="login-box">
 						<div class="ml26">  
 							<h3>登录系统：</h3> 							      
-							<form method="post" action="">
 								<p class="msg">&nbsp;</p>
-								<input type="text" name="username" id="username" class="text" placeholder="输入用户名" >
-								<input type="password" name="password" id="password" class="text mt6" placeholder="输入密码" >
+								<form id="login_in_form" action="dataAnalysis.jsp" method="post" >
+									<input type="text" name="username" id="username" class="text" placeholder="输入用户名" >
+									<input type="password" name="password" id="password" class="text mt6" placeholder="输入密码" >
+								</form>
 								<div class="mt15">  
 									<div class="fr mr26">
 										<a>忘记密码？</a>   
 									</div>
 								</div>
 								<div class="login-btn mt35">
-									<input type="submit" value="">
+									<input type="submit" id="login_in"value="">
 								</div>
 							</form> 
 						  
@@ -85,14 +87,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<a href="" class="reg-btn orange-btn">注册账户</a>
 				   		</div>	
 					</div>
-
 			   </div>
+			   
 			</div>
 		</div>
+
+		<div id="download" class="clearfix">
+			<ul class="download-list clearfix">
+				<li class="ico-analysis" title="数据分析"><a data-ca="main-downpc" href="">数据分析</a></li>
+				<li class="ico-mining" title="数据挖掘"><a data-ca="main-downandroid" href="">数据挖掘</a></li>
+				<li class="ico-feedback last" title="数据预测与反馈"><a data-ca="main-downiphone" href="">模型预测与反馈</a></li>
+			</ul>
+		</div>
+		<input type="hidden" value="<%=basePath%>" id=basePath2>
 	</div>
 
 	 
-	 <!--footer-->   
+	 <!--footer
 	<div id="footer">
 		<div class="top-footer">
 			<div class="w960">
@@ -123,13 +134,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<p>© 2014 CCNT All Rights Reserved  <a href="http://ccnt.zju.edu.cn/" target="_blank">浙江大学计算机科学与技术学院 CCNT实验室</a></p>
 		</div>
 	</div>
-	 
+	 -->   
   </body>
   
 
 <script>
 //.left-banner直接调用.fadeAnimate，返回它自身
 $('#top-main .left-banner').fadeAnimate({});
+
+$("#login_in").click(function(){
+	
+	var username=$("#username").val();
+	var password=$("#password").val();
+	if(null==username || null==password){
+		alert('用户名或密码不能为空！');
+		return;
+	}
+	if(username!="kanion" || password!= "kanion"){
+		alert('用户名和密码不匹配！');
+		return;
+	}
+	$("#login_in_form").submit();
+	
+});
 </script>
 
 

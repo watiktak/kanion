@@ -1,9 +1,15 @@
 var chart1;//全局变量
-$(document).ready(function(){
-	chart1=new Highcharts.Chart({
+var rsdVal;//计算的rsd值
+var jsonData;//保存后台传过来的值
+var column = 10;//显示中间体的表格每一行的列数
+var rsdData=[];//画图数据准备
+var pinming;//品名
+var zhongjianti;//中间体
+var option = {
 		chart:{
 			renderTo:'tablesRsd',
-			type:'line'
+			type:'line',
+			//height:'500'
 		},
 		title:{
 			text:'中间体趋势图'
@@ -19,20 +25,110 @@ $(document).ready(function(){
 					fontWeight:'normal'
 				},
 				enable:true,
-				text:'Source:www.kanion.com'
+				text:''
 			}
 		,
 		xAxis:{
-			// categories:['Apples','Bananas','Oranges']
+			title:{
+				text:'批号'
+			},
+			type:'linear',
+			startOnTick:true,
+			min:0,
+			//tickInterval:2
+			categories:['Z131101','Z131102','Z131103','Z131104','Z131105','Z131106',
+			            'Z131107','Z131108','Z131109','Z131110','Z131111','Z131112',
+			            'Z131113','Z131114','Z131115','Z131116','Z131117','Z131118',
+			            'Z131119','Z131119','Z131120','Z131121','Z131122','Z131123',
+			            'Z131124','Z131125']
 		},
 		yAxis:{
 			title:{
-				text:'浸膏量'
-			}
+				text:''
+			},
+			type:'linear',
+			startOnTick:true,
+			min:0,
+			tickInterval:100
 		},
 		series:[{
 			name:'栀子',
-			data:[435,409,413,372,400,381,458,376,343,379,350,369,443,361,392,363,387,386,431,406]
+			//data:[435,409,413,372,400,381,458,376,343,379,350,369,443,361,392,363,387,386,431,406]
+			data:[]
 		}]
+	};
+
+$(document).ready(function(){
+	$.ajax({
+		async:false,
+		type:'get',
+		url:'http://localhost:8080/kanion/rsd/rsdExtraction.json',
+		dataType:'json',
+		success:function(data){
+			jsonData = data;
+			rsdVal = rsdCalculate(data);
+		},
+		error:function(data){
+			alert('json数据获取失败，请联系管理员');
+		}
+	});
+	
+	var isCreated = false;
+	//利用jquery的事件绑定机制
+	$(document).on('click','#zs_midButton',function() {
+		$('#zs_value').html(rsdVal + "%");
+		if(!isCreated){
+			createTable(jsonData);
+			isCreated = true;
+		}
+		
+		chart1 = new Highcharts.Chart(option);
+		console.log(option.series.data);
+		console.log(option.series.name);
 	});
 });
+//动态创建显示中间值的表格
+function createTable(rsdObject) {
+	var length = rsdObject.length;
+	var rowNum = Math.ceil(length/column);
+	pinming = rsdObject[0].pinming;
+	zhongjianti = rsdObject[0].zhongjianti;
+	$('.zs_mid').append("<caption>各批号中间体(Kg)</caption>");
+	for(var i = 0;i < rowNum;i++) {//之前犯了一个愚蠢的不仔细的问题，把单引号写在pihao后面了，改了很久
+		$('.zs_mid').append("<tr class='pihao"+ i +"'></tr>");
+		$('.zs_mid').append("<tr class='pihaoval" + i + "'></tr>");
+	}
+	$.each(rsdObject,function(num,item){
+		rsdData.push(item.pihaoValue);
+		var index = Math.floor(num/column);	 
+		$('.zs_mid .pihao' + index).append("<td>" + item.pihao + "</td>");
+		$('.zs_mid .pihaoval' + index).append("<td>" + item.pihaoValue + "</td>");
+	});
+	//console.log(rsdData);
+	option.series[0].name = pinming;
+	option.series[0].data = rsdData;
+	option.yAxis.title.text = zhongjianti;
+	
+}
+
+//计算rsd值
+function rsdCalculate( rsdObject ) {
+	var totalValue = 0.0;
+	var meanValue = 0.0;
+	var totalSquareValue = 0.0;
+	var rsdValue = 0.0;
+	var length = rsdObject.length;
+	$.each(rsdObject,function(num,item) {
+		totalValue += item.pihaoValue;
+	});
+	meanValue = (totalValue/length).toFixed(6);
+	
+	$.each(rsdObject,function(num,item) {
+		var dif = item.pihaoValue - meanValue;
+		totalSquareValue += Math.pow(dif,2);
+	});
+	
+	rsdValue = (Math.sqrt(totalSquareValue)/(length - 1))/meanValue;
+	rsdValue = (rsdValue * 100).toFixed(2);
+	return rsdValue;
+}

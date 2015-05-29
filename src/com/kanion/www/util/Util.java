@@ -27,6 +27,8 @@ public class Util {
 	// 图表展现正态分布时每个分布区间步长，值越大步长越小,取可除尽的值，防止出现精度不准确
 	public static final int categoryCount = 5;
 
+	
+	
 	/**
 	 * 
 	 * @Title: readFile

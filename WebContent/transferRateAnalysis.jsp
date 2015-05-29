@@ -1,29 +1,32 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
 %>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    <title>康源PKS统计挖掘系统</title>
-	<link rel="stylesheet" type="text/css" href="CSS/global.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>康缘PKS统计挖掘系统</title>
+<link rel="stylesheet" type="text/css" href="CSS/global.css">
 	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 	<script type="text/javascript" src="js/jquery-extend.js"></script>
 	<script type="text/javascript" src="js/highcharts.js"></script>
 	<script type="text/javascript" src="js/exporting.js"></script>
 	<script type="text/javascript" src="js/util.js"></script>
-  </head>
-  <body>
- 	<%@ include file="head.html" %>
+</head>
+<body>
+	<input id="pageName" value="dataAnalysis" type="hidden"/>
+	<c:import url="head.jsp"  charEncoding="UTF-8" />
 	<div id="Bdy">
 		<div class="bdy">
 			<div class="main">				
-				<!-- ***************************************************** 质量均值分析模块  ***************************************************** -->
-				<!-- 质量均值分析模块 ：分析某一时间段的（干膏/含量/浸膏量）均值，表示离异点，以及形成这些离异点的原因-->
-				<div id="qualityAverageAnalysisDiv" class="dis">
+				<!-- ***************************************************** 转移率分析模块  ***************************************************** -->
+				<!-- 转移率分析模块 ：分析某一批号段的中医药成分转移率，并用图标表示出来，参数选取：品名 - 批号 - 工序 - 中间体 -->
+				<div id="qualityAverageAnalysisDiv" class="main_content">
 					<!-- 分析目标表列表 -->
 					<div class="intro">
 						<dl>
@@ -31,85 +34,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<i class="i iB i2"></i>
 							</dt>
 							<dd>
-								<dd><i class="w100 dis-ib">请选择品名：</i>
-									<select id="tables">
-									    <option value="volvo">金青提取</option>
-										<option value="saab">热毒宁栀子提取</option>
-										<option value="fiat">金银花提取</option>
-										<option value="audi">热毒宁提取</option>
+								<dd><i style=" text-align:center" class="w100 dis-ib">品名</i>
+									<select id="tables" class="defaultOption" onchange="NameChange(this.id)">
+									    <option value="热毒宁注射液金青提取物">热毒宁注射液金青提取物</option>
+										<option value="热毒宁注射液栀子提取物">热毒宁注射液栀子提取物</option>
 									</select>
 								</dd>
 							</dd>
-							<dd><i class="w100 dis-ib">请选择批次：</i>
-									<select id="minBatchNo" name="minBatchNo">
-									    <option value="volvo">1</option>
-										<option value="saab">2</option>
-										<option value="fiat">3</option>
-										<option value="audi">4</option>
-									    <option value="volvo">5</option>
-										<option value="saab">6</option>
-										<option value="fiat">7</option>
-										<option value="audi">8</option>
-									    <option value="volvo">9</option>
-										<option value="saab">10</option>
-										<option value="fiat">11</option>
-										<option value="audi">12</option>
-										<option value="volvo">13</option>
-										<option value="saab">14</option>
-										<option value="fiat">15</option>
-										<option value="audi">16</option>
-									    <option value="volvo">17</option>
-										<option value="saab">18</option>
-										<option value="fiat">19</option>
-										<option value="audi">20</option>
-									</select>
+							<dd><i style=" text-align:center" class="w100 dis-ib">批次</i>
+									<select id="minBatchNo" name="minBatchNo" class="defaultOption" onchange="BatchNoChange1(this.id)"></select>
 									-
-									<select id="maxBatchNo"name="maxBatchNo">
-									    <option value="volvo">20</option>
-										<option value="saab">19</option>
-										<option value="fiat">18</option>
-										<option value="audi">17</option>
-									    <option value="volvo">16</option>
-										<option value="saab">15</option>
-										<option value="fiat">14</option>
-										<option value="audi">13</option>
-									    <option value="volvo">12</option>
-										<option value="saab">11</option>
-										<option value="fiat">10</option>
-										<option value="audi">9</option>
-										<option value="volvo">8</option>
-										<option value="saab">7</option>
-										<option value="fiat">6</option>
-										<option value="audi">5</option>
-									    <option value="volvo">4</option>
-										<option value="saab">3</option>
-										<option value="fiat">2</option>
-										<option value="audi">1</option>
+									<select id="maxBatchNo"name="maxBatchNo" class="defaultOption">
+									   <option value="z150520">z150520</option>
 									</select>
 								</dd>
-								<dd><i class="w100 dis-ib">请选择工序：</i>
-									<select id="minProcessName" name="minProcessName">
-									    <option value="volvo">第一次回流提取</option>
-										<option value="saab">第二次回流提取</option>
-										<option value="fiat">单效浓缩</option>
-										<option value="audi">刮板浓缩</option>
-										<option value="fiat">热处理</option>
-										<option value="audi">冷藏过滤</option>
-										<option value="audi">栀子过滤浸膏萃取</option>
-										<option value="fiat">栀子浸膏的真空干燥</option>
-										<option value="audi">栀子提取物的粉碎分装</option>
+								<dd id = "zz"><i style=" text-align:center" class="w100 dis-ib">工序</i>
+									<select id="minProcessName" name="minProcessName" class="defaultOption" onchange="ProcessChange1(this.id)">
+									    <option value="前处理">前处理</option>
+										<option value="金银花提取">金银花提取</option>
+										<option value="金银花浓缩">金银花浓缩</option>
+										<option value="醇沉">醇沉</option>
+										<option value="醇沉回收">醇沉回收</option>
+										<option value="萃取">萃取</option>
+										<option value="干燥总混">干燥总混</option>
 									</select>
 									-
-									<select id="maxProcessName"name="maxProcessName">
-									    <option value="volvo">第一次回流提取</option>
-										<option value="saab">第二次回流提取</option>
-										<option value="fiat">单效浓缩</option>
-										<option value="audi">刮板浓缩</option>
-										<option value="fiat">热处理</option>
-										<option value="audi">冷藏过滤</option>
-										<option value="audi">栀子过滤浸膏萃取</option>
-										<option value="fiat">栀子浸膏的真空干燥</option>
-										<option value="audi">栀子提取物的粉碎分装</option>
+									<select id="maxProcessName"name="maxProcessName" class="defaultOption">
+									    <option value="金银花提取">金银花提取</option>
+										<option value="金银花浓缩">金银花浓缩</option>
+										<option value="醇沉">醇沉</option>
+										<option value="醇沉回收">醇沉回收</option>
+										<option value="萃取">萃取</option>
+										<option value="干燥总混">干燥总混</option>
 									</select>
 									<button type="button" onclick="qualityAverageAnalysis()" class="orange-btn w200 mt15 floatRight" >转移率分析</button>
 								</dd>						
@@ -129,86 +85,332 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<input type="hidden" value="<%=basePath%>" id=basePath>
 	</body>	  	
 
-	<!-- 质量均值分析初始化 -->
+	<!-- 转移率分析初始化 -->
 	<script language="JavaScript" type="text/javascript">
-		var basePath=$("#basePath").val();
-		//质量均值分析按钮点击后的初始化：显示数据库中的生产表名。
-		$("#qualityAverageBtn").click(function(){
+	//页面初始化
+	$(function(){
+		var pageName=$("#pageName").val();
+		loadHead(pageName);
+	});
+
+		
+		//转移率分析按钮点击后的初始化：显示数据。
+		//定义批次数组
+		var BatchNo = new Array("z150501","z150502","z150503","z150504","z150505","z150506",
+				"z150507","z150508","z150509","z150510","z150511","z150512","z150513",
+				"z150514","z150515","z150516","z150517","z150518","z150519","z150520");
+		
+		//定义金青提取工序和栀子提取工序数组
+		var QingJinArr = new Array("前处理","金银花提取","金银花浓缩","醇沉","醇沉回收","萃取","干燥总混");
+		var ZhiZiArr = new Array("前处理","提取","浓缩","萃取","干燥总混");
+		
+		var ProcessChoseId = 0; //标注品名选择种类，0--金青提取， 1--栀子提取
+		
+		//加载网页时自动填充批次选择的第一部分，即minBatchNo
+		function loadData(){
+			selectTag = document.getElementById("minBatchNo"); //获取select标记 
+			colls = selectTag.options; //获取引用 
+			if(colls.length > 0 && isClearOption()){ 
+				clearOptions(colls); //清空select
+			} 
+			for(var i=0;i<BatchNo.length;i++){ 
+				//item = new Option(BatchNo[i],BatchNo[i]); //通过Option()构造函数创建option对象 
+				//selectTag.options.add(item); 
+				 selectTag.options.add(new Option());
+				 selectTag.options[i].value = BatchNo[i];
+				 selectTag.options[i].text = BatchNo[i];
+		    }
+		};
+		window.onload = loadData();
+		
+		//品名 selcet <tables> 的onchange监听事件
+		function NameChange(x){
+			selectTag = document.getElementById("minProcessName");   //获取select标记 
+			colls = selectTag.options;   //获取引用 
+			colls.length = 0; //清空select option item
 			
-	</script>
-	<!-- 质量均值分析(按钮点击事件) -->
-	<script type="text/javascript">
-		function qualityAverageAnalysis(){
+			var name_str=$("#tables option:selected").val();   //获取品名选项
+			if(name_str == "热毒宁注射液青金提取物"){    //表示选择金青提取
+				ProcessChoseId = 0;
+			    
+			    //填充工序选项 (minProcessName)
+				for(var i=0;i<QingJinArr.length;i++){
+					selectTag.options.add(new Option());  //通过Option()构造函数创建option对象 
+					selectTag.options[i].value = QingJinArr[i];
+					selectTag.options[i].text = QingJinArr[i];
+			    }
+			} else {      //选择栀子提取
+				ProcessChoseId = 1;
+				for(var i=0;i<ZhiZiArr.length;i++){
+					selectTag.options.add(new Option());
+					 selectTag.options[i].value = ZhiZiArr[i];
+					 selectTag.options[i].text = ZhiZiArr[i];
+					
+			    }
+			}
+		};
+
+		//批次 select <minBatchNo> onchange监听事件 
+		function BatchNoChange1(x){
+			selectTag = document.getElementById("maxBatchNo"); //获取select标记 
+			colls = selectTag.options; //获取引用 
+			colls.length = 0;
+			
+			var minBatchNo_str=$("#minBatchNo option:selected").val();
+			var local = 0;
+			//var indexNo = BatchNo.indexOf(minBatchNo_str);
+			var indexNo = indexOf(BatchNo,minBatchNo_str);
+			
+			for(var i = BatchNo.length - 1;i >= indexNo;i--){
+				selectTag.options.add(new Option());
+				selectTag.options[local].value = BatchNo[i];
+				selectTag.options[local].text = BatchNo[i];
+				local++;
+		    }
+			
+		};
+		
+		//工序 select <minProcessName> onchange监听事件
+		function ProcessChange1(x){
+			selectTag = document.getElementById("maxProcessName"); //获取select标记 
+			colls = selectTag.options; //获取引用 
+			colls.length = 0;
+			
+			var process_str=$("#minProcessName option:selected").val();
+			var indexNo;
+			var local = 0;
+			
+			if(ProcessChoseId == 0){
+				indexNo = indexOf(QingJinArr,process_str);
+				for(var i = indexNo;i < QingJinArr.length ;i++){
+					selectTag.options.add(new Option());
+					 selectTag.options[local].value = QingJinArr[i];
+					 selectTag.options[local].text = QingJinArr[i];
+					 local++;
+					
+			    }
+			} else {
+				//indexNo = ZhiZiArr.indexOf(process_str);
+				indexNo = indexOf(ZhiZiArr,process_str);
+				for(var i = indexNo;i < ZhiZiArr.length ;i++){
+					selectTag.options.add(new Option());
+					selectTag.options[local].value = ZhiZiArr[i];
+				    selectTag.options[local].text = ZhiZiArr[i];
+				    local++;
+			    }
+			}
+		};
+		
+        //转移率分析按钮点击监听事件
+	    function qualityAverageAnalysis(){
 	  		var returnData=0;
 	  		drawHighchart(returnData);
 		};
-	</script>
-	<script>
+		
 		//呈现图表
 		function drawHighchart(returnData){
-			    $('#containerQuality').highcharts({
-			        chart: {
-			            type: 'column'
-			        },
-			        title: {
-			        	style:{
-			        		color:'#64B9C9',
-			        		fontSize:'18px',
-						    fontFamily:'微软雅黑'
-			        	},
-			            text: '青金提取转移率分析'
-			        },
-			        subtitle: {
-			            text: 'Source:www.kanion.com'
-			        },
-			        xAxis: {
-			            categories: [
-			                '1',
-			                '2',
-			                '3',
-			                '4',
-			                '5',
-			                '6',
-			                '7',
-			                '8',
-			                '9',
-			                '10',
-			                '11',
-			                '12',
-			                '13',
-			                '14',
-			                '15',
-			                '16'
-			                
-			            ]
-			        },
-			        yAxis: {
-			            min: 0,
-			            title: {
-			                text: '转移率 (%)'
-			            }
-			        },
-			        
-			        plotOptions: {
-			            column: {
-			                pointPadding: 0,
-			                borderWidth: 0
-			            }
-			        },
-			        legend:{
-			        	layout:'vertical',
-			    		align:'right',
-			    		verticalAlign:'middle'
-			        },
-			        credits:{
-			            enabled:false // 禁用版权信息
-			        },
-			        series: [{
-			            name: '青金提取转移率(%)',
-			            data: [49.9, 71.5, 76.5, 45.3, 75.4, 68.2, 68.2, 66.6, 73.2, 78.5, 76.5, 65.5, 69.5, 78.5, 78.4, 43.5]
+			var minBatchNo_str=$("#minBatchNo option:selected").val();
+			var minIndexNo = indexOf(BatchNo,minBatchNo_str);
+			var maxBatchNo_str=$("#maxBatchNo option:selected").val();
+			var maxIndexNo = indexOf(BatchNo,maxBatchNo_str);
+			var minProcess_str = $("#minProcessName option:selected").val();
+			var maxProcess_str = $("#maxProcessName option:selected").val();
+			var minProcessIndexNo;
+			var maxProcessIndexNo;
+			var mark = 0;
+			if(ProcessChoseId == 0){
+				minProcessIndexNo = indexOf(QingJinArr, minProcess_str);
+				maxProcessIndexNo = indexOf(QingJinArr, maxProcess_str);
+			} else {
+				minProcessIndexNo = indexOf(ZhiZiArr, minProcess_str);
+				maxProcessIndexNo = indexOf(ZhiZiArr, maxProcess_str);
+			}
 
-			        }]
-			    });
+			//居中显示
+			window.scrollTo(0,250);
+		    $('#containerQuality').highcharts({
+		        chart: {
+		            type: 'column',
+		            
+		            events: {
+	                     load: function () {
+	                    	 this.setTitle({text:$("#tables option:selected").val() + "转移率分析"});
+	                    	// var xdata = [];
+	                    	 if(mark == 0){
+	                    		 var no = 0; //minProcessIndexNo maxProcessIndexNo + 1
+	                    		 var l = maxIndexNo + 1 - minIndexNo;
+	                    		 while(this.series.length > l){
+	 								var r=this.series.length;
+	 								this.series[r-1].remove();
+	 							 }
+	                    		 
+	                    		 for (var i = minIndexNo; i <= maxIndexNo; i++) {
+	                    			 
+	                    			 var x, y;
+	                    			 this.series[no].update({
+										    name: BatchNo[i]
+									 });
+	                    			 if(maxProcessIndexNo - minProcessIndexNo == 1){
+	                    				 j = minProcessIndexNo;  
+	                    				 if(ProcessChoseId == 0){
+	 	                    				x = QingJinArr[j + 1];
+	 	                    				if(x =="金银花提取"){
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 70.5;
+	 	                    				} else if(x =="金银花浓缩"){
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 89;
+	 	                    				} else if(x == "醇沉"){
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 72;
+	 	                    				} else if(x == "醇沉回收"){
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 89;
+	 	                    				} else if(x == "萃取"){
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 94;
+	 	                    				} else{
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 89;
+	 	                    				}
+	 	                    			 } else {
+	 	                    				x = ZhiZiArr[j + 1];
+	 	                    				if(x =="提取"){
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 98;
+	 	                    				} else if(x =="浓缩"){
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 98;
+	 	                    				} else if(x == "萃取"){
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 95;
+	 	                    				} else{
+	 	                    					y = Math.round(Math.random()*100)/100.0 + 93;
+	 	                    				}
+	 	                    			 }
+		                    			 //y = Math.round(Math.random()*30 + 50);
+		                                 this.series[no].addPoint([x, y]);
+	                    				 
+	                    			 } else {
+	                    				 for(var j = minProcessIndexNo; j <= maxProcessIndexNo; j++){   
+			                    			  //xdata.push(BatchNo[i]);
+		 	                    			 var k = j + 1;
+		                    				 if(ProcessChoseId == 0){
+		 	                    				if(k > maxProcessIndexNo){
+		 	                    					x = QingJinArr[minProcessIndexNo] + " → " + QingJinArr[maxProcessIndexNo];
+		 	                    				} else{
+		 	                    					x = QingJinArr[k];
+		 	                    				}
+		 	                    				if(x =="金银花提取"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 70.5;
+		 	                    				} else if(x =="金银花浓缩"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 89;
+		 	                    				} else if(x == "醇沉"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 72;
+		 	                    				} else if(x == "醇沉回收"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 89;
+		 	                    				} else if(x == "萃取"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 94;
+		 	                    				} else if(x == "干燥总混"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 89;
+		 	                    				} else{
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 34;
+		 	                    				}
+		 	                    			 } else {
+		 	                    				if(k > maxProcessIndexNo){
+		 	                    					x = ZhiZiArr[minProcessIndexNo] + " → " + ZhiZiArr[maxProcessIndexNo];
+		 	                    				} else{
+		 	                    					x = ZhiZiArr[k];
+		 	                    				}
+		 	                    				if(x =="提取"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 98;
+		 	                    				} else if(x =="浓缩"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 98;
+		 	                    				} else if(x == "萃取"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 95;
+		 	                    				} else if(x == "干燥总混"){
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 93;
+		 	                    				} else{
+		 	                    					y = Math.round(Math.random()*100)/100.0 + 86;
+		 	                    				}
+		 	                    			 }
+			                    			 //y = Math.round(Math.random()*30 + 50);
+			                                 this.series[no].addPoint([x, y]);
+						                  }
+	                    			 }
+	                    			
+		                             no++;
+	                    		 }
+		                    	 mark = 1;
+		                    	// xAxis.categories = xdata;
+	                    	 }
+	                     }
+	                 }
+		            
+		        },
+		        title: {
+		        	margin:40,
+		        	style:{
+		        		color:'#64B9C9',
+		        		fontSize:'18px',
+					    fontFamily:'微软雅黑'
+		        	},
+		           // text: '青金提取转移率分析'
+		        },
+		        legend:{
+		        	layout:'vertical',
+		    		align:'right',
+		    		verticalAlign:'middle'
+		        },
+		        xAxis: {
+		        	categories:[],
+		        	title: {
+		                text: '生产工序'
+		            }
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: '转移率 (%)'
+		            }
+		        },
+		        
+		        plotOptions: {
+		            column: {
+		                pointPadding: 0,
+		                borderWidth: 0
+		            }
+		        },
+		        credits:{
+		            enabled:false // 禁用版权信息
+		        },
+		        series: [{},{},{},{},{},{},{},{},{},{},{},{},{},
+		                 {},
+		                 {},
+		                 {},
+		                 {},
+		                 {},
+		                 {},
+		                 {},
+		                 {},
+		                 {}]
+	        });
+		    
 		};
+		
+		//获取数组中元素索引
+		function indexOf(arr,x){
+
+			if(!Array.indexOf) 
+			{ 
+			                    
+		        for(var i=0; i<arr.length; i++) 
+		        { 
+		            if(arr[i]==x) 
+		            { 
+		                return i; 
+		            } 
+		        } 
+		        return -1; 
+			   
+			} else {
+				return arr.indexOf(x);
+			}
+			
+		};
+		
+		
 	</script>
+
 </html>

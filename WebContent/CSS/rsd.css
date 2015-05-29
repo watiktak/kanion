@@ -105,9 +105,11 @@ td.zs_name span{
 	letter-spacing:2px;
 }
 select.zs_ser{
-	width:45px;
+	width:68px;
 }
-
+select.zs_ser option{
+	font-size:10px;
+}
 /*计算结果显示的div*/
 div.zs_cal{
 	float:right;
@@ -153,14 +155,18 @@ span.zs_svalue{
 	font-weight:bold;
 	
 }
+.tablesRsd{
+	height:auto;
+}
 /*显示中间体值的table样式*/
 .zs_midValue{
-    width:100%;
+	
+    width:80%;
     margin:20px auto;
 }
 .zs_mid{
-    margin:0 auto;
-    /*border:1px solid black;*/
+    /*margin:0 auto;*/
+    
     color:black;
     width:100%;
     border-collapse:separate;

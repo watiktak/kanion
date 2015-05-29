@@ -44,13 +44,13 @@ import com.kanion.www.model.analysis.trend.TypeName;
 public class TrendAnalysisServiceImpl implements TrendAnalysisService{
 	static Logger logger=Logger.getLogger(TrendAnalysisServiceImpl.class.getName());
 	private TrendAnalysisSelect mTrendAnalysisSelect=TrendAnalysisSelect.INSTANCE;
-	private TrendAnalysisSelectMapper mTrendAnalysisSelectMapper;
-	
-	@Autowired
-	public void setmTrendAnalysisSelectMapper(
-			TrendAnalysisSelectMapper mTrendAnalysisSelectMapper) {
-		this.mTrendAnalysisSelectMapper = mTrendAnalysisSelectMapper;
-	}
+//	private TrendAnalysisSelectMapper mTrendAnalysisSelectMapper;
+//	
+//	@Autowired
+//	public void setmTrendAnalysisSelectMapper(
+//			TrendAnalysisSelectMapper mTrendAnalysisSelectMapper) {
+//		this.mTrendAnalysisSelectMapper = mTrendAnalysisSelectMapper;
+//	}
 
 
 	/* (获取数据库中所有品名)
@@ -240,6 +240,8 @@ public class TrendAnalysisServiceImpl implements TrendAnalysisService{
 				map.put(p,targetArgument);
 			}
 		}
+		
+		
 		//曲线型
 		if(1==argumentType){
 			return getSpline(targetTypeName,targetProcess,map);
@@ -250,7 +252,7 @@ public class TrendAnalysisServiceImpl implements TrendAnalysisService{
 
 
 	/**
-	* @Title: getSpline
+	* @Title: getSpline未完成
 	* @Description: 构建时间时序表
 	* @param @param targetTypeName
 	* @param @param targetProcess
@@ -264,6 +266,7 @@ public class TrendAnalysisServiceImpl implements TrendAnalysisService{
 		if(null==targetTypeName || null==targetProcess || null== map)
 			return null;
 		Spline ret=new Spline();
+		String yString=null;
 		//设置标题
 		StringBuilder sb=new StringBuilder();
 		sb.append(targetTypeName.getName()+targetProcess.getName()+"(");
@@ -274,6 +277,7 @@ public class TrendAnalysisServiceImpl implements TrendAnalysisService{
 			if(isFirst){
 				isFirst=false;
 				argString=entry.getValue().getName();
+				yString=argString;
 				sb.append(entry.getKey().getName());
 			}else
 				sb.append(","+entry.getKey().getName());
@@ -282,10 +286,24 @@ public class TrendAnalysisServiceImpl implements TrendAnalysisService{
 		sb.append(")的"+argString+"趋势");
 		ret.getTitle().setText(sb.toString());
 		
+		//设置Y轴名字
+		ret.getyAxis().getTitle().setText(yString);
+		
+		
 		
 		
 		
 		return ret;
+	}
+
+
+	@Override
+	public Spline getDemoChart(String typeName, String process,
+			String[] phases, String argument) {
+
+		
+		
+		return null;
 	}
 	
 	

@@ -69,4 +69,5 @@ function hideHighcharts(container){
 function checkSection(min,max){
 	if(parseInt(min)>=parseInt(max)) return false;
 	else return true;
-}
+};
+

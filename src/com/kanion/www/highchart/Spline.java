@@ -12,9 +12,11 @@
 */
 package com.kanion.www.highchart;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -143,7 +145,7 @@ public class Spline {
 	}
 	
 	//Y轴属性
-	static class YAxis{
+	public static class YAxis{
 		//Y轴标题
 		private Title title=new Title();
 		private int min=0;
@@ -237,17 +239,17 @@ public class Spline {
 		//数据的含义，显示在图例上
 		private String name="";
 		//数据值数组
-		private List<Object> data=new ArrayList<Object>();
+		private List<Map<BigDecimal,Number>> data=new ArrayList<Map<BigDecimal,Number>>();
 		public String getName() {
 			return name;
 		}
 		public void setName(String name) {
 			this.name = name;
 		}
-		public List<Object> getData() {
+		public List<Map<BigDecimal, Number>> getData() {
 			return data;
 		}
-		public void setData(List<Object> data) {
+		public void setData(List<Map<BigDecimal, Number>> data) {
 			this.data = data;
 		}
 		

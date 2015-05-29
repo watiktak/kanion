@@ -81,7 +81,7 @@ public interface TrendAnalysisService {
 	public List<String> getArguments(String typeName,String process,String[] phase);
 
 	/**
-	* @Title: getChart
+	* @Title: 根据相关参数获取图表，实际生产模式
 	* @Description: TODO
 	* @param @param typeName
 	* @param @param process
@@ -93,5 +93,16 @@ public interface TrendAnalysisService {
 	*/
 	public Spline getChart(String typeName, String process, String[] phases,
 			String argument);
+
+	/**
+	 * 根据相关参数获取demo图表，演示模式
+	 * @param typeName
+	 * @param process
+	 * @param phases
+	 * @param argument
+	 * @return
+	 */
+	public Spline getDemoChart(String typeName, String process,
+			String[] phases, String argument);
 
 }
