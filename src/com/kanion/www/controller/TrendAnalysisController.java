@@ -42,6 +42,8 @@ import com.kanion.www.util.ProjectProperties;
 public class TrendAnalysisController {
 	
 	static Logger logger=Logger.getLogger(TrendAnalysisController.class.getName());
+	
+	
 	@Autowired
 	private TrendAnalysisService mTrendAnalysisService;
 	/**

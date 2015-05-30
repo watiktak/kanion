@@ -12,7 +12,7 @@ var option = {
 			//height:'500'
 		},
 		title:{
-			text:'中间体趋势图'
+			text:'热毒宁注射液金青提取物'
 		},
 		credits:{
 				href:'www.xxx.org',
@@ -39,8 +39,8 @@ var option = {
 			categories:['Z131101','Z131102','Z131103','Z131104','Z131105','Z131106',
 			            'Z131107','Z131108','Z131109','Z131110','Z131111','Z131112',
 			            'Z131113','Z131114','Z131115','Z131116','Z131117','Z131118',
-			            'Z131119','Z131119','Z131120','Z131121','Z131122','Z131123',
-			            'Z131124','Z131125']
+			            'Z131119','Z131120','Z131121','Z131122','Z131123','Z131124',
+			            'Z131125','Z131126']
 		},
 		yAxis:{
 			title:{
@@ -76,23 +76,27 @@ $(document).ready(function(){
 	var isCreated = false;
 	//利用jquery的事件绑定机制
 	$(document).on('click','#zs_midButton',function() {
+		var pm = $(".tablesA").find("option:selected").text();
 		$('#zs_value').html(rsdVal + "%");
 		if(!isCreated){
 			createTable(jsonData);
 			isCreated = true;
 		}
-		
+		option.title.text = pm;
+		zhongjianti = $(".zs_projA").find("option:selected").text();
+		option.yAxis.title.text = zhongjianti;
+		option.series[0].name = pm;
 		chart1 = new Highcharts.Chart(option);
-		console.log(option.series.data);
-		console.log(option.series.name);
+		
 	});
 });
 //动态创建显示中间值的表格
 function createTable(rsdObject) {
 	var length = rsdObject.length;
 	var rowNum = Math.ceil(length/column);
-	pinming = rsdObject[0].pinming;
-	zhongjianti = rsdObject[0].zhongjianti;
+	//pinming = rsdObject[0].pinming;
+	//zhongjianti = rsdObject[0].zhongjianti;
+	
 	$('.zs_mid').append("<caption>各批号中间体(Kg)</caption>");
 	for(var i = 0;i < rowNum;i++) {//之前犯了一个愚蠢的不仔细的问题，把单引号写在pihao后面了，改了很久
 		$('.zs_mid').append("<tr class='pihao"+ i +"'></tr>");
@@ -105,9 +109,9 @@ function createTable(rsdObject) {
 		$('.zs_mid .pihaoval' + index).append("<td>" + item.pihaoValue + "</td>");
 	});
 	//console.log(rsdData);
-	option.series[0].name = pinming;
+	//option.series[0].name = pinming;
 	option.series[0].data = rsdData;
-	option.yAxis.title.text = zhongjianti;
+	
 	
 }
 

@@ -36,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<dd>
 								<dd><i style=" text-align:center" class="w100 dis-ib">品名</i>
 									<select id="tables" class="defaultOption" onchange="NameChange(this.id)">
-									    <option value="热毒宁注射液金青提取物">热毒宁注射液青金提取物</option>
+									    <option value="热毒宁注射液金青提取物">热毒宁注射液金青提取物</option>
 										<option value="热毒宁注射液栀子提取物">热毒宁注射液栀子提取物</option>
 									</select>
 								</dd>
@@ -50,7 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								</dd>
 								<dd><i style="text-align:center" class="w100 dis-ib">中间体</i>
 									<select id="minProcessName" name="minProcessName" class="defaultOption">
-									    <option value="volvo">金银花提取</option>
+									    <option value="volvo">金银花提取液</option>
 										<option value="saab">第二次回流提取</option>
 										<option value="fiat">单效浓缩</option>
 										<option value="audi">刮板浓缩</option>
@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div >
 						<table class="altrowstable" id="alternatecolor" style="display:none"> 
 						<tr> 
-						    <td>评估项目(Item)</td><td>青金转移率分析</td>
+						    <td>评估项目(Item)</td><td>金银花提取液正态分析</td>
 						    <td>单位(Unit)</td><td>Kg</td>
 						    <td>规格下限(LSL)</td><td>575</td>  
 						</tr> 
@@ -197,8 +197,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script language="JavaScript" type="text/javascript">
 		//转移率分析按钮点击后的初始化：显示数据。
 		//定义批次数组
-		var BatchNo = new Array("z150501","z150502","z150503","z150504","z150505","z150506",
-				"z150507","z150508","z150509","z150510","z150511","z150512","z150513",
+		var BatchNo = new Array("z140501","z140502","z140503","z140504","z140505","z140506",
+				"z140507","z140508","z150509","z150510","z150511","z150512","z150513",
 				"z150514","z150515","z150516","z150517","z150518","z150519","z150520");
 		
 var ProcessChoseId = 0; //标注品名选择种类，0--金青提取， 1--栀子提取

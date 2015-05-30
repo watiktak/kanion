@@ -27,6 +27,7 @@ public class Argument implements MokeTable{
 	private String colName;
 	private Integer type;
 	
+	
 	public Argument() {
 		
 	}

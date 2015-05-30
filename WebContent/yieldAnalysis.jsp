@@ -34,8 +34,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</dt>
 							<dd><i class="w100 dis-ib">品名</i>
 								<select class="defaultOption">
-									<option>金青</option>
-									<option>栀子</option>
+									<option>热毒宁注射液金青提取物</option>
+									<option>热毒宁注射液栀子提取物</option>
 									<option></option>								
 								</select>
 							</dd>
