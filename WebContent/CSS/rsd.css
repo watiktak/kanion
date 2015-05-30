@@ -43,7 +43,7 @@ fieldset.zs{
 	height:32px;
 	overflow:hidden;
 	display:inline-block;
-	background:url(../images/icons.png) no-repeat -100%;
+	background:url(../icons/icons.png) no-repeat -100%;
 	margin:0 0.25em;
 	line-height:0 !important;
 	text-align:left;
@@ -101,15 +101,20 @@ td.zs_name{
 
 
 }
+
 td.zs_name span{
 	letter-spacing:2px;
 }
+select{
+	width:160px;
+}
 select.zs_ser{
-	width:68px;
+	width:70px;
 }
 select.zs_ser option{
 	font-size:10px;
 }
+
 /*计算结果显示的div*/
 div.zs_cal{
 	float:right;
@@ -156,7 +161,8 @@ span.zs_svalue{
 	
 }
 .tablesRsd{
-	height:auto;
+	/*min-width:700px;
+	max-width:800px;*/
 }
 /*显示中间体值的table样式*/
 .zs_midValue{

@@ -10,12 +10,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>康缘PKS统计挖掘系统</title>
+		<link rel="stylesheet" type="text/css" href="CSS/global.css">
 		<link rel="stylesheet" href="CSS/global_zs.css" type="text/css">
 		<link rel="stylesheet" href="CSS/rsd.css" type="text/css" >
-		<link rel="stylesheet" href="CSS/curvefit.css" type="text/css">
-		<link rel="stylesheet" type="text/css" href="CSS/global.css">
 		<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
 		<script src="js/highcharts.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/exporting.js"></script>
 		<script src="js/global.js" type="text/javascript"></script>
 		<script src="js/rsd.js" type="text/javascript"></script>		
 </head>
@@ -36,23 +36,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<legend>请选择 A:</legend>
 										<table>
 											<tr>
-												<td class="zs_name"><span>中间体:</span></td>
-												<td><select name="proj" id="zs_proj">
-													<option value="" selected>浓缩浸膏重量</option>
-													<option value="">干膏</option>
-												</select></td>
-											</tr>
-											<tr>
 												<td class="zs_name"><span>品名:</span></td>
-												<td><select name="tables" id="tables">
-													<option value="" >金青</option>
-													<option value="" selected>栀子</option>
+												<td><select name="tables" id="tables" class="tablesA">
+													<option value="" >热毒宁注射液金青提取物</option>
+													<option value="" selected>热毒宁注射液栀子提取物</option>
 												</select></td>
 												<!-- <td class="zs_name"><span>中间体:</span></td>-->
 												<!--<td><select name="midSub" id="midSub" ></select></td>-->
 												</tr>
 												
 											<tr>
+											
+											<tr>
+												<td class="zs_name"><span>中间体:</span></td>
+												<td><select name="proj" id="zs_proj" class="zs_projA">
+													<option value="" selected>金青回收浸膏重量</option>
+													<option value="">干膏</option>
+												</select></td>
+											</tr>
+											
 												<td class="zs_name"><span>项目:</span></td>
 												<td><select name="proj" id="zs_proj">
 													<option value="" selected>重量</option>
@@ -62,6 +64,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											
 											<tr><td class="zs_name"><span>批次:</span></td>
 												<td><select  id="minBatchNo" name="minBatchNo" class="zs_ser">
+													<option value="20">Z131125</option>
+													<option value="20">Z131124</option>
+													<option value="20">Z131123</option>
+													<option value="20">Z131122</option>
+													<option value="20">Z131121</option>
 													<option value="20">Z131120</option>
 													<option value="19">Z131119</option>
 													<option value="18">Z131118</option>
@@ -84,6 +91,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<option value="1" selected>Z131101</option>
 												</select>
 												<select name="maxBatchNo" id="maxBatchNo" class="zs_ser">
+													<option value="20">Z131125</option>
+													<option value="20">Z131124</option>
+													<option value="20">Z131123</option>
+													<option value="20">Z131122</option>
+													<option value="20">Z131121</option>
 													<option value="20">Z131120</option>
 													<option value="19">Z131119</option>
 													<option value="18">Z131118</option>
@@ -112,18 +124,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<fieldset class="zs zs_rsd_fieldset">
 										<legend>请选择 B：</legend>
 										<table>
-											<tr>
-												<td class="zs_name"><span>中间体:</span></td>
-												<td><select name="proj" id="zs_proj">
-													<option value="" selected>浓缩浸膏重量</option>
-													<option value="">干膏</option>
-												</select></td>
-											</tr>
+											
 											<tr>
 												<td class="zs_name"><span>品名:</span></td>
 												<td><select name="tables" id="tables">
-													<option value="">栀子</option>
-													<option value="">金青</option>
+													<option value="">热毒宁注射液栀子提取物</option>
+													<option value="">热毒宁注射液金青提取物</option>
+												</select></td>
+											</tr>
+											<tr>
+												<td class="zs_name"><span>中间体:</span></td>
+												<td><select name="proj" id="zs_proj">
+													<option value="" selected>金青回收浸膏重量</option>
+													<option value="">干膏</option>
 												</select></td>
 											</tr>
 											<tr>

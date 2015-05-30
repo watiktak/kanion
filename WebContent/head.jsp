@@ -72,37 +72,37 @@ String basePath2 = request.getScheme()+"://"+request.getServerName()+":"+request
 		<div class="toolbar" id="dataMining" style="display: none">
 			<ul class="tools" >
 
-				<li class="tool">
+				<li class="tool" id="">
 					<button  id="analysisBtn" title="相关性分析(单)">
 						<i class="i i8"></i>
 					</button>	
 				</li>
 				
-				<li class="tool">
+				<li class="tool" id="">
 					<button  id="analysisBtn" title="相关性分析(多)">
 						<i class="i i9"></i>
 					</button>	
 				</li>
 				
-				<li class="tool">
+				<li class="tool" id="">
 					<button  id="analysisBtn" title="预测分析">
 						<i class="i i10"></i>
 					</button>	
 				</li>
 				
-				<li class="tool">
+				<li class="tool" id="">
 					<button  id="stablityBtn" title="质量均一性">
 						<i class="i i11"></i>
 					</button>	
 				</li>
 				
-				<li class="tool">
+				<li class="tool" id="">
 					<button  id="q_statistics" title="Q统计量分析">
 						<i class="i i12"></i>
 					</button>	
 				</li>
 				
-				<li class="tool">
+				<li class="tool" id="">
 					<button  id="t_statistics" title="T统计量分析">
 						<i class="i i13"></i>
 					</button>	
@@ -133,7 +133,12 @@ function loadHead(pageName){
 $(".tool").click(function(){
 	var basePath=$("#basePath2").val();
 	var id = $(this).attr("id");
-	if(id=="trendAnalysis"){
+	if(id==""){
+		alert("此模块正在开发中...")
+		return;
+	}
+		
+	if(id=="trendAnalysis" || id=="yieldAnalysis"){
 		location.href = basePath + id + "/init.htm";
 	}else{
 		location.href = basePath + id + ".jsp";

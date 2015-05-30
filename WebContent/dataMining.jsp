@@ -28,27 +28,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<!-- *****************************************************导航说明  ***************************************************** -->
 					<p class="title"><b>欢迎使用数据挖掘模块，以下是《数据挖掘模块使用说明》，请在第一次使用时详细阅读，谢谢！本模块尚处于开发中...</b></p>
 					<ul>
-						<li class="navi_info">
+						<li class="navi_info" id="">
 							<button>
 								<i class="i i8"></i>
 							</button>
-							相关性分析工具（单工段）:以各工段产出中间体某个项目为目标值，分析其与本工序内各工艺参数之间的项目性，并对各个参数进行排序。
+							相关性分析工具（单工段）:以各工段产出中间体某个项目为目标值，分析其与本工序内各工艺参数之间的相关性。
 						</li>
 						
-						<li class="navi_info">
+						<li class="navi_info" id="">
 							<button>
 								<i class="i i9"></i>
 							</button>
-							相关性分析工具（多工段）:以各工段产出中间体某个项目为目标值，分析其与选取工段内各工艺参数
+							相关性分析工具（多工段）:分析多个工段中间体项目之间的相关性。
 						</li>
 						
 						<li class="navi_info">
 							<button>
 								<i class="i i10"></i>
 							</button>
-							<p>预测分析:以工段内生产参数值为输入数据，以中间体各项目（重量、含量、体积、密度等）为目标值进行数据拟合，</p>
-							<p>得出一可接受误差范围内模型。以此模型，将生产参数输入，则可预测出目标值（中间体各项目）。方法不限于BP</p>
-							<p>神经网络模型等方法。</p>	
+							<p>预测分析:使用数据挖掘算法训练可接受误差范围内的模型，以工段内生产参数值为输入数据，预测中间体各项目（重量、含量、体积、密度等）的值。</p>
+						</li>
+						
+						<li class="navi_info">
+							<button>
+								<i class="i i11"></i>
+							</button>	
+							<p>质量均一性分析：分析生产工艺参数和各中间体项目，得出质量均一性指标</p>
+						</li>
+				
+						<li class="navi_info">
+							<button>
+								<i class="i i12"></i>
+							</button>	
+							<p>Q统计量分析</p>
+						</li>
+				
+						<li class="navi_info">
+							<button>
+								<i class="i i13"></i>
+							</button>	
+							<p>T统计量分析</p>
 						</li>
 					</ul>
 				</div>
@@ -65,6 +84,8 @@ $(function(){
 
 //获取image src路径
 $(".navi_info").click(function(){
+	alert("此模块尚在开发中...")
+	/*
 	var basePath=$("#basePath2").val();
 	var id = $(this).attr("id");
 	if(id=="trendAnalysis"){
@@ -72,6 +93,7 @@ $(".navi_info").click(function(){
 	}else{
 		location.href = basePath + id + ".jsp";
 	}
+	*/
 });		
 </script>
 
