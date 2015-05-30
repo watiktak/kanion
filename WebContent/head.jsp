@@ -138,7 +138,7 @@ $(".tool").click(function(){
 		return;
 	}
 		
-	if(id=="trendAnalysis"){
+	if(id=="trendAnalysis" || id=="yieldAnalysis"){
 		location.href = basePath + id + "/init.htm";
 	}else{
 		location.href = basePath + id + ".jsp";

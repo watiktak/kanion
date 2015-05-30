@@ -10,12 +10,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>康缘PKS统计挖掘系统</title>
-<link rel="stylesheet" type="text/css" href="CSS/global.css">
-	<script type="text/javascript" src="js/jquery-1.7.1.js"></script>
-	<script type="text/javascript" src="js/jquery-extend.js"></script>
-	<script type="text/javascript" src="js/highcharts.js"></script>
-	<script type="text/javascript" src="js/exporting.js"></script>
-	<script type="text/javascript" src="js/util.js"></script>
+<link rel="stylesheet" type="text/css" href="../CSS/global.css">
+	<script type="text/javascript" src="../js/jquery-1.7.1.js"></script>
+	<script type="text/javascript" src="../js/jquery-extend.js"></script>
+	<script type="text/javascript" src="../js/highcharts.js"></script>
+	<script type="text/javascript" src="../js/exporting.js"></script>
+	<script type="text/javascript" src="../js/util.js"></script>
 </head>
 <body>
 	<input id="pageName" value="dataAnalysis" type="hidden"/>
@@ -33,11 +33,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<i class="i iB i2"></i>
 							</dt>
 							<dd><i class="w100 dis-ib">品名</i>
-								<select class="defaultOption">
-									<option>热毒宁注射液金青提取物</option>
-									<option>热毒宁注射液栀子提取物</option>
-									<option></option>								
-								</select>
+								<select class="defaultOption" id="typeNames">
+									<c:forEach items="${typeNames}" var="typeName">
+										<option>${typeName}</option>
+									</c:forEach>
+								</select>							
 							</dd>
 							<dd>							
 								<i class="w100 dis-ib">批号</i>
@@ -90,20 +90,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							
 							<dd>								
 								<i class="w100 dis-ib">中间体</i>
-								<select class="defaultOption">
-									<option>金银花提取液</option>																	
+								<select class="defaultOption" id="intermidates">
+																									
 								</select>
+								<button type="button" id="yieldAnalysisBtn" class="orange-btn w200 mt15 floatRight" >收率分析</button>
 							</dd>
-							
+							<!-- 
 							<dd>	
 								<i class="w100 dis-ib">项目</i>
-								<select class="defaultOption">
+								<select class="defaultOption" id="items">
 									<option>体积</option>
 									<option>温度</option>
 									<option>重量</option>
 								</select>							
-								<button type="button" id="yieldAnalysisBtn" class="orange-btn w200 mt15 floatRight" >收率分析</button>
-							</dd>							
+							</dd>		
+							 -->					
 						</dl>						
 					</div>	
 	
@@ -155,7 +156,7 @@ var option = {
 	        type: 'column'
 	        },
 	        title: {
-	            text: '收率分析'
+	            text: '金银花提取液收率分析'
 	        },
 	        subtitle: {
 	            text: ''
@@ -211,5 +212,23 @@ function avgYield() {
 	}
 }
 
+
+/**
+ * 点击品名显示中间体
+ */
+$("#typeNames").click(function(){
+	var url=basePath+"yieldAnalysis/getIntermidates.json";
+	var typeName=$("#typeNames").val();
+	var data={};
+	data["typeName"]=typeName;
+	var returnData=getJSON(url,data);
+	var intermidates=returnData.intermidates;
+	$("#intermidates").empty();
+	$.each(intermidates,function(){
+		$("#intermidates").append("<option>"+this+"</option>");
+	});
+	
+	
+});
 </script>  	
 </html>

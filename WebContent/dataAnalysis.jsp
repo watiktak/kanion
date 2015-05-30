@@ -93,7 +93,7 @@ $(function(){
 $(".navi_info").click(function(){
 	var basePath=$("#basePath2").val();
 	var id = $(this).attr("id");
-	if(id=="trendAnalysis"){
+	if(id=="trendAnalysis" || id=="yieldAnalysis"){
 		location.href = basePath + id + "/init.htm";
 	}else{
 		location.href = basePath + id + ".jsp";
