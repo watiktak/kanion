@@ -34,6 +34,7 @@ var option = {
 	        },
 	        plotOptions: {
 	            series: {
+	            	colorByPoint:true,
 	            	pointWidth: 30,
 	                pointPadding: 0.2,
 	                borderWidth: 0
@@ -45,6 +46,9 @@ var option = {
 	            }
 	            }
 	        },
+	        colors:['#0208fb','#484cfb','#797cf9','#f77893','#fa6887','#fa6887','#f95a7c','#fa3962','#f7093b'
+	                
+	                ],
 	        series: [{
 	            name: '单工段相关性分析',
 	            data:[]

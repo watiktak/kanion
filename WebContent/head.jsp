@@ -72,13 +72,13 @@ String basePath2 = request.getScheme()+"://"+request.getServerName()+":"+request
 		<div class="toolbar" id="dataMining" style="display: none">
 			<ul class="tools" >
 
-				<li class="tool" id="">
+				<li class="tool" id="correlationSingleAnalysis">
 					<button  id="analysisBtn" title="相关性分析(单)">
 						<i class="i i8"></i>
 					</button>	
 				</li>
 				
-				<li class="tool" id="">
+				<li class="tool" id="correlationMultiAnalysis">
 					<button  id="analysisBtn" title="相关性分析(多)">
 						<i class="i i9"></i>
 					</button>	
