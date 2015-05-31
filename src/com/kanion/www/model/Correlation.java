@@ -65,7 +65,7 @@ public class Correlation {
         Double[] values={-0.22,-0.17,-0.05,0.05,0.07,0.07,0.08,0.13,0.55};
         String information="金银花第一批次提取浓缩单工段的相关性分析，与目标属性出膏比重相关性较大的参数为：ph值，药液量和升温时间";
         String title="金银花第一批次提取浓缩相关性分析";
-        String target_attribute="出膏比重";
+        String target_attribute="浸膏量";
         hm.put("information", information);
         hm.put("key", keys);
         hm.put("values", values);
@@ -80,9 +80,9 @@ public class Correlation {
 //		hm.put("金青回收浸膏重量",Double.parseDouble("-0.20"));
 //      hm.put("第二批次浸膏量",Double.parseDouble("0.11"));
         
-        String[] keys={"第一批次浸膏量","金青回收浸膏重量","第二批次浸膏量"};
+        String[] keys={"第一批次浸膏量","金青醇沉浸膏重量","第二批次浸膏量"};
         Double[] values={-0.27,-0.20,0.11};
-        String information="金银花多工段的相关性分析，总共4个工段，与目标属性干膏相关性较大的参数为：第一批次浸膏量，金青回收浸膏重量";
+        String information="金银花多工段的相关性分析，总共4个工段，与目标属性干膏相关性较大的参数为：第一批次浸膏量，金青醇沉浸膏重量";
         String title="金银花多工段相关性分析";
         String target_attribute="干膏";
         hm.put("information", information);
@@ -97,9 +97,9 @@ public class Correlation {
 		HashMap hm=new HashMap();
 		hm.put("第一批次浸膏量",Double.parseDouble("-0.16"));
         hm.put("第二批次浸膏量",Double.parseDouble("-0.45"));
-        hm.put("金青回收浸膏重量",Double.parseDouble("-0.15"));
+        hm.put("金青醇沉浸膏重量",Double.parseDouble("-0.15"));
         
-        String[] keys={"第二批次浸膏量","第一批次浸膏量","金青回收浸膏重量"};
+        String[] keys={"第二批次浸膏量","第一批次浸膏量","金青醇沉浸膏重量"};
         Double[] values={-0.45,-0.16,-0.15};
         String information="金银花多工段的相关性分析，总共4个工段，与目标属性含量相关性较大的参数为：第二批次浸膏量";
         String title="金银花多工段相关性分析";

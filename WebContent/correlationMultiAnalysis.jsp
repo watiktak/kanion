@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td class="zs_name"><span>品名:</span></td>
 												<td><select name="tables" id="tables">
 													<option value="" >热毒宁注射液金青提取物</option>
-													<option value="" selected>热毒宁注射液栀子提取物</option>
+													<option value="" >热毒宁注射液栀子提取物</option>
 												</select></td>
 												<!-- <td class="zs_name"><span>中间体:</span></td>-->
 												<!--<td><select name="midSub" id="midSub" ></select></td>-->
@@ -131,6 +131,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			    </div>
 			    
 			</div> 
+			<input type="hidden" value="<%=basePath%>" id=basePath>
 		</div>
 	</div>
 	<input type="hidden" value="<%=basePath%>" id=basePath>	
@@ -140,5 +141,10 @@ $(function(){
 	var pageName=$("#pageName").val();
 	loadHead(pageName);
 });
+
+
+
+
+
 </script>
 </html>

@@ -47,19 +47,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td class="zs_name"><span>品名:</span></td>
 												<td><select name="tables" id="tables">
 													<option value="" >热毒宁注射液金青提取物</option>
-													<option value="" selected>热毒宁注射液栀子提取物</option>
+													<option value="" >热毒宁注射液栀子提取物</option>
 												</select></td>
 												<!-- <td class="zs_name"><span>中间体:</span></td>-->
 												<!--<td><select name="midSub" id="midSub" ></select></td>-->
 												</tr>
 												
-											<!--<tr>
-												<td class="zs_name"><span>项目:</span></td>
+											<tr>
+												<td class="zs_name"><span>工段:</span></td>
 												<td><select name="proj" id="zs_proj">
-													<option value="" selected>重量</option>
-													<option value="" selected>体积</option>
+													<option value="" >金银花第一批次提取浓缩</option>
+													<option value="" >金银花第二批次提取浓缩</option>
+													<option value="" >金青醇沉</option>
+													<option value="" >金青回收</option>
 												</select></td>
-											</tr>  -->
+											</tr>  
 											
 											<tr><td class="zs_name"><span>批次:</span></td>
 												<td><select  id="minBatchNo" name="minBatchNo" class="zs_ser">

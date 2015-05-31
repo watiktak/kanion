@@ -42,28 +42,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							相关性分析工具（多工段）:分析多个工段中间体项目之间的相关性。
 						</li>
 						
-						<li class="navi_info">
+						<li class="navi_info" id="">
 							<button>
 								<i class="i i10"></i>
 							</button>
 							<p>预测分析:使用数据挖掘算法训练可接受误差范围内的模型，以工段内生产参数值为输入数据，预测中间体各项目（重量、含量、体积、密度等）的值。</p>
 						</li>
 						
-						<li class="navi_info">
+						<li class="navi_info" id="">
 							<button>
 								<i class="i i11"></i>
 							</button>	
 							<p>质量均一性分析：分析生产工艺参数和各中间体项目，得出质量均一性指标</p>
 						</li>
 				
-						<li class="navi_info">
+						<li class="navi_info" id="">
 							<button>
 								<i class="i i12"></i>
 							</button>	
 							<p>Q统计量分析</p>
 						</li>
 				
-						<li class="navi_info">
+						<li class="navi_info" id="">
 							<button>
 								<i class="i i13"></i>
 							</button>	
@@ -84,16 +84,18 @@ $(function(){
 
 //获取image src路径
 $(".navi_info").click(function(){
-	alert("此模块尚在开发中...")
-	/*
 	var basePath=$("#basePath2").val();
 	var id = $(this).attr("id");
-	if(id=="trendAnalysis"){
+	if(id==""){
+		alert("此模块正在开发中...")
+		return;
+	}
+		
+	if(id=="trendAnalysis" || id=="yieldAnalysis"){
 		location.href = basePath + id + "/init.htm";
 	}else{
 		location.href = basePath + id + ".jsp";
 	}
-	*/
 });		
 </script>
 
