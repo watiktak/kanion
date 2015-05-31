@@ -321,9 +321,11 @@ function drawChart() {
 	var rowNum;
 	//上传文件,获得数据---------------------------------------------
 	$('#uploadForm').submit(function(){
+		var url = $("#basePath").val()+"curvefit/addAction.json";
 		$(this).ajaxSubmit({
 			type:'post',
-			url:'http://localhost:8080/kanion/curvefit/addAction.json',
+			//url:'http://localhost:8080/kanion/curvefit/addAction.json',
+			url:url,
 			dataType:'text',//注意这里的格式和前台定义的格式，不然会出错，success函数不执行
 			success:function(fileName){
 				console.log("fileName:"+fileName);

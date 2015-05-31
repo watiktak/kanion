@@ -28,14 +28,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<!-- *****************************************************导航说明  ***************************************************** -->
 					<p class="title"><b>欢迎使用数据挖掘模块，以下是《数据挖掘模块使用说明》，请在第一次使用时详细阅读，谢谢！本模块尚处于开发中...</b></p>
 					<ul>
-						<li class="navi_info" id="">
+						<li class="navi_info" id="correlationSingleAnalysis">
 							<button>
 								<i class="i i8"></i>
 							</button>
 							相关性分析工具（单工段）:以各工段产出中间体某个项目为目标值，分析其与本工序内各工艺参数之间的相关性。
 						</li>
 						
-						<li class="navi_info" id="">
+						<li class="navi_info" id="correlationMultiAnalysis">
 							<button>
 								<i class="i i9"></i>
 							</button>

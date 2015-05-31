@@ -96,11 +96,12 @@ var  option2 = {
 	        }]
 }
 $(document).ready(function() {
-	
+	var url = $("#basePath").val()+"correlation/corrAnalysis.json";
 	$.ajax({
 		async:false,
 		type:'get',
-		url:'http://localhost:8080/kanion/correlation/corrAnalysis.json',
+		//url:'http://localhost:8080/kanion/correlation/corrAnalysis.json',
+		url:url,
 		dataType:'json',
 		success:function(data){
 			corsing = data;

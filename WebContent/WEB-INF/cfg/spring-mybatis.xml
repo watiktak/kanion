@@ -22,8 +22,8 @@
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
-		<property name="username" value="kangyuan" />
-		<property name="password" value="ccntgrid" />
+		<property name="username" value="pksgy" />
+		<property name="password" value="123456" />
 	</bean>
 
 	<!-- 初始化连接池大小 -->

@@ -36,13 +36,12 @@ var option = {
 	            series: {
 	            	pointWidth: 30,
 	                pointPadding: 0.2,
-	                borderWidth: 0
-	            ,
-	            dataLabels:{//将值显示在柱状图的上面
-	            	enabled:true,
-	            	crop:false,
-	            	overflow:'none'
-	            }
+	                borderWidth: 0,
+	                dataLabels:{//将值显示在柱状图的上面
+	                	enabled:true,
+	                	crop:false,
+	                	overflow:'none'
+	                }
 	            }
 	        },
 	        series: [{
@@ -52,11 +51,12 @@ var option = {
 }
 $(document).ready(function() {
 	
-	
+	var url = $("#basePath").val()+"correlation/corrAnalysis.json";
 	$.ajax({
 		async:false,
 		type:'get',
-		url:'http://localhost:8080/kanion/correlation/corrAnalysis.json',
+		//url:'http://localhost:8080/kanion/correlation/corrAnalysis.json',
+		url:url,
 		dataType:'json',
 		success:function(data){
 			corsing = data;
@@ -71,8 +71,6 @@ $(document).ready(function() {
 //				option.series[0].data.push(num);
 //				option.xAxis.categories.push(i);
 //			});
-			
-			
 			
 		},
 		error:function(data){

@@ -128,6 +128,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 		</div>
 	</div>	
+	<input type="hidden" value="<%=basePath%>" id=basePath>
 </body>
 <script language="JavaScript" type="text/javascript">
 $(function(){

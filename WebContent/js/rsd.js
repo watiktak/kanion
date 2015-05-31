@@ -59,10 +59,12 @@ var option = {
 	};
 
 $(document).ready(function(){
+	var url = $("#basePath").val()+"rsd/rsdExtraction.json";
 	$.ajax({
 		async:false,
 		type:'get',
-		url:'http://localhost:8080/kanion/rsd/rsdExtraction.json',
+		//url:'http://localhost:8080/kanion/rsd/rsdExtraction.json',
+		url:url,
 		dataType:'json',
 		success:function(data){
 			jsonData = data;
