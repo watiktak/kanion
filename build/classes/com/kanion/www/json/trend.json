@@ -1,0 +1,1201 @@
+{	
+	"batchTableName":"KY_M_BATCHRECORD",
+	"batchNoColName":"N_BATCHID",
+	"typeNames": 
+	[
+		{
+			"name": "热毒宁注射液金青提取物",
+			"colName": "S_PRONAME",
+			"processes": 
+			[
+				{
+					"name": "金银花提取",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "金银花第一次提取",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "加入纯化水流速m³/h",
+									"colName": "",
+									"tableName":"",
+									"type": 1
+								},
+
+								{
+									"name": "加纯化水量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "加纯化水时间",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "加入浓盐酸量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "加浓盐酸时纯化水温度",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "加酸后纯化水PH值",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "第一次提取过程纯化水预热蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								
+								{
+									"name": "第一次提取过程升温过程温度上（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "第一次提取过程纯化水预热纯化水温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "第一次提取过程升温过程蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "第一次提取过程升温过程温度下（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第一次提取蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第一次提取温度上（℃）",
+									"colName": "",
+									"type": 1
+								},
+								
+								{
+									"name": "金银花第一次提取温度下（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "提取液PH",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "水提取药液量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "提取液总量（7.9-8.1M3）",
+									"colName": "",
+									"type": 3
+								},
+
+								{
+									"name": "出液流速",
+									"colName": "",
+									"type": 0
+								}
+							]
+						},
+
+						{
+							"name": "金银花第二次提取",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "加入纯化水流速m³/h",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "加纯化水量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "加纯化水时间",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "第二次提取过程纯化水预热蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "第二次提取过程纯化水预热纯化水温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "第二次提取过程升温过程蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "第二次提取过程升温过程温度上/下（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第二次提取蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第二次提取温度上/下（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "蒸馏液体积",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "蒸馏液总体积（210-225L）",
+									"colName": "",
+									"type": 3
+								},
+
+								{
+									"name": "水提取药液量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "提取液PH",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "残留液出液量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "提取液总量(单）",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "提取液总量",
+									"colName": "",
+									"type": 3
+								}
+							]
+						}
+					]
+				},
+
+				{
+					"name": "金银花浓缩",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "金银花回流提取液的连续三效板式浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "金银花第一次提取液连续三效板式浓缩蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第一次提取液连续三效板式浓缩一效温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第二次提取液连续三效板式浓缩蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第二次提取液连续三效板式浓缩一效温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第一次提取液三效终点浓缩三效温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第一次提取液三效终点浓缩三效真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第二次提取液三效终点浓缩三效温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "金银花第二次提取液三效终点浓缩三效真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "过程中浸膏相对密度",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "第一次提取液三效浓缩出膏总量（标准2.0～2.2M3）",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "第二次提取液三效浓缩出膏总量（标准2.0～2.2M3）",
+									"colName": "",
+									"type": 0
+								}
+							]
+						},
+
+						{
+							"name": "金银花回流提取液的减压浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "药液温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "过程中出膏相对密度",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "温度",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "出膏重量",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				},
+
+				{
+					"name": "青蒿提取",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "青蒿第一次提取",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "加入金银花蒸馏液体积",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "蒸汽压力",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "罐内温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "挥发油收集量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "挥发油收集总量",
+									"colName": "",
+									"type": 3
+								}
+							]
+						},
+
+						{
+							"name": "青蒿第二次提取",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "流量计流速",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "加入纯化水量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "蒸汽压力（MPa）",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "药液温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "提取液出液流速",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "水提取药液量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "提取液总量",
+									"colName": "",
+									"type": 3
+								}
+							]
+						}
+					]
+				},
+
+				{
+					"name": "青蒿浓缩",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "青蒿回流提取液的连续三效板式浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "一效温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "三效温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "三效真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "过程浸膏相对密度",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "出膏总量（标准450-550kg）",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				},
+
+				{
+					"name": "青蒿碱沉、浓缩",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "青蒿－80％醇沉、调碱和上清液调酸",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "醇沉调碱过程中温度曲线浸膏温度",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "醇沉调碱计算加入乙醇量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "醇沉调碱加入乙醇浓度",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "醇沉调碱加入乙醇量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "醇沉调碱药液初始pH值（A）",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "醇沉调碱调节后药液最终pH值（标准8.00～8.20）",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "醇沉调碱过程pH变化曲线",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "醇沉调碱氢氧化钠溶液用量",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "调酸药液初始pH值",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "调酸调节后药液最终pH值",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "调酸过程pH变化",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "调酸盐酸溶液用量",
+									"colName": "",
+									"type": 0
+								}
+							]
+						},
+
+						{
+							"name": "上清液浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "上清液体积",
+									"colName": "",
+									"type": 0
+								},
+
+								{
+									"name": "蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "浓缩温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "浸膏相对密度",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "温度",
+									"colName": "",
+									"type": 1
+								},
+
+								{
+									"name": "浸膏量",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				},
+
+				{
+					"name": "醇沉",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "金银花浸膏、青蒿浸膏的混合醇沉",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "加入金银花浸膏重量",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "加入青蒿浸膏重量",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "温度降至25-30℃时温度温度变化曲线",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "计算加入乙醇量",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "加入乙醇浓度",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "加入乙醇量",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "乙醇用量",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "上清液体积",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "醇沉回收浓缩",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "金银花、青蒿浸膏醇沉上清液的回收浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "回收蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "回收温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "回收真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "浓缩蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "浓缩温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "浓缩真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "浸膏相对密度",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "检测浸膏密度时温度",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "出膏浸膏相对密度和温度",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				},
+				
+				{
+					"name": "冷藏调酸萃取",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "金银花、青蒿浸膏调酸萃取",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "温度曲线",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "冷藏总时间（标准：不低8小时）",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "药液原始pH值",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "调节后药液最终pH值（标准1.9～2.1）",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "pH值变化曲线",
+									"colName": "",
+									"type": 1
+								},
+								
+								{
+									"name": "加料浸膏总重",
+									"colName": "",
+									"type": 3
+								},
+								
+								{
+									"name": "加料每塔",
+									"colName": "",
+									"type": 0
+								}
+								,
+								
+								{
+									"name": "流速",
+									"colName": "",
+									"type": 1
+								}
+								,
+								
+								{
+									"name": "出汁时间",
+									"colName": "",
+									"type": 0
+								},
+								
+								{
+									"name": "萃取速度（L/h）",
+									"colName": "",
+									"type": 1
+								}
+								,
+								
+								{
+									"name": "萃取结束时间",
+									"colName": "",
+									"type": 0
+								}
+								,
+								
+								{
+									"name": "萃取液总重",
+									"colName": "",
+									"type": 3
+								}
+								,
+								
+								{
+									"name": "乙酸乙酯用量",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				},
+				
+				{
+					"name": "萃取回收浓缩",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "金青萃取液回收",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "真空度（MPa）",
+									"colName": "",
+									"type": 1
+								}
+							]
+						},
+						
+						{
+							"name": "金青萃取回收药液的浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "最终浸膏相对密度",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "浸膏比重变化曲线",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "出膏重量（标准60±5kg）",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"name": "热毒宁注射液栀子提取物",
+			"colName": "",
+			"processes": 
+			[
+				{
+					"name": "提取、浓缩",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "栀子回流提取",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "（1次）水表原始读数流量计流速",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "（1次）加80%乙醇量（标准2.93m3 /罐）",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "（1次）升温过程蒸汽压力",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "（1次）升温过程温度",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "（1次）提取药液量",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "（1次）80%乙醇提取药液量（标准8.0-8.5M3）",
+									"colName": "",
+									"type": 3
+								},
+								{
+									"name": "（2次）水表原始读数流量计流速",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "（2次）加80%乙醇量（标准2.93m3 /罐）",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "（2次）升温过程蒸汽压力",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "（2次）升温过程温度",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "（2次）提取药液量",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "（2次）80%乙醇提取药液量（标准8.0-8.5M3）",
+									"colName": "",
+									"type": 3
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "提取液回收浓缩",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "栀子回流提取液的浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "回收蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "回收温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "回收真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},							
+								{
+									"name": "浓缩蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "浓缩温度（℃）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "浓缩真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},
+								{
+									"name": "浸膏相对密度和温度",
+									"colName": "",
+									"type": 0
+								},
+								{
+									"name": "浸膏相对密度变化曲线",
+									"colName": "",
+									"type": 1
+								}
+							]
+						}
+					]
+				}
+				,
+				{
+					"name": "热处理、冷藏、过滤",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "栀子热处理、冷藏、过滤",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "栀子热处理、冷藏、过滤温度变化曲线",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "栀子热处理、冷藏、过滤蒸汽压力变化曲线",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "栀子热处理、冷藏、过滤pH变化曲线",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "药液初始pH值",
+									"colName": "",
+									"type": 0
+								},{
+									"name": "调节后药液最终pH值（标准2.90～3.10）",
+									"colName": "",
+									"type": 0
+								},{
+									"name": "盐酸溶液用量",
+									"colName": "",
+									"type": 0
+								},{
+									"name": "冷藏温度",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "冷藏总时间（标准：不低8小时）",
+									"colName": "",
+									"type": 0
+								},{
+									"name": "J4117萃取前罐药液重量",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				}
+				,
+				
+				{
+					"name": "萃取回收浓缩",
+					"colName": "",
+					"phases": 
+					[
+						{
+							"name": "栀子萃取回收浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "加料浸膏总重",
+									"colName": "",
+									"type": 3
+								},{
+									"name": "加料每塔",
+									"colName": "",
+									"type": 0
+								},{
+									"name": "流速",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "萃取速度（L/h）",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "萃取总用时",
+									"colName": "",
+									"type":0
+								},{
+									"name": "萃取液总重",
+									"colName": "",
+									"type": 3
+								},{
+									"name": "正丁醇用量",
+									"colName": "",
+									"type": 0
+								}
+							]
+						},
+						{
+							"name": "栀子萃取液的回收浓缩",
+							"colName": "",
+							"arguments": 
+							[
+								{
+									"name": "回收蒸汽压力（MPa）",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "回收温度（℃）",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "回收真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "浓缩温度（℃）",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "浓缩收真空度（MPa）",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "萃取速度（L/h）",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "浸膏相对密度",
+									"colName": "",
+									"type":0
+								},{
+									"name": "比重变化曲线",
+									"colName": "",
+									"type": 1
+								},{
+									"name": "出膏重量(标准：200±10kg)",
+									"colName": "",
+									"type": 0
+								}
+							]
+						}
+					]
+				}
+			
+			]
+		
+		}
+	]
+}
