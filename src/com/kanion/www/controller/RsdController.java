@@ -24,12 +24,13 @@ public class RsdController {
 	@RequestMapping("/rsdExtraction")
 	@ResponseBody
 	public String rsdExtraction(HttpServletRequest request,HttpServletResponse response){
-		String pihao[]={"Z150401","Z150402","Z150403","Z150404","Z150405","Z150406","Z150407","Z150408","Z150409","Z150410","Z150411","Z150501","Z150502","Z150503","Z150504","Z150505","Z150506",
-				"Z150507","Z150508","Z150509","Z150510","Z150511","Z150601","Z150602","Z150603"};
-		double value []= {478,490,473,490,480,490,480,485,475,480,470,484,489,499,483,
-				490,480,470,485,490,477,480,472,480,490};
+		String pihao[]={"Z150501","Z150502","Z150503","Z150504","Z150505","Z150506",
+				"Z150507","Z150508"};
+		//double value []= {478,490,473,490,480,490,480,485,475,480,470,484,489,499,483,
+				//490,480,470,485,490,477,480,472,480,490};
+		double value [] ={380,390,385,395,400,398,390,400};
 		JSONArray jsonArray = new JSONArray();
-		for(int i = 0;i < 25;i++) {
+		for(int i = 0;i < value.length;i++) {
 			RsdExtraction rsdExtraction = new RsdExtraction();
 			rsdExtraction.setPinming("金青");
 			rsdExtraction.setZhongjianti("金青回收浸膏重量(Kg)");
