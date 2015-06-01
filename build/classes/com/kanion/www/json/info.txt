@@ -1,5 +1,0 @@
-trend.json的说明：
-batchTableName:批表名
-batchNoColName：批号所在列名
-type : 0 数值型  1曲线型 3汇总型，数据库中不存有相应字段，需要汇总多罐
-colName：对应列名
