@@ -42,49 +42,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<dd>							
 								<i class="w100 dis-ib">批号</i>
 								<select class="defaultOption">
-									<option>z150301</option>
-									<option>z150302</option>
-									<option>z150303</option>
-									<option>z150304</option>
-									<option>z150305</option>
-									<option>z150306</option>
-									<option>z150307</option>
-									<option>z150308</option>
-									<option>z150309</option>
-									<option>z150310</option>
-									<option>z150311</option>
-									<option>z150312</option>
-									<option>z150313</option>
-									<option>z150314</option>
-									<option>z150315</option>
-									<option>z150316</option>
-									<option>z150317</option>
-									<option>z150318</option>
-									<option>z150319</option>
-									<option>z150320</option>
+									<option value="23" selected>Z150501</option>
+									<option value="24">Z150502</option>
+									<option value="25">Z150503</option>
+									<option value="26">Z150504</option>
+									<option value="27">Z150505</option>
+									<option value="28">Z150506</option>
+									<option value="29">Z150507</option>
+									<option value="30" >Z150508</option>
 								</select>
 								-
 								<select class="defaultOption">
-									<option>z150301</option>
-									<option>z150302</option>
-									<option>z150303</option>
-									<option>z150304</option>
-									<option>z150305</option>
-									<option>z150306</option>
-									<option>z150307</option>
-									<option>z150308</option>
-									<option>z150309</option>
-									<option>z150310</option>
-									<option>z150311</option>
-									<option>z150312</option>
-									<option>z150313</option>
-									<option>z150314</option>
-									<option>z150315</option>
-									<option>z150316</option>
-									<option>z150317</option>
-									<option>z150318</option>
-									<option>z150319</option>
-									<option>z150320</option>
+									<option value="23">Z150501</option>
+									<option value="24">Z150502</option>
+									<option value="25">Z150503</option>
+									<option value="26">Z150504</option>
+									<option value="27">Z150505</option>
+									<option value="28">Z150506</option>
+									<option value="29">Z150507</option>
+									<option value="30" selected>Z150508</option>
 								</select>
 							</dd>
 							

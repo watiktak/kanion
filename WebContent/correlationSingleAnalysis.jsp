@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											
 											<tr><td class="zs_name"><span>批次:</span></td>
 												<td><select  id="minBatchNo" name="minBatchNo" class="zs_ser">
-														<option value="1">Z150401</option>
+														<option value="1" selected>Z150401</option>
 													<option value="2">Z150402</option>
 													<option value="3">Z150403</option>
 													<option value="4">Z150404</option>
@@ -119,7 +119,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<option value="27">Z150505</option>
 													<option value="28">Z150506</option>
 													<option value="29">Z150507</option>
-													<option value="30">Z150508</option>
+													<option value="30" selected>Z150508</option>
 							</select></td>
 												
 											</tr>

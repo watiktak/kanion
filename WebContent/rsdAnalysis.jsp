@@ -38,8 +38,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<tr>
 												<td class="zs_name"><span>品名:</span></td>
 												<td><select name="tables" id="tables" class="tablesA">
-													<option value="" >热毒宁注射液金青提取物</option>
-													<option value="" selected>热毒宁注射液栀子提取物</option>
+													<option value="" selected>热毒宁注射液金青提取物</option>
+													<option value="" >热毒宁注射液栀子提取物</option>
 												</select></td>
 												<!-- <td class="zs_name"><span>中间体:</span></td>-->
 												<!--<td><select name="midSub" id="midSub" ></select></td>-->
@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 												<td class="zs_name"><span>项目:</span></td>
 												<td><select name="proj" id="zs_proj">
 													<option value="" selected>重量</option>
-													<option value="" selected>体积</option>
+													<option value="" >体积</option>
 												</select></td>
 											</tr>
 											
@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<option value="21">Z150421</option>
 													<option value="22">Z150422</option>
 
-													<option value="23">Z150501</option>
+													<option value="23" selected>Z150501</option>
 													<option value="24">Z150502</option>
 													<option value="25">Z150503</option>
 													<option value="26">Z150504</option>
@@ -128,7 +128,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<option value="27">Z150505</option>
 													<option value="28">Z150506</option>
 													<option value="29">Z150507</option>
-													<option value="30">Z150508</option>
+													<option value="30" selected>Z150508</option>
 													
 												</select>
 									</td>

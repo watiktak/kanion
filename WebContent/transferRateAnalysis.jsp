@@ -60,10 +60,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<option value="醇沉">醇沉</option>
 										<option value="醇沉回收">醇沉回收</option>
 										<option value="萃取">萃取</option>
-<<<<<<< HEAD
-=======
-										<option value="干燥总混">干燥总混</option>
->>>>>>> 2ad6cd114f118214cc5cc078656f217aa21dcb2f
 									</select>
 									-
 									<select id="maxProcessName"name="maxProcessName" class="defaultOption">
@@ -72,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<option value="醇沉">醇沉</option>
 										<option value="醇沉回收">醇沉回收</option>
 										<option value="萃取">萃取</option>
-										<option value="干燥总混">干燥总混</option>
+										<option value="干燥总混" selected>干燥总混</option>
 									</select>
 									<button type="button" onclick="qualityAverageAnalysis()" class="orange-btn w200 mt15 floatRight" >转移率分析</button>
 								</dd>						
