@@ -91,12 +91,17 @@ public class TrendAnalysisServiceImpl implements TrendAnalysisService{
 		logger.info("获取品名("+typeName+")对应的批号和工序/工段，批表("+batchTableName+"),批号列名("+batchNoTableName+"),品名列名("+typeNameTableName+")");
 		logger.info("数据库未接入，批号获取失败！生成模拟批号");
 		ret=new ArrayList<String>();
-		ret.add("Z140101");
-		ret.add("Z140102");
-		ret.add("Z140103");
-		ret.add("Z140104");
-		ret.add("Z140105");
-		ret.add("Z140106");		
+		ret.add("Z150603");
+		ret.add("Z150602");
+		ret.add("Z150601");
+		ret.add("Z150508");
+		ret.add("Z150507");
+		ret.add("Z150506");	
+		ret.add("Z150505");
+		ret.add("Z150504");
+		ret.add("Z150503");	
+		ret.add("Z150502");
+		ret.add("Z150501");
 		//ret=mTrendAnalysisSelectMapper.getBatchNos(batchTableName, batchNoTableName, typeNameTableName, typeName);
 		return ret;
 	}
