@@ -36,11 +36,7 @@ var option = {
 			startOnTick:true,
 			min:0,
 			//tickInterval:2
-			categories:['Z131101','Z131102','Z131103','Z131104','Z131105','Z131106',
-			            'Z131107','Z131108','Z131109','Z131110','Z131111','Z131112',
-			            'Z131113','Z131114','Z131115','Z131116','Z131117','Z131118',
-			            'Z131119','Z131120','Z131121','Z131122','Z131123','Z131124',
-			            'Z131125','Z131126']
+			categories:[]
 		},
 		yAxis:{
 			title:{
@@ -105,6 +101,7 @@ function createTable(rsdObject) {
 		$('.zs_mid').append("<tr class='pihaoval" + i + "'></tr>");
 	}
 	$.each(rsdObject,function(num,item){
+		option.xAxis.categories.push(item.pihao);
 		rsdData.push(item.pihaoValue);
 		var index = Math.floor(num/column);	 
 		$('.zs_mid .pihao' + index).append("<td>" + item.pihao + "</td>");
