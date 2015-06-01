@@ -111,10 +111,7 @@ public class Correlation {
         hm.put("title", title);
         hm.put("target", target_attribute);
 		return hm;
-<<<<<<< HEAD
-		
-=======
->>>>>>> 2ad6cd114f118214cc5cc078656f217aa21dcb2f
+
 	}
 }
 
