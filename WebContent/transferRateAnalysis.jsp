@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<select id="minBatchNo" name="minBatchNo" class="defaultOption" onchange="BatchNoChange1(this.id)"></select>
 									-
 									<select id="maxBatchNo"name="maxBatchNo" class="defaultOption">
-									   <option value="z150520">z150520</option>
+									   <option value="z150417">z150603</option>
 									</select>
 								</dd>
 								<dd id = "zz"><i style=" text-align:center" class="w100 dis-ib">工序</i>
@@ -95,10 +95,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		//转移率分析按钮点击后的初始化：显示数据。
 		//定义批次数组
-		var BatchNo = new Array("z150501","z150502","z150503","z150504","z150505","z150506",
-				"z150507","z150508","z150509","z150510","z150511","z150512","z150513",
-				"z150514","z150515","z150516","z150517","z150518","z150519","z150520");
-		
+		var BatchNo = new Array("z150401","z150402","z150403","z150404","z150405","z150406",
+				"z150407","z150408","z150409","z150410","z150411","z150412","z150413",
+				"z150414","z150415","z150416","z150417");
+		/*("z150401","z150402","z150403","z150404","z150405","z150406",
+				"z150407","z150408","z150409","z150410","z150411","z150412","z150413",
+				"z150414","z150415","z150416","z150417","z150502","z150503","z150504",
+				"z150506","z150507","z150508","z150601","z150602","z150603");
+		*/
 		//定义金青提取工序和栀子提取工序数组
 		var QingJinArr = new Array("前处理","金银花提取","金银花浓缩","醇沉","醇沉回收","萃取","干燥总混");
 		var ZhiZiArr = new Array("前处理","提取","浓缩","萃取","干燥总混");
@@ -418,7 +422,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		            enabled:false // 禁用版权信息
 		        },
 		        series: [{},{},{},{},{},{},{},{},{},{},{},{},{},
-		                 {},
+		                 {},{},{},{},{},{},{},{},{},{},{},{},{},
 		                 {},
 		                 {},
 		                 {},
