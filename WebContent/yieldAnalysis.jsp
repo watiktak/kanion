@@ -140,9 +140,10 @@ $("#yieldAnalysisBtn").click(function(){
 		item.data = [];
 	});
 
-	
-	for(var i = 0;i < 20;i++) {
-		var random = 590 + Math.random() * 30;
+	//option.series[0].data = [1420,1400,1420,1450,1428,1448,1430,1429];
+	for(var i = 0,len = option.xAxis.categories.length;i < len;i++) {
+		var random = 1400 + Math.random() * 50;
+		random = Math.ceil(random);
 		option.series[0].data.push(random);
 	}
 	avgYield();
@@ -165,9 +166,7 @@ var option = {
 	        	text:''
 	        },
 	        xAxis: {
-	            categories: ['z150301', 'z150302', 'z150303', 'z150304','z150305','z150306','z150307','z150308','z150309','z150310',
-	                         'z150311','z150312','z150313','z150314','z150315','z150316',
-	                         'z150317','z150318','z150319','z150320']
+	            categories: ['z150501', 'z150502', 'z150503', 'z150504','z150505','z150506','z150507','z150508']
 	        },
 	        yAxis: {
 	            min: 0,
@@ -181,7 +180,12 @@ var option = {
 	        plotOptions: {
 	            column: {
 	                pointPadding: 0.2,
-	                borderWidth: 0
+	                borderWidth: 0,
+	                dataLabels:{//将值显示在柱状图的上面
+	                	enabled:true,
+	                	crop:false,
+	                	overflow:'none'
+	                }
 	            }
 	        },
 	        series: [{
