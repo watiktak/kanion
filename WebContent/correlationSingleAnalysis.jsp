@@ -65,51 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											
 											<tr><td class="zs_name"><span>批次:</span></td>
 												<td><select  id="minBatchNo" name="minBatchNo" class="zs_ser">
-<<<<<<< HEAD
-													<option value="20">Z131120</option>
-													<option value="19">Z131119</option>
-													<option value="18">Z131118</option>
-													<option value="17">Z131117</option>
-													<option value="16">Z131116</option>
-													<option value="15">Z131115</option>
-													<option value="14">Z131114</option>
-													<option value="13">Z131113</option>
-													<option value="12">Z131112</option>
-													<option value="11">Z131111</option>
-													<option value="10">Z131110</option>
-													<option value="9">Z131109</option>
-													<option value="8">Z131108</option>
-													<option value="7">Z131107</option>
-													<option value="6">Z131106</option>
-													<option value="5">Z131105</option>
-													<option value="4">Z131104</option>
-													<option value="3">Z131103</option>
-													<option value="2">Z131102</option>
-													<option value="1" selected>Z131101</option>
-												</select>
-												<select name="maxBatchNo" id="maxBatchNo" class="zs_ser">
-													<option value="20">Z131120</option>
-													<option value="19">Z131119</option>
-													<option value="18">Z131118</option>
-													<option value="17">Z131117</option>
-													<option value="16">Z131116</option>
-													<option value="15">Z131115</option>
-													<option value="14">Z131114</option>
-													<option value="13">Z131113</option>
-													<option value="12">Z131112</option>
-													<option value="11">Z131111</option>
-													<option value="10">Z131110</option>
-													<option value="9">Z131109</option>
-													<option value="8">Z131108</option>
-													<option value="7">Z131107</option>
-													<option value="6">Z131106</option>
-													<option value="5">Z131105</option>
-													<option value="4">Z131104</option>
-													<option value="3">Z131103</option>
-													<option value="2">Z131102</option>
-													<option value="1">Z131101</option>
-=======
-													<option value="1">Z150401</option>
+														<option value="1">Z150401</option>
 													<option value="2">Z150402</option>
 													<option value="3">Z150403</option>
 													<option value="4">Z150404</option>
@@ -126,7 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<option value="15">Z150415</option>
 													<option value="16">Z150416</option>
 													<option value="17">Z150417</option>
-									
+													
 													<option value="23">Z150501</option>
 													<option value="24">Z150502</option>
 													<option value="25">Z150503</option>
@@ -136,6 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<option value="29">Z150507</option>
 													<option value="30">Z150508</option>
 												</select>
+												
 												<select name="maxBatchNo" id="maxBatchNo" class="zs_ser">
 													<option value="1">Z150401</option>
 													<option value="2">Z150402</option>
@@ -163,26 +120,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 													<option value="28">Z150506</option>
 													<option value="29">Z150507</option>
 													<option value="30">Z150508</option>
-<<<<<<< HEAD
-													<option value="31">Z150509</option>
-													<option value="32">Z150510</option>
-													<option value="33">Z150511</option>
-													<option value="34">Z150512</option>
-													<option value="35">Z150513</option>
-													<option value="36">Z150514</option>
-													<option value="37">Z150515</option>
-													<option value="38">Z150516</option>
-													<option value="39">Z150517</option>
-													<option value="40">Z150518</option>
-													<option value="41">Z150519</option>
-													<option value="42">Z150601</option>
-													<option value="43">Z150602</option>
-													<option value="44">Z150603</option>
->>>>>>> 2ad6cd114f118214cc5cc078656f217aa21dcb2f
-=======
-			
->>>>>>> zhsi
-												</select></td>
+							</select></td>
 												
 											</tr>
 										</table>
