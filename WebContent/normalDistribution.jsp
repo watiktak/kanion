@@ -45,6 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<select id="minBatchNo" name="minBatchNo" class="defaultOption" onchange="BatchNoChange1(this.id)"></select>
 									-
 									<select id="maxBatchNo"name="maxBatchNo" class="defaultOption">
+<<<<<<< HEAD
 									   <option value="z150603">z150603</option>
 									   <option value="z150602">z150602</option>
 									   <option value="z150601">z150601</option>
@@ -66,6 +67,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									   <option value="z150603">z150410</option>
 									   <option value="z150603">z150409</option>
 									   <option value="z150603">z150408</option>
+=======
+									   <option value="z150520">z150520</option>
+>>>>>>> 2ad6cd114f118214cc5cc078656f217aa21dcb2f
 									</select>
 								</dd>
 								<dd><i style="text-align:center" class="w100 dis-ib">中间体</i>
@@ -217,10 +221,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script language="JavaScript" type="text/javascript">
 		//转移率分析按钮点击后的初始化：显示数据。
 		//定义批次数组
+<<<<<<< HEAD
 		var BatchNo = new Array("z150401","z150402","z150403","z150404","z150405","z150406",
 				"z150407","z150408","z150409","z150410","z150411","z150412","z150413",
 				"z150414","z150415","z150416","z150501","z150502","z150503","z150504",
 				"z150506","z150507","z150508","z150601","z150602","z150603");
+=======
+		var BatchNo = new Array("z140501","z140502","z140503","z140504","z140505","z140506",
+				"z140507","z140508","z150509","z150510","z150511","z150512","z150513",
+				"z150514","z150515","z150516","z150517","z150518","z150519","z150520");
+>>>>>>> 2ad6cd114f118214cc5cc078656f217aa21dcb2f
 		
 var ProcessChoseId = 0; //标注品名选择种类，0--金青提取， 1--栀子提取
 		
