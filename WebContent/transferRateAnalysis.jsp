@@ -56,7 +56,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										<option value="醇沉">醇沉</option>
 										<option value="醇沉回收">醇沉回收</option>
 										<option value="萃取">萃取</option>
-										<option value="干燥总混">干燥总混</option>
 									</select>
 									-
 									<select id="maxProcessName"name="maxProcessName" class="defaultOption">
@@ -110,6 +109,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		function loadData(){
 			selectTag = document.getElementById("minBatchNo"); //获取select标记 
 			colls = selectTag.options; //获取引用 
+			selectTag1 = document.getElementById("maxBatchNo"); //获取select标记 
+			colls1 = selectTag1.options; //获取引用 
+			colls1.length = 0;
 			if(colls.length > 0 && isClearOption()){ 
 				clearOptions(colls); //清空select
 			} 
@@ -120,6 +122,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				 selectTag.options[i].value = BatchNo[i];
 				 selectTag.options[i].text = BatchNo[i];
 		    }
+			for(var i=0;i<BatchNo.length;i++){ 
+				//item = new Option(BatchNo[i],BatchNo[i]); //通过Option()构造函数创建option对象 
+				//selectTag.options.add(item); 
+				 selectTag1.options.add(new Option());
+				 selectTag1.options[i].value = BatchNo[BatchNo.length-1-i];
+				 selectTag1.options[i].text = BatchNo[BatchNo.length-1-i];
+		    }
 		};
 		window.onload = loadData();
 		
@@ -128,24 +137,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			selectTag = document.getElementById("minProcessName");   //获取select标记 
 			colls = selectTag.options;   //获取引用 
 			colls.length = 0; //清空select option item
+			selectTag1 = document.getElementById("maxProcessName");   //获取select标记 
+			colls1 = selectTag1.options;   //获取引用 
+			colls1.length = 0; //清空select option item
 			
 			var name_str=$("#tables option:selected").val();   //获取品名选项
-			if(name_str == "热毒宁注射液青金提取物"){    //表示选择金青提取
+			if(name_str == "热毒宁注射液金青提取物"){    //表示选择金青提取
 				ProcessChoseId = 0;
 			    
 			    //填充工序选项 (minProcessName)
-				for(var i=0;i<QingJinArr.length;i++){
+				for(var i=0;i<QingJinArr.length - 1;i++){
 					selectTag.options.add(new Option());  //通过Option()构造函数创建option对象 
 					selectTag.options[i].value = QingJinArr[i];
 					selectTag.options[i].text = QingJinArr[i];
 			    }
+				//填充工序选项 (minProcessName)
+				for(var i=0;i<QingJinArr.length - 1;i++){
+					selectTag1.options.add(new Option());  //通过Option()构造函数创建option对象 
+					selectTag1.options[i].value = QingJinArr[i+1];
+					selectTag1.options[i].text = QingJinArr[i+1];
+			    }
 			} else {      //选择栀子提取
 				ProcessChoseId = 1;
-				for(var i=0;i<ZhiZiArr.length;i++){
+				for(var i=0;i<ZhiZiArr.length - 1;i++){
 					selectTag.options.add(new Option());
 					 selectTag.options[i].value = ZhiZiArr[i];
 					 selectTag.options[i].text = ZhiZiArr[i];
-					
+			    }
+				//填充工序选项 (minProcessName)
+				for(var i=0;i<ZhiZiArr.length - 1;i++){
+					selectTag1.options.add(new Option());  //通过Option()构造函数创建option对象 
+					selectTag1.options[i].value = ZhiZiArr[i+1];
+					selectTag1.options[i].text = ZhiZiArr[i+1];
 			    }
 			}
 		};
@@ -182,20 +205,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			if(ProcessChoseId == 0){
 				indexNo = indexOf(QingJinArr,process_str);
-				for(var i = indexNo;i < QingJinArr.length ;i++){
+				for(var i = indexNo;i < QingJinArr.length-1 ;i++){
 					selectTag.options.add(new Option());
-					 selectTag.options[local].value = QingJinArr[i];
-					 selectTag.options[local].text = QingJinArr[i];
+					 selectTag.options[local].value = QingJinArr[i+1];
+					 selectTag.options[local].text = QingJinArr[i+1];
 					 local++;
 					
 			    }
 			} else {
 				//indexNo = ZhiZiArr.indexOf(process_str);
 				indexNo = indexOf(ZhiZiArr,process_str);
-				for(var i = indexNo;i < ZhiZiArr.length ;i++){
+				for(var i = indexNo;i < ZhiZiArr.length-1 ;i++){
 					selectTag.options.add(new Option());
-					selectTag.options[local].value = ZhiZiArr[i];
-				    selectTag.options[local].text = ZhiZiArr[i];
+					selectTag.options[local].value = ZhiZiArr[i+1];
+				    selectTag.options[local].text = ZhiZiArr[i+1];
 				    local++;
 			    }
 			}
@@ -224,6 +247,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			} else {
 				minProcessIndexNo = indexOf(ZhiZiArr, minProcess_str);
 				maxProcessIndexNo = indexOf(ZhiZiArr, maxProcess_str);
+			}
+			//定义二维数组用于存储批号--工序的转移率值
+			var transferValue = new Array();
+			for(var i = 0; i <= maxIndexNo - minIndexNo; i++){
+				transferValue[i] = new Array();
+				for(var j = 0; j <= maxProcessIndexNo - minProcessIndexNo; j++){
+					transferValue[i][j] = -1; 
+				}
 			}
 
 			//居中显示
@@ -305,7 +336,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		 	                    				} else if(x == "干燥总混"){
 		 	                    					y = Math.round(Math.random()*100)/100.0 + 89;
 		 	                    				} else{
-		 	                    					y = Math.round(Math.random()*100)/100.0 + 34;
+		 	                    					y=100;
+		 	                    					for(var z = 0; z < maxProcessIndexNo - minProcessIndexNo; z++){
+		 	                    						y = y * transferValue[i-minIndexNo][z]/100;
+		 	                    					}
+		 	                    					//y = Math.round(Math.random()*100)/100.0 + 34;
 		 	                    				}
 		 	                    			 } else {
 		 	                    				if(k > maxProcessIndexNo){
@@ -322,9 +357,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		 	                    				} else if(x == "干燥总混"){
 		 	                    					y = Math.round(Math.random()*100)/100.0 + 93;
 		 	                    				} else{
-		 	                    					y = Math.round(Math.random()*100)/100.0 + 86;
+		 	                    					y=100;
+		 	                    					for(var z = 0; z < maxProcessIndexNo - minProcessIndexNo; z++){
+		 	                    						y = y * transferValue[i-minIndexNo][z]/100;
+		 	                    					}
+		 	                    					//y = Math.round(Math.random()*100)/100.0 + 86;
 		 	                    				}
 		 	                    			 }
+		                    				 transferValue[i-minIndexNo][j-minProcessIndexNo] = y;
+		                    				 y =  (Math.round(y*100))/100;
+		                    				 //alert(transferValue[i][j]);
 			                    			 //y = Math.round(Math.random()*30 + 50);
 			                                 this.series[no].addPoint([x, y]);
 						                  }
