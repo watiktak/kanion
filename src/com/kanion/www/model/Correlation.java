@@ -111,7 +111,6 @@ public class Correlation {
         hm.put("title", title);
         hm.put("target", target_attribute);
 		return hm;
-		
 	}
 }
 
