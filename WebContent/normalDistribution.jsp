@@ -113,10 +113,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<tr> 
 						    <td>上管制线(+3δ)</td><td>540</td>
 						    <td>下管制线(-3δ)</td><td>720</td>
-						    <td>样本量(Sample Size)</td><td>480</td> 
+						    <td>样本量(Sample Size)</td><td>50</td> 
 						</tr> 
 						<tr> 
-						    <td>预估不良率(Defect)</td><td>5.00%</td>
+						    <td>预估不良率(Defect)</td><td>1.00%</td>
 						    <td>平均值偏离度(Ca)</td><td>0.04%</td>
 						    <td>上限过程能力(CpU)</td><td>0.65</td> 
 						</tr> 
