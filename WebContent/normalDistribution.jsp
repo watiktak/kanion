@@ -45,7 +45,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<select id="minBatchNo" name="minBatchNo" class="defaultOption" onchange="BatchNoChange1(this.id)"></select>
 									-
 									<select id="maxBatchNo"name="maxBatchNo" class="defaultOption">
-
 									   <option value="z150508">z150508</option>
 									   <option value="z150507">z150507</option>
 									   <option value="z150506">z150506</option>
@@ -54,37 +53,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									   <option value="z150503">z150503</option>
 									   <option value="z150502">z150502</option>
 									   <option value="z150501">z150501</option>
-									   <option value="z150617">z150417</option>
-									   <option value="z150616">z150416</option>
-									   <option value="z150615">z150415</option>
-									   <option value="z150614">z150414</option>
-									   <option value="z150603">z150413</option>
-									   <option value="z150603">z150412</option>
-									   <option value="z150603">z150411</option>
-									   <option value="z150603">z150410</option>
-									   <option value="z150603">z150409</option>
-									   <option value="z150603">z150408</option>
-
-
+									   <option value="z150417">z150417</option>
+									   <option value="z150416">z150416</option>
+									   <option value="z150415">z150415</option>
+									   <option value="z150414">z150414</option>
+									   <option value="z150413">z150413</option>
+									   <option value="z150412">z150412</option>
+									   <option value="z150411">z150411</option>
+									   <option value="z150410">z150410</option>
+									   <option value="z150409">z150409</option>
+									   <option value="z150408">z150408</option>
 									</select>
 								</dd>
 								<dd><i style="text-align:center" class="w100 dis-ib">中间体</i>
 									<select id="minProcessName" name="minProcessName" class="defaultOption">
-									    <option value="volvo">金银花提取液</option>
-										<option value="saab">第二次回流提取</option>
-										<option value="fiat">单效浓缩</option>
-										<option value="audi">刮板浓缩</option>
-										<option value="fiat">热处理</option>
-										<option value="audi">冷藏过滤</option>
-										<option value="audi">栀子过滤浸膏萃取</option>
-										<option value="fiat">栀子浸膏的真空干燥</option>
-										<option value="audi">栀子提取物的粉碎分装</option>
+									    <option value="volvo">金银花浓缩浸膏</option>
+										<option value="saab">金银花提取液</option>
+										<option value="fiat">金青萃取液</option>
+										<option value="audi">金青醇沉上清液</option>
+										<option value="fiat">青蒿调酸上清液</option>
+										<option value="audi">青蒿醇沉回收浸膏</option>
+										<option value="audi">青蒿浓缩浸膏</option>
+										<option value="fiat">金青湿膏</option>
 									</select>		
 								</dd>
 								<dd><i style="text-align:center" class="w100 dis-ib">项目  </i>
 									<select id="minProcessName" name="minProcessName" class="defaultOption">
 									    <option value="volvo">重量</option>
-										<option value="saab">体积</option>
 									</select>
 									<button type="button" onclick="qualityAverageAnalysis()" class="orange-btn w200 mt15 floatRight" >正态分析</button>
 								</dd>							
@@ -100,7 +95,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div >
 						<table class="altrowstable" id="alternatecolor" style="display:none"> 
 						<tr> 
-						    <td>评估项目(Item)</td><td>金银花提取液正态分析</td>
+						    <td>评估项目(Item)</td><td>亚批次金银花浸膏整体正态分析</td>
 						    <td>单位(Unit)</td><td>Kg</td>
 						    <td>规格下限(LSL)</td><td>575</td>  
 						</tr> 
@@ -333,7 +328,8 @@ var ProcessChoseId = 0; //标注品名选择种类，0--金青提取， 1--栀�
 			        		fontSize:'18px',
 						    fontFamily:'微软雅黑'
 			        	},
-			            text: '热毒宁注射液青金提取物正态分布'
+			            text: '亚批次金银花浸膏整体正态分布图',
+			            x:-40
 			        },
 			        colors:['#64B9C9','#F01041'],
 			        xAxis: {
@@ -476,13 +472,13 @@ var ProcessChoseId = 0; //标注品名选择种类，0--金青提取， 1--栀�
 			        },
 			        series: [{
 			        	type: 'column',
-			            name: '重量频率',
-			            data: [0,0,1,0,0,3,13,26,41,57,63,79,65,55,39,30,13,12,6,4,1,0,2,0,0]
+			            name: '频率',
+			            data: [0,0,0,0,0,0,1,2,5,5,6,8,6,6,4,3,2,1,0,0,0,0,0,0,0]
 
 			        },
 			        {
 			        	type: 'spline',
-			            name: '重量正态分布曲线',
+			            name: '正态分布曲线',
 			            yAxis: 1,
 			            lineWidth: 2, 
 		            	//lineColor:'#F01041',
