@@ -1,0 +1,79 @@
+/*
+   曲线拟合页面样式表
+*/
+/*拟合方法选择项*/
+fieldset.zs{
+	margin:1em 0;
+	padding:0.4em 1em;
+	border:1px solid #ccc;
+	display:inline-block;
+	position:relative;
+
+}
+fieldset.zs_curve_fieldset{
+	width:400px;
+}
+div.zs_curvechoice{
+	color:black;
+	font-family:"微软雅黑";
+	font-size:14px;
+	width:100%;
+}
+div.zs_curvechoice span{
+	padding-left:0.5em;
+}
+label.zs_method{
+	display:inline-block;
+	width:100px;
+	text-align:left;
+}
+/*结果计算按钮部分*/
+div.zs_cs{
+	position:absolute;
+	bottom:120px;
+}
+div.zs_curvecal{
+	width:300px;
+	position:relative;
+	height:160px;
+}
+
+div.zs_curvesr{
+	margin-left:5px;
+}
+span.zs_curvesvalue{
+	right:6px;
+	width:200px;
+	
+}
+button.zs_cfButton{
+	display:block;
+	margin:0 auto;
+	width:280px;
+	height:30px;
+	line-height:30px;
+	background: url('../icons/btn_bg_1.jpg') repeat-x
+}
+/*图表显示区*/
+.zs_curCharts{
+    margin-top:-20px;
+}
+/*显示r值的table样式*/
+div.zs_rsval{
+    width:100%;
+    margin:20px auto;
+}
+table.zs_rstab{
+    width:50%;
+    margin:0 auto;
+    color:black;
+    border-collapse:separate;
+}
+.zs_rstab caption{
+    font-size:1em;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+.zs_rstab td{
+    border:1px solid #ccc;
+}
