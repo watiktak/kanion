@@ -10,17 +10,25 @@ function addEvents(func){
 	}
 }
 
-/*突出显示当前页面的导航栏*/
-function highlightPage(){
-	var div=document.getElementById("index");
-	var ul=div.getElementsByTagName("ul");
-	var links=ul[0].getElementsByTagName("a");
-	var linkUrl;
-	for(var i=0,len=links.length;i<len;i++){
-		linkUrl=links[i].getAttribute("href");
-		if(window.location.href.indexOf(linkUrl)!=-1){
-			links[i].className="here"
+
+/*添加事件函数*/
+var EventUtil={
+		addHandler:function(element,type,handler){
+			if(element.addEventListener){//DOM2级方法
+				element.addEventListener(type,handler,false);
+			}else if(element.attachEvent){//IE方法
+				element.attachEvent("on"+type,handler);
+			}else{//DOM0级方法
+				element["on"+type]=handler;
+			}
+		},
+		removeHandler:function(element,type,handler){
+			if(element.removeEventListener,handler){
+				element.removeEventListener(type,handler,false);
+			}else if(element.detachEvent){
+				element.detachEvent("on"+type,handler);
+			}else{
+				element["on"+type]=null;
+			}
 		}
-	}
 }
-addEvents(highlightPage);

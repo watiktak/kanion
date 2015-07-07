@@ -80,8 +80,8 @@
 				
 				scatter : {
 					marker : {
-						fillColor: '#ffffff',
-						lineWidth: 2,
+						//fillColor: '#ffffff',
+						lineWidth: 1,
 						lineColor: null,
 						radius : 4,
 						states : {
@@ -292,11 +292,12 @@ var EventUtil={
 		}
 }
 
+/*-------------------------------------------------*/
 google.load("visualization", "1", {
 	packages : [ "corechart" ]
 });
 google.setOnLoadCallback(drawChart);
-
+/*----------------------------------------------------*/
 function drawChart() {
 	var data;
 	var suffix="";
@@ -513,65 +514,65 @@ var data1 = google.visualization.arrayToDataTable([
 	
 	EventUtil.addHandler(startBtn,"click",function(){
 		
-		/*{if(suffix != "csv"){
+		if(suffix != "csv"){
 			alert("请上传.csv格式的文件");
-		} }*/
+		} 
 		
 		/*highcharts进行曲线拟合  方式选择   ，事件点击*/
 		var choosed=false;
 		var hgChoosed = false;
 		
 		
-//{		if(zs_linear.checked) {
-//			var tempOption1 = optionsHighcharts;
-//			hgChoosed = true;
-//			choosed = true;
-//			optionsHighcharts.title.text = "一次方程拟合";
-//			for(var i = 0; i < columnNum-1; i++) {
-//				tempOption1.series[i].regressionSettings.type = 'linear';
-//				tempOption1.chart.renderTo = 'tablesCur-1';
-//			}
-//			 var chart1 = new Highcharts.Chart(tempOption1);
-//		}
-//		if(zs_polynomial.checked) {
-//			var tempOption2 = optionsHighcharts;
-//			hgChoosed = true;
-//			choosed = true;
-//			tempOption2.title.text = "二次方程拟合";
-//			for(var i = 0; i < columnNum-1; i++) {
-//				tempOption2.series[i].regressionSettings.type = 'polynomial';
-//				tempOption2.chart.renderTo = 'tablesCur-2';
-//			}
-//			
-//			var  chart2 = new Highcharts.Chart(tempOption2);
-//			console.log(tempOption2.series[0].regressionSettings.type);
-//			
-//		}
-//		if(zs_exponential.checked) {
-//			hgChoosed = true;
-//			choosed = true;
-//			optionsHighcharts.title.text = "指数方程拟合";
-//			for(var i = 0; i < columnNum-1; i++) {
-//				optionsHighcharts.series[i].regressionSettings.type = 'exponential';
-//				optionsHighcharts.chart.renderTo = 'tablesCur-3';
-//			}
-//			console.log(optionsHighcharts.series[0].regressionSettings.type);
-//			var  chart3 = new Highcharts.Chart(optionsHighcharts);
-//		}
-//		if(zs_logarithmic.checked) {
-//			hgChoosed = true;
-//			choosed = true;
-//			optionsHighcharts.title.text = "对数方程拟合";
-//			for(var i = 0; i < columnNum-1; i++) {
-//				optionsHighcharts.series[i].regressionSettings.type = 'logarithmic';
-//				optionsHighcharts.chart.renderTo = 'tablesCur-5';
-//			}
-//			var chart4 = new Highcharts.Chart(optionsHighcharts);
-//		}
-//		
-//		if(!hgChoosed){
-//			alert('请先选择拟合方式');
-//		}                                                 }
+		if(zs_linear.checked) {
+			var tempOption1 = optionsHighcharts;
+			hgChoosed = true;
+			choosed = true;
+			optionsHighcharts.title.text = "一次方程拟合";
+			for(var i = 0; i < columnNum-1; i++) {
+				tempOption1.series[i].regressionSettings.type = 'linear';
+				tempOption1.chart.renderTo = 'tablesCur-1';
+			}
+			 var chart1 = new Highcharts.Chart(tempOption1);
+		}
+		if(zs_polynomial.checked) {
+			var tempOption2 = optionsHighcharts;
+			hgChoosed = true;
+			choosed = true;
+			tempOption2.title.text = "二次方程拟合";
+			for(var i = 0; i < columnNum-1; i++) {
+				tempOption2.series[i].regressionSettings.type = 'polynomial';
+				tempOption2.chart.renderTo = 'tablesCur-2';
+			}
+			
+			var  chart2 = new Highcharts.Chart(tempOption2);
+			console.log(tempOption2.series[0].regressionSettings.type);
+			
+		}
+		if(zs_exponential.checked) {
+			hgChoosed = true;
+			choosed = true;
+			optionsHighcharts.title.text = "指数方程拟合";
+			for(var i = 0; i < columnNum-1; i++) {
+				optionsHighcharts.series[i].regressionSettings.type = 'exponential';
+				optionsHighcharts.chart.renderTo = 'tablesCur-3';
+			}
+			console.log(optionsHighcharts.series[0].regressionSettings.type);
+			var  chart3 = new Highcharts.Chart(optionsHighcharts);
+		}
+		if(zs_logarithmic.checked) {
+			hgChoosed = true;
+			choosed = true;
+			optionsHighcharts.title.text = "对数方程拟合";
+			for(var i = 0; i < columnNum-1; i++) {
+				optionsHighcharts.series[i].regressionSettings.type = 'logarithmic';
+				optionsHighcharts.chart.renderTo = 'tablesCur-5';
+			}
+			var chart4 = new Highcharts.Chart(optionsHighcharts);
+		}
+		
+		if(!hgChoosed){
+			alert('请先选择拟合方式');
+		}                                                 
 		
 		
 		
@@ -585,7 +586,7 @@ var data1 = google.visualization.arrayToDataTable([
 			}
 			chartLinear = new google.visualization.ScatterChart(document
 					.getElementById('tablesCur-1'));
-			chartLinear.draw(data1, options);
+			chartLinear.draw(data, options);
 		}
 		if(two_equation.checked){
 			choosed=true;
@@ -596,7 +597,7 @@ var data1 = google.visualization.arrayToDataTable([
 			}
 			chartLinear = new google.visualization.ScatterChart(document
 					.getElementById('tablesCur-2'));
-			chartLinear.draw(data1, options);
+			chartLinear.draw(data, options);
 		}
 		if(three_equation.checked){
 			choosed=true;
@@ -607,7 +608,7 @@ var data1 = google.visualization.arrayToDataTable([
 			}
 			chartLinear = new google.visualization.ScatterChart(document
 					.getElementById('tablesCur-3'));
-			chartLinear.draw(data1, options);
+			chartLinear.draw(data, options);
 		}
 		if(exponential_equation.checked){
 			choosed=true;
@@ -616,7 +617,7 @@ var data1 = google.visualization.arrayToDataTable([
 				options.trendlines[i].type = "exponential";
 			}
 			chartLinear = new google.visualization.ScatterChart(document.getElementById('tablesCur-4'));
-			chartLinear.draw(data1,options);
+			chartLinear.draw(data,options);
 		} 
 		
 		if(!choosed){

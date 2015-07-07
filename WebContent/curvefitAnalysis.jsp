@@ -20,11 +20,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="js/papaparse.min.js"></script>
 <script type="text/javascript" src="js/jquery.csv-0.71.min.js"></script><!-- 新增 -->
 <script type="text/javascript" src="js/jquery-form.js"></script><!-- 新增 -->
-<script type="text/javascript" src="https://www.google.com/jsapi"></script><!-- 新增 -->
+<!--<script type="text/javascript" src="https://www.google.com/jsapi"></script><!-- 新增 -->  -->
 
- <script type="text/javascript" src="js/highcharts-regression.js"></script> 
-<script src="js/curvefit.js" type="text/javascript"></script>
-<script src="js/global.js" type="text/javascript"></script> 
+ <script type="text/javascript" src="js/highcharts-regression.js"></script>
+ <script src="js/global.js" type="text/javascript"></script>  
+<!-- <script src="js/curvefit.js" type="text/javascript"></script> -->
+
+<script src="js/curfitHighCharts.js" type="text/javascript"></script>
+
 <body>
 	<input id="pageName" value="dataAnalysis" type="hidden"/>
 	<c:import url="head.jsp"  charEncoding="UTF-8" />
@@ -49,13 +52,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 											<input type="submit" id="pclick" value="上传文件"/>
 										</form>
 										
-										<!--<div>
+										<div>
 											<label for="">拟合方式-1:</label>
 											<input type = "checkbox" id = "zs_linear" class="zs_fit" />一次方程
 											<input type = "checkbox" id = "zs_polynomial" class="zs_fit" />二次方程
 											<input type = "checkbox" id = "zs_exponential" class="zs_fit" />指数方程
 											<input type = "checkbox" id = "zs_logarithmic" class="zs_fit" />对数方程
-										</div>  -->
+										</div>  
 										<div>
 											<label for="">拟合方式:</label>
 											<input type="checkbox" id="zs_onefit" class="zs_fit"/>一次方程

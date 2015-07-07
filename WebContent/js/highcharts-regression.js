@@ -64,6 +64,8 @@
                 extraSerie.data = regression.points ;
                 extraSerie.name = extraSerie.name.replace("%r2",regression.rSquared);
                 extraSerie.name = extraSerie.name.replace("%r",regression.rValue);
+              //zhsi modified
+                regression.string += "-------R-value:"+regression.rValue;
                 extraSerie.name = extraSerie.name.replace("%eq",regression.string);               
                 
                 extraSerie.regressionOutputs = regression ;
@@ -167,7 +169,7 @@
               return 0;
         });
 
-        var string = 'y = ' + Math.round(gradient*100) / 100 + 'x + ' + Math.round(intercept*100) / 100;
+        var string = 'y = ' + Math.round(gradient*1000) / 1000 + 'x + ' + Math.round(intercept*1000) / 1000;
         return {equation: [gradient, intercept], points: results, string: string};
     }
     
@@ -205,7 +207,7 @@
               return 0;
         });
 
-        var string = 'y = ' + Math.round(A*100) / 100 + ' + ' + Math.round(B*100) / 100 + ' ln(x)';
+        var string = 'y = ' + Math.round(A*1000) / 1000 + ' + ' + Math.round(B*1000) / 1000 + ' ln(x)';
         
         return {equation: [A, B], points: results, string: string};
     }
@@ -243,7 +245,7 @@
               return 0;
         });
 
-        var string = 'y = ' + Math.round(A*100) / 100 + 'x^' + Math.round(B*100) / 100;
+        var string = 'y = ' + Math.round(A*1000) / 1000 + 'x^' + Math.round(B*1000) / 1000;
 
         return {equation: [A, B], points: results, string: string};
     }
@@ -300,9 +302,9 @@
         var string = 'y = ';
 
         for(var i = equation.length-1; i >= 0; i--){
-            if(i > 1) string += Math.round(equation[i]*100) / 100 + 'x^' + i + ' + ';
-            else if (i == 1) string += Math.round(equation[i]*100) / 100 + 'x' + ' + ';
-            else string += Math.round(equation[i]*100) / 100;
+            if(i > 1) string += Math.round(equation[i]*1000) / 1000 + 'x^' + i + ' + ';
+            else if (i == 1) string += Math.round(equation[i]*1000) / 1000 + 'x' + ' + ';
+            else string += Math.round(equation[i]*1000) / 1000;
         }
 
         return {equation: equation, points: results, string: string};
